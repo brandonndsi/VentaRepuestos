@@ -7,7 +7,7 @@
         <!-- CSS-->
         <link rel="stylesheet" type="text/css" href="../../css/styles.css">
         <!-- JS-->
-        <script src="../../js/jquery.js"></script>
+        <script src="../../js/jquery-1.10.2.js"></script>
 
     </head>
     <body>
