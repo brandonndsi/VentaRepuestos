@@ -7,7 +7,7 @@ function mostrarEmpleados() {
             "bDeferRender": true,
             "sPaginationType": "full_numbers",
             "ajax": {
-                "url": "../business/empleadoaccion/empleadoAccion.php",
+                "url": "../../business/empleadoaccion/empleadoAccion.php",
                 "type": "POST",
                 data: {accion: "mostrar"}// se recive la accion
             },

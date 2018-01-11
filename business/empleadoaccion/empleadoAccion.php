@@ -15,10 +15,9 @@ if ($action == "insertar") {
 } else if ($action == 'buscar') {
 
 } else if ($action == 'mostrar') {
-    //$conexion = new DataEmpleado();
-    //echo $conexion->mostrarEmpleados();
+    $conexion = new DataEmpleado();
+    echo $conexion->mostrarEmpleados();
 
-    echo 'hola';
 }else{
     header("location: ../../../index.php");
 }
