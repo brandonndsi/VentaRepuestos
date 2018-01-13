@@ -38,7 +38,13 @@ class DataEmpleado {
             $tabla = "";
             while ($row = $mostrarempleados->fetch_assoc()) {
 
-                $editar = '<button onclick=\"verModalEditar();\"  '
+                $editar = '<button onclick=\"verModalEditar('.$row['empleadoid'].','
+                        . '\''.$row['personanombre'].'\','. '\''.$row['personaapellido1'].'\','
+                        . '\''.$row['personaapellido2'].'\','.$row['empleadocedula'].','
+                        . $row['personatelefono'].','. '\''.$row['personacorreo'].'\','
+                        . '\''.$row['empleadocontrasenia'].'\','.$row['empleadoedad'].','
+                        . '\''.$row['empleadosexo'].'\','.'\''.$row['empleadoestadocivil'].'\','
+                        . '\''.$row['empleadobanco'].'\','.$row['empleadocuentabancaria'].');\"'
                         . 'class=\"btn btn-primary\">Modificar</button>';
 
                 $ver = '<button onclick=\"verModalBuscar(' . $row['empleadoedad'] . ','

@@ -61,7 +61,7 @@ function mostrarEmpleados() {
 
         /// refresca la tabla cada cierto tiempo
         //setInterval(function () {
-          //  table.ajax.reload(null, false);
+        //  table.ajax.reload(null, false);
         //}, 5000);
     });
 
@@ -79,16 +79,6 @@ function registrarEmpleado() {
     var direccion = document.getElementById("empleadodirecciones").value;
     var correo = document.getElementById("empleadocorreos").value;
     var cuenta = document.getElementById("empleadonumerocuentas").value;
-
-    alert(nombre);
-    alert(apellido1);
-    alert(apellido2);
-    alert(cedula);
-    alert(telefono);
-    alert(direccion);
-    alert(correo);
-    alert(cuenta);
-
 
     $(document).ready(function () {
         $.post("../../business/empleadoaccion/empleadoAccion.php", {
@@ -108,48 +98,41 @@ function registrarEmpleado() {
         });
         alert("se envian los datos");
     });
-
 }
 
 function modificarEmpleado() {
 
-    var id = document.getElementById("empleadoid").value;
-    var nombre = document.getElementById("empleadonombre").value;
-    var apellido1 = document.getElementById("empleadoapellido1").value;
-    var apellido2 = document.getElementById("empleadoapellido2").value;
-    var cedula = document.getElementById("empleadocedula").value;
-    var telefono = document.getElementById("empleadotelefono").value;
-    var direccion = document.getElementById("empleadodireccion").value;
-    var correo = document.getElementById("empleadocorreo").value;
-    var cuenta = document.getElementById("empleadonumerocuenta").value;
-
-    alert(id);
-    alert(nombre);
-    alert(apellido1);
-    alert(apellido2);
-    alert(cedula);
-    alert(telefono);
-    alert(direccion);
-    alert(correo);
-    alert(cuenta);
+    var id = document.getElementById("empleadoid3").value;
+    var nombre = document.getElementById("personanombre3").value;
+    var apellido1 = document.getElementById("personaape1").value;
+    var apellido2 = document.getElementById("personaape2").value;
+    var cedula = document.getElementById("empleadocedula3").value;
+    var telefono = document.getElementById("personatelefono3").value;
+    var correo = document.getElementById("personacorreo3").value;
+    var contra = document.getElementById("empleadocontrasenia3").value;
+    var age = document.getElementById("empleadoedad3").value;
+    var sex = document.getElementById("empleadosexo3").value;
+    var estcivil = document.getElementById("empleadoestadocivil3").value;
+    var banck = document.getElementById("empleadobanco3").value;
+    var cuenta = document.getElementById("empleadocuentabancaria3").value;
 
     $(document).ready(function () {
-
         $.post("../../business/empleadoaccion/empleadoAccion.php", {
             personaId: id,
             personaNombre: nombre,
             personaApellido1: apellido1,
             personaApellido2: apellido2,
-            personaTelefono: telefono,
             personaCedula: cedula,
-            personaDireccion: direccion,
+            personaTelefono: telefono,
             personaCorreo: correo,
-            numeroCuenta: cuenta,
+            personaContra: contra,
+            personaEdad: age,
+            personaSexo: sex,
+            personaEstado: estcivil,
+            personaBanco: banck,
+            personaCuenta: cuenta,
             accion: "modificar"
-        }, function (responseText) {
-            alert(responseText);
         });
-        alert("se envian los datos");
     });
 }
 
@@ -157,28 +140,33 @@ function eliminarEmpleado() {
 
     alert("Se elimino correctamente");
     var empleado = document.getElementById("empleadoid2").value;
+    
     $(document).ready(function () {
 
         $.post("../../business/empleadoaccion/empleadoAccion.php", {
             empleadoid: empleado,
             accion: "eliminar"
         });
-
     });
 }
 
-function verModalEditar($id, $nombre, $apellido1, $apellido2, $cedula, $telefono, $direccion, $correo, $cuenta) {
+function verModalEditar($id, $nombre, $apellido1, $apellido2, $cedula, $telefono, $correo, $contra, $age, $sex,
+        $estcivil, $banck, $cuenta) {
 
     //se colocan los valores en el formulario
-    $("#empleadoid").val($id);
-    $("#empleadonombre").val($nombre);
-    $("#empleadoapellido1").val($apellido1);
-    $("#empleadoapellido2").val($apellido2);
-    $("#empleadocedula").val($cedula);
-    $("#empleadotelefono").val($telefono);
-    $("#empleadodireccion").val($direccion);
-    $("#empleadocorreo").val($correo);
-    $("#empleadonumerocuenta").val($cuenta);
+    $("#empleadoid3").val($id);
+    $("#personanombre3").val($nombre);
+    $("#personaape1").val($apellido1);
+    $("#personaape2").val($apellido2);
+    $("#empleadocedula3").val($cedula);
+    $("#personatelefono3").val($telefono);
+    $("#personacorreo3").val($correo);
+    $("#empleadocontrasenia3").val($contra);
+    $("#empleadoedad3").val($age);
+    $("#empleadosexo3").val($sex);
+    $("#empleadoestadocivil3").val($estcivil);
+    $("#empleadobanco3").val($banck);
+    $("#empleadocuentabancaria3").val($cuenta);
 
     //Se realiza llamado a la función del JS modalComun para mostar el modal correspondiente
     mostrarModalModificar();
