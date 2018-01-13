@@ -1,3 +1,80 @@
+
+h1 , h2 , h3 , h4 , h5 , h6 {
+    margin-top : 0 ;
+    margin-bottom : .5 rem ;
+}
+
+p {
+    margin-top : 0 ;
+    margen inferior : 1 rem ;
+    familia de fuentes : verdana ;
+    tamaño de letra : 20 px ;
+}
+
+a {
+    color : azul ;
+    texto-decoración : ninguno ;
+    color de fondo : transparente ;
+    -webkit-text-decoration-skip : objetos;
+}
+
+tabla {
+    border-collapse : colapso ;
+}
+
+th {
+    text-align : izquierda ;
+}
+
+.btn {
+  font-weight : normal ;
+  text-align : center ;
+  espacio en blanco : nowrap ;
+  vertical-alinear : medio ;
+  borde : 1 px  sólido  transparente ;
+  relleno : 0.1 rem  0.2 rem ;
+  tamaño de letra : 1 rem ;
+  línea-altura : 1.5 ;
+  radio del borde : 0,70 rem ;
+  transición : todos los  0.15 s  facilitan el ingreso ;
+}
+
+.btn-primary {
+  color : #fff ;
+  color de fondo : # 007bff ;
+  color de borde : # 007bff ;
+}
+
+.btn-secondary {
+  color : #fff ;
+  color de fondo : # 868e96 ;
+  color del borde : # 868e96 ;
+}
+
+.btn-success {
+  color : #fff ;
+  color de fondo : # 28a745 ;
+  color del borde : # 28a745 ;
+}
+
+.btn-info {
+  color : #fff ;
+  color de fondo : # 17a2b8 ;
+  color del borde : # 17a2b8 ;
+}
+
+.btn-warning {
+  color : #111 ;
+  color de fondo : # ffc107 ;
+  border-color : # ffc107 ;
+}
+
+.btn-danger {
+  color : #fff ;
+  color de fondo : # dc3545 ;
+  color del borde : # dc3545 ;
+}
+
 .nav {
     padding-left: 0;
     margin-bottom: 0;

@@ -6,19 +6,23 @@ include '../../domain/empleados/Empleados.php';
 $action = $_POST['accion'];
 
 if ($action == "insertar") {
-
-
+    
 } else if ($action == "modificar") {
-
+    
 } else if ($action == 'eliminar') {
-
-} else if ($action == 'buscar') {
-
+    
+    $pro = $_POST['empleadoid'];
+    if (is_numeric($pro)) {
+        $conexion = new DataEmpleado();
+        $result = $conexion->eliminarEmpleado($pro);
+    } else {
+        echo "error";
+    }
+    
 } else if ($action == 'mostrar') {
     $conexion = new DataEmpleado();
     echo $conexion->mostrarEmpleados();
-
-}else{
+} else {
     header("location: ../../../index.php");
 }
 ?>

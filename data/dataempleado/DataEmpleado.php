@@ -20,13 +20,10 @@ class DataEmpleado {
     }
 
     //eliminar
-    public function eliminarEmpleado() {
-        
-    }
-
-    //buscar
-    public function buscarEmpleado() {
-        
+    public function eliminarEmpleado($empleado) {
+        $this->conexion->crearConexion()->set_charset('utf8');
+        $pro = $this->conexion->crearConexion()->query("CALL eliminarempleado('$empleado')");
+        return $pro;
     }
 
     //mostrar empleados
@@ -41,11 +38,19 @@ class DataEmpleado {
             $tabla = "";
             while ($row = $mostrarempleados->fetch_assoc()) {
 
-                $editar = '<button class=\"btn btn-primary\">Modificar</button>';
+                $editar = '<button onclick=\"verModalEditar();\"  '
+                        . 'class=\"btn btn-primary\">Modificar</button>';
 
-                $ver = '<button class=\"btn btn-info\">Ver +</button>';
+                $ver = '<button onclick=\"verModalBuscar(' . $row['empleadoedad'] . ','
+                        . '\'' . $row['empleadosexo'] . '\' ,'
+                        . '\'' . $row['empleadoestadocivil'] . '\' ,'
+                        . '\'' . $row['empleadobanco'] . '\');\"'
+                        . 'class=\"btn btn-info\">Ver +</button>';
 
-                $eliminar = '<button class=\"btn btn-danger\" >Eliminar</button>';
+                $eliminar = '<button onclick=\"verModalEliminar(' . $row['empleadoid'] . ','
+                        . '\'' . $row['personanombre'] . '\',\'' . $row['personaapellido1'] . '\','
+                        . '\'' . $row['personaapellido2'] . '\');\"'
+                        . 'class=\"btn btn-danger\" >Eliminar</button>';
 
                 $tabla .= '{
 				  "nombre":"' . $row['personanombre'] . '",
