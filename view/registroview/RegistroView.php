@@ -15,7 +15,7 @@
     <body>
         <div class="page-container">
 
-            <form name="frmRegistro">
+            <form name="frmRegistro" >
                 <h2>Completa tus datos</h2>
 
                 <input type="hidden" name="clienteid" id="clienteid" >

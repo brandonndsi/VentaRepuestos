@@ -7,27 +7,22 @@ function registrarCliente() {
     var correo = document.getElementById("personacorreo").value;
     var clave = document.getElementById("clienteclave").value;
     var direccion = document.getElementById("clientedireccionexacta").value;
-
-    alert(nombre);
-    alert(apellido1);
-    alert(apellido2);
-    alert(telefono);
-    alert(correo);
-    alert(clave);
-    alert(direccion);
-
+    
     $(document).ready(function () {
+        $.post("../../business/clienteaccion/clienteAccion", {
 
-        $.post("../../business/clienteaccion/clienteAccion.php", {
-            
-            clientenombre: nombre,
-            clienteapellido1: apellido1,
-            clienteapellido2: apellido2,
-            clientetelefono: telefono,
-            clientecorreo: correo,
-            clienteclave: clave,
-            clientedireccion: direccion,
+            Clientenombre: nombre,
+            Clienteapellido1: apellido1,
+            Clienteapellido2: apellido2,
+            Clientetelefono: telefono,
+            Clientecorreo: correo,
+            Clienteclave: clave,
+            Clientedireccion: direccion,
             accion: "insertar"
+
+        }, function (responseText) {
+            alert(responseText);
         });
+        alert("se envian los datos");
     });
 }

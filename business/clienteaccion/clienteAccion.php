@@ -3,22 +3,21 @@
 include '../../data/datacliente/DataCliente.php';
 include '../../domain/clientes/Clientes.php';
 
+/* @var $action type */
 $action = $_POST['accion'];
 
 if ($action == "insertar") {
 
-    if ($_POST) {
-        $error_encontrado = "";
-        if (validarClave($_POST["clienteclave"], $error_encontrado)) {
-            echo "PASSWORD VÁLIDO";
+    echo "entra a insertar ";
 
-            $conexion = new DataEmpleado();
-            $result = $conexion->insertarCliente();
-            
-            print_r($result);
-        } else {
-            echo "PASSWORD NO VÁLIDO: " . $error_encontrado;
-        }
+    $error_encontrado = "";
+    
+    if (validarClave($_POST["Clienteclave"], $error_encontrado)) {
+        echo "PASSWORD VÁLIDO";
+        $conexion = new DataEmpleado();
+        $result = $conexion->insertarCliente();
+    } else {
+        echo "PASSWORD NO VÁLIDO: " . $error_encontrado;
     }
 
     function validarClave($clave, &$error_clave) {
@@ -51,6 +50,8 @@ if ($action == "insertar") {
 } else if ($action == "eliminar") {
     
 } else if ($action == "mostrar") {
+    
+} else {
     
 }
 ?>
