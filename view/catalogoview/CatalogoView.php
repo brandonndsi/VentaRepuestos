@@ -19,7 +19,8 @@
                         <ul class="nav navbar-nav">
                             <li><a href="../../index.php"> Inicio</a></li>
                             <li><a href="#infoventaonline" > Acerca de Ventas Online</a></li>
-
+                            <li><a href="../../ver.php" > Clientes</a></li>
+                            
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
