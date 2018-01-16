@@ -80,7 +80,7 @@
                 <div class="modal-body">
                     <form>
                         <div style="width:50%; float:left;">
-                        <input type="hidden" name="empleadoid" ></td><!--este es el campo que está como llave primaria en la base de datos-->    
+                        <input type="hidden" name="empleadoid" ><!--este es el campo que está como llave primaria en la base de datos-->    
                         <p class="col-sm-8">Nombre: <input type="text" name="personanomb" class="form-control" id="personanomb" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})" /></p>                
                         <p class="col-sm-8">Apellido 1: <input type="text" name="personaapelli1" class="form-control" id="personaapelli1" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p> 
                         <p class="col-sm-8">Apellido 2:<input type="text" name="personaapelli2" class="form-control" id="personaapelli2" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p> 

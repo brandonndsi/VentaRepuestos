@@ -23,10 +23,10 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="" ><strong>Registrar</strong></a>
+                                <a href="../../view/registroview/RegistroView.php" ><strong>Reg&iacute;strate</strong></a>
                             </li>
                             <li>
-                                <a href="../../view/loginview/LoginView.php" ><strong>Ingresar</strong></a>
+                                <a href="../../view/loginview/LoginView.php" ><strong>Ingresa</strong></a>
                             </li>
                         </ul>
                     </div>
