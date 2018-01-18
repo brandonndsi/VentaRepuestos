@@ -95,6 +95,13 @@ flex-wrap: wrap;
 	border-radius: 50%;
 	border: 5px solid black;
 	}
+	#contenedor #trol{
+	width: 180px;
+	height: 180px;	
+	}
+	#contenedor #tro{
+	width: 30%;	
+	}
 	.contenedor{
 		width: 900px;
 	}

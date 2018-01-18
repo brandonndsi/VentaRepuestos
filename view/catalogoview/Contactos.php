@@ -24,11 +24,11 @@
 	 			<p><b>Telefono:</b></p><p>88-77-66-55</p>
 	 			<p><b>Correo:</b></p><p>JuanMaster12@gmail.com</p>
 	 		</div>
-	 		<div id="log">
+	 		<div id="log" class="tro">
                             <h2>Brandon Rodr&iacute;gez M&eacute;ndez.</h2>
-	 			<img src="../../images/catalogo/brandon.jpg">
+	 			<img src="../../images/catalogo/brandon.jpg" id="trol">
 	 			<h4>Ingeniero en Sistemas de Informática.</h4>
-	 			<p>Especialista en el área de la interfaz gráfica administrativos,  <br>
+	 			<p>Especialista en el área de la interfaz gráfica administrativos,<br>
 	 			   posee 2 años de experiencia en el campo de la venta de repuestos
 	 			    y comercialización de los mismos.</p>
 	 			<p>Con una Bachiller  en Ingeniería en sistemas.</p>

@@ -1,0 +1,117 @@
+*{	
+background-image: url("../images/fondos/administrador.jpg");
+background-size: 100vw 100vh;
+background-attachment: fixed;
+margin: 0;
+padding: 0;
+	/*box-sizing: border-box;*/
+}
+body{
+	font-family: sans-serif;
+	/*min-height: 100vh;
+	flex-wrap: wrap;
+	display: flex;*/
+	/*font-family: monospace;*/
+}
+#navegador{
+margin: 30px;
+width: 200px;
+border: 2px solid black;
+border-radius:20px;
+padding: 20px;
+height: 400px;
+background: #6C6969;
+/*box-shadow: 5px 5px 0px #F9F0F0;
+align-content: center;
+
+margin-top:10px;
+margin-bottom: 50px;
+margin-left:5%; 
+width: 25%;
+background: black;
+border-radius:20px;
+border: 2px solid black;*/
+}
+#navegador a {
+	display: block;
+	border: 1px solid black;
+	padding: 10px;
+	color: #fff;
+	text-decoration: none;
+	border: 1px solid #D3D6F6;
+	border-radius: 10px;
+	box-shadow: 5px 5px 0px #F9F0F0;
+}
+
+#navegador a:hover {
+cursor: pointer;
+background: rgba(255,255,255,0.5);
+color: black;
+box-shadow: 5px 5px 0px black;
+}
+#datos h3{
+	text-align: center;
+	padding: 10px;
+	padding-bottom: 10px;
+	background: #74F189;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;	
+}
+#datos #imagen,h3,p{
+box-shadow: 5px 5px 0px black;	
+}
+#datos #imagen{
+	background: #fff;
+	box-sizing: border-box;/*para ajustar la parte derecha del contenedor*/
+	padding:4px;
+	width: 100%;
+	height: 120px;
+	/*box-shadow: 5px 5px 0px black;*/
+}
+#datos img{
+	width: 90px;/*para que la imagen tome el 100 del div que la contiene*/
+	height: auto;/*para que la imagen tome el alto del div*/
+	display: block;/*para poder quitar el flex y tener la posivilida de centrar elementos*/
+	margin: auto;/*centra el elemento del div*/
+	border-radius: 50%;
+	background: #74F189;
+	border: 5px solid black;
+	padding-bottom: 4px;
+}
+#datos{
+padding:20px;
+margin:30px;
+width: auto;
+color: #fff;
+background:#9AABF8;
+height: 400px;
+box-sizing: border-box;
+border-radius: 20px;
+border: 3px solid black;
+/*
+margin: 20%;
+*/
+}
+#datos p {
+/*margin-top: 10px;*/
+padding:10px;
+padding-top: 1px; 
+text-align: justify;
+color: #000000;
+background: #ffff;
+border-bottom-left-radius:20px;
+border-bottom-right-radius: 20px;
+/*box-shadow: 5px 5px 0px black;*/
+}
+b{
+background: #F9F6F6;	
+}
+#datos #nombre{
+	text-align: center;
+	background: #F9F6F6;
+	border-radius:0px;
+
+}
+#contenedor{
+display: flex;
+}
