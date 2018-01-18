@@ -39,7 +39,7 @@
         <li><a href="../facturaview/FacturaView.php" target="_parent" class="btn btn-info">Mostrar Facturas</a></li>
         <li><a href="../empleadoview/EmpleadoView.php" target="_parent" class="btn btn-info">Empleados</a></li>
         <li><a href="../tipoempleadoview/TipoEmpleadoView.php" target="_parent" class="btn btn-info">Tipos de Empleados</a></li>
-        <li><a href="../../ver.php" target="_parent" class="btn btn-info">Clientes</a></li>
+        <li><a href="../clienteview/ClienteView.php" target="_parent" class="btn btn-info">Clientes</a></li>
         <li><a href="../proveedorview/ProveedorView.php" target="_parent" class="btn btn-info">Proveedores</a></li>
         <li><a href="../productoview/ProductoView.php" target="_parent" class="btn btn-info">Catalogo de Productos</a></li>
     </ul>

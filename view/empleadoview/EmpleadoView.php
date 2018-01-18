@@ -8,6 +8,8 @@
         <!--CSS-->
         <link rel="stylesheet" href="../../css/jquery.dataTables.css">
         <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.tabla.css">
+        <link rel="stylesheet" type="text/css" href="../../css/estilocrud.css">
         <!--Javascript-->
         <script src="../../js/jquery-1.10.2.js"></script>
         <script src="../../js/jquery.dataTables.js"></script>
@@ -24,6 +26,12 @@
     </head>
 
     <body background="">
+        <nav>
+            <ul>
+                <li><a class="active" href="../../index.php">Menu</a></li>
+                <li style="float:right"><a  href="#about">Salir</a></li>
+            </ul>
+        </nav>
 
     <center>
         <h1>
@@ -80,55 +88,55 @@
                 <div class="modal-body">
                     <form>
                         <div style="width:50%; float:left;">
-                        <input type="hidden" name="empleadoid" ><!--este es el campo que está como llave primaria en la base de datos-->    
-                        <p class="col-sm-8">Nombre: <input type="text" name="personanomb" class="form-control" id="personanomb" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})" /></p>                
-                        <p class="col-sm-8">Apellido 1: <input type="text" name="personaapelli1" class="form-control" id="personaapelli1" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p> 
-                        <p class="col-sm-8">Apellido 2:<input type="text" name="personaapelli2" class="form-control" id="personaapelli2" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p> 
-                        <p class="col-sm-8">Cedula:<input type="text" name="empleadocedu" class="form-control" id="empleadocedu" required pattern="[0-9]{9}"/></p> 
-                        <p class="col-sm-8">Telefono:<input type="text" name="personatel" class="form-control" id="personatel" required pattern="[0-9]{8}" /></p> 
-                        <p class="col-sm-8">Correo:<input type="email" name="personaemail" class="form-control" id="personaemail" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required /></p> 
-                        <p class="col-sm-8">Tipo de Empleado: <select name = "combotipoemple" id ="combotipoemple" class="form-control"> </p>
-                        <option></option>
-                        <option value = "Administrador">Administrador/a</option>
-                        <option value = "Bodega">Bodega/a</option>
-                        <option value = "Repartidor">Repartidor/a</option>
-                        <option value = "Cajero">Cajero/a</option>
-                        </select>
+                            <input type="hidden" name="empleadoid" ><!--este es el campo que está como llave primaria en la base de datos-->    
+                            <p class="col-sm-8">Nombre: <input type="text" name="personanomb" class="form-control" id="personanomb" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})" /></p>                
+                            <p class="col-sm-8">Apellido 1: <input type="text" name="personaapelli1" class="form-control" id="personaapelli1" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p> 
+                            <p class="col-sm-8">Apellido 2:<input type="text" name="personaapelli2" class="form-control" id="personaapelli2" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p> 
+                            <p class="col-sm-8">Cedula:<input type="text" name="empleadocedu" class="form-control" id="empleadocedu" required pattern="[0-9]{9}"/></p> 
+                            <p class="col-sm-8">Telefono:<input type="text" name="personatel" class="form-control" id="personatel" required pattern="[0-9]{8}" /></p> 
+                            <p class="col-sm-8">Correo:<input type="email" name="personaemail" class="form-control" id="personaemail" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required /></p> 
+                            <p class="col-sm-8">Tipo de Empleado: <select name = "combotipoemple" id ="combotipoemple" class="form-control"> </p>
+                            <option></option>
+                            <option value = "Administrador">Administrador/a</option>
+                            <option value = "Bodega">Bodega/a</option>
+                            <option value = "Repartidor">Repartidor/a</option>
+                            <option value = "Cajero">Cajero/a</option>
+                            </select>
                         </div>
-                        
+
                         <div style="width:50%; float:left;">
-                        <p class="col-sm-8">Contraseña: <input type="password" name="empleadocontrasena" class="form-control" id="empleadocontrasena" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p>
-                        <p class="col-sm-8">Edad: <input type="number" name="empleadoage" class="form-control" id="empleadoage" min="18" max="80" pattern="[1-9]{2,3}" required/></p>
-                        <p class="col-sm-8">Sexo: <select name = "combosexo" id="combosexo" class="form-control"> required</p>
-                        <option value = "Masculino">M</option>
-                        <option value = "Femenino">F</option>
-                        <option value = "Otro">Otro</option>
-                        </select>
-                        <p class="col-sm-8">Estado Civil: <select name = "comboestadocivil" id="comboestadocivil" class="form-control" required></p>
-                        <option value = "Soltero">Soltero/a</option>
-                        <option value = "Casado">Casado/a</option>
-                        <option value = "Viudo">Viudo/a</option>
-                        <option value = "Divorciado">Divorciado/a</option>
-                        <option value = "UnionLibre">Union Libre</option>
-                        </select>
-                        <p class="col-sm-8">Banco: <select name = "combobanco" id="combobanco" class="form-control"> required</p>
-                        <option ></option>
-                        <option value = "Nacional">Nacional</option>
-                        <option value = "CostaRica">Costa Rica</option>
-                        <option value = "Popular">Popular</option>
-                        <option value = "Citibank">Citibank</option>
-                        <option value = "Bac">Bac San José</option>
-                        <option value = "Bancrédito">Bancrédito</option>
-                        <option value = "Scotia">Scotia Bank</option>
-                        <option value = "BCT">BCT</option>
-                        <option value = "Davivienda">Davivienda</option>
-                        <option value = "Proamerica">Banca Proamerica</option>
-                        <option value = "LAFISE">LAFISE</option>
-                        <option value = "Cathay">Cathay</option>
-                        <option value = "Desyfin">Desyfin</option>
-                        </select>
-                        <p class="col-sm-8">Numero de Cuenta:<input type="text" name="empleadocuentabanco" class="form-control" id="empleadocuentabanco" required pattern="[0-9]{17,24}" /></p> 
-                        <p class="col-sm-8">Fecha de Ingreso:<input type="date" name="empleadofechadeingreso" class="form-control" id="empleadofechadeingreso" step="1" min="2017-01-01" max="2050-12-31" value="000-00-00"required/></p>
+                            <p class="col-sm-8">Contraseña: <input type="password" name="empleadocontrasena" class="form-control" id="empleadocontrasena" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p>
+                            <p class="col-sm-8">Edad: <input type="number" name="empleadoage" class="form-control" id="empleadoage" min="18" max="80" pattern="[1-9]{2,3}" required/></p>
+                            <p class="col-sm-8">Sexo: <select name = "combosexo" id="combosexo" class="form-control"> required</p>
+                            <option value = "Masculino">M</option>
+                            <option value = "Femenino">F</option>
+                            <option value = "Otro">Otro</option>
+                            </select>
+                            <p class="col-sm-8">Estado Civil: <select name = "comboestadocivil" id="comboestadocivil" class="form-control" required></p>
+                            <option value = "Soltero">Soltero/a</option>
+                            <option value = "Casado">Casado/a</option>
+                            <option value = "Viudo">Viudo/a</option>
+                            <option value = "Divorciado">Divorciado/a</option>
+                            <option value = "UnionLibre">Union Libre</option>
+                            </select>
+                            <p class="col-sm-8">Banco: <select name = "combobanco" id="combobanco" class="form-control"> required</p>
+                            <option ></option>
+                            <option value = "Nacional">Nacional</option>
+                            <option value = "CostaRica">Costa Rica</option>
+                            <option value = "Popular">Popular</option>
+                            <option value = "Citibank">Citibank</option>
+                            <option value = "Bac">Bac San José</option>
+                            <option value = "Bancrédito">Bancrédito</option>
+                            <option value = "Scotia">Scotia Bank</option>
+                            <option value = "BCT">BCT</option>
+                            <option value = "Davivienda">Davivienda</option>
+                            <option value = "Proamerica">Banca Proamerica</option>
+                            <option value = "LAFISE">LAFISE</option>
+                            <option value = "Cathay">Cathay</option>
+                            <option value = "Desyfin">Desyfin</option>
+                            </select>
+                            <p class="col-sm-8">Numero de Cuenta:<input type="text" name="empleadocuentabanco" class="form-control" id="empleadocuentabanco" required pattern="[0-9]{17,24}" /></p> 
+                            <p class="col-sm-8">Fecha de Ingreso:<input type="date" name="empleadofechadeingreso" class="form-control" id="empleadofechadeingreso" step="1" min="2017-01-01" max="2050-12-31" value="000-00-00"required/></p>
                         </div> 
                     </form>
                 </div>
@@ -140,7 +148,7 @@
         </div>
     </div>
     <!--final de sección de modal que sirve para registrar el empleado elegido-->
-    
+
     <!--sección de modal que sirve para modificar el empleado elegido-->
 
     <!-- Modal -->
@@ -156,22 +164,22 @@
                 <div class="modal-body">
                     <form>
                         <div style="width:50%; float:left;">
-                        <input type="hidden" name="empleadoid3" id="empleadoid3"></td><!--este es el campo que está como llave primaria en la base de datos-->    
-                        <p class="col-sm-8">Nombre: <input type="text" name="personanombre3" class="form-control" id="personanombre3" pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})" /></p>                
-                        <p class="col-sm-8">Apellido 1: <input type="text" name="personaape1" class="form-control" id="personaape1" pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p> 
-                        <p class="col-sm-8">Apellido 2:<input type="text" name="personaape2" class="form-control" id="personaape2" pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p> 
-                        <p class="col-sm-8">Cedula:<input type="text" name="empleadocedula3" class="form-control" id="empleadocedula3" pattern="[0-9]{9}"/></p> 
-                        <p class="col-sm-8">Telefono:<input type="text" name="personatelefono3" class="form-control" id="personatelefono3" pattern="[0-9]{8}" /></p> 
-                        <p class="col-sm-8">Correo:<input type="email" name="personacorreo3" class="form-control" id="personacorreo3" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"/></p> 
+                            <input type="hidden" name="empleadoid3" id="empleadoid3"></td><!--este es el campo que está como llave primaria en la base de datos-->    
+                            <p class="col-sm-8">Nombre: <input type="text" name="personanombre3" class="form-control" id="personanombre3" pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})" /></p>                
+                            <p class="col-sm-8">Apellido 1: <input type="text" name="personaape1" class="form-control" id="personaape1" pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p> 
+                            <p class="col-sm-8">Apellido 2:<input type="text" name="personaape2" class="form-control" id="personaape2" pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p> 
+                            <p class="col-sm-8">Cedula:<input type="text" name="empleadocedula3" class="form-control" id="empleadocedula3" pattern="[0-9]{9}"/></p> 
+                            <p class="col-sm-8">Telefono:<input type="text" name="personatelefono3" class="form-control" id="personatelefono3" pattern="[0-9]{8}" /></p> 
+                            <p class="col-sm-8">Correo:<input type="email" name="personacorreo3" class="form-control" id="personacorreo3" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"/></p> 
                         </div>
-                        
+
                         <div style="width:50%; float:left;">
-                        <p class="col-sm-8">Contraseña:<input type="text" name="empleadocontrasenia3" class="form-control" id="empleadocontrasenia3"/></p> 
-                        <p class="col-sm-8">Edad:<input type="text" name="empleadoedad3" class="form-control" id="empleadoedad3"/></p> 
-                        <p class="col-sm-8">Sexo:<input type="text" name="empleadosexo3" class="form-control" id="empleadosexo3"/></p> 
-                        <p class="col-sm-8">Estado Civil:<input type="text" name="empleadoestadocivil3" class="form-control" id="empleadoestadocivil3"/></p> 
-                        <p class="col-sm-8">Banco:<input type="text" name="empleadobanco3" class="form-control" id="empleadobanco3"/></p> 
-                        <p class="col-sm-8">Numero de Cuenta:<input type="text" name="empleadocuentabancaria3" class="form-control" id="empleadocuentabancaria3" pattern="[0-9]{17,24}" /></p> 
+                            <p class="col-sm-8">Contraseña:<input type="text" name="empleadocontrasenia3" class="form-control" id="empleadocontrasenia3"/></p> 
+                            <p class="col-sm-8">Edad:<input type="text" name="empleadoedad3" class="form-control" id="empleadoedad3"/></p> 
+                            <p class="col-sm-8">Sexo:<input type="text" name="empleadosexo3" class="form-control" id="empleadosexo3"/></p> 
+                            <p class="col-sm-8">Estado Civil:<input type="text" name="empleadoestadocivil3" class="form-control" id="empleadoestadocivil3"/></p> 
+                            <p class="col-sm-8">Banco:<input type="text" name="empleadobanco3" class="form-control" id="empleadobanco3"/></p> 
+                            <p class="col-sm-8">Numero de Cuenta:<input type="text" name="empleadocuentabancaria3" class="form-control" id="empleadocuentabancaria3" pattern="[0-9]{17,24}" /></p> 
                         </div> 
                     </form>
                 </div>
@@ -244,7 +252,7 @@
         </div>
     </div>
     <!--final de sección de modal que sirve para ver mas datos del empleado elegido-->
-    
-    
+
+
 </body>
 </html>

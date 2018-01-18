@@ -8,11 +8,16 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="../../css/login.css">
+        <link rel="stylesheet" type="text/css" href="../../css/catalogo/principal.css">
+        <link rel="stylesheet" type="text/css" href="../../css/catalogo/fonts/style.css">
         <!-- JS -->
         <script src="../../js/Cliente.js"></script>
 
     </head>
     <body>
+        <?php
+        include '../menu/menu.php';
+        ?>
         <div class="page-container">
 
             <form name="frmRegistro" >

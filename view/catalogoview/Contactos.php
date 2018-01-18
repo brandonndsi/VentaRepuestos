@@ -25,15 +25,15 @@
 	 			<p><b>Correo:</b></p><p>JuanMaster12@gmail.com</p>
 	 		</div>
 	 		<div id="log">
-	 			<h2>Brandon Rodrigez Mendez.</h2>
-	 			<img src="../../images/catalogo/brandon.jpeg">
-	 			<h4>Ingeniero en Sistemas de Infomatica.</h4>
-	 			<p>Especialista en el area de la interfaz grafica administrativos, <br>
-	 			   posee 5 años de experiencia en el campo de la venta de repuestos<br>
-	 			    y comersializacion de los mismos.</p>
-	 			<p>Con una bacheller en administracion.</p>
+                            <h2>Brandon Rodr&iacute;gez M&eacute;ndez.</h2>
+	 			<img src="../../images/catalogo/brandon.jpg">
+	 			<h4>Ingeniero en Sistemas de Informática.</h4>
+	 			<p>Especialista en el área de la interfaz gráfica administrativos,  <br>
+	 			   posee 2 años de experiencia en el campo de la venta de repuestos
+	 			    y comercialización de los mismos.</p>
+	 			<p>Con una Bachiller  en Ingeniería en sistemas.</p>
 	 			<p><b>Telefono:</b></p><p>89-77-00-56</p>
-	 			<p><b>Correo:</b></p><p>brandoro45@gmail.com</p>
+	 			<p><b>Correo:</b></p><p>brandonndsi@gmail.com</p>
 	 		</div>
 	 		<div id="log">
 	 			<h2>David Salas Lorente.</h2>

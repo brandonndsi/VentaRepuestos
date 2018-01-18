@@ -9,7 +9,8 @@
             <a href="../categoriaproductoview/CategoriaProductoView.php">Repuestos</a>
             <a href="../catalogoview/EmpresaInformacion.php">Quienes somos</a>
             <a href="../catalogoview/Contactos.php">Contacto</a>
-            <a href="../loginview/LoginView.php">Login</a>
+            <a href="../loginview/LoginView.php">Ingresa</a>
+            <a href="../registroview/RegistroView.php">Reg&iacute;strate</a>
         </nav>
         </div>
     </header>

@@ -6,8 +6,8 @@
         <meta charset="UTF-8" content="text/html; charset=ISO-8859-1">
         <title>Proveedor</title>
         <!-- CSS-->
-        <link rel="stylesheet" type="text/css" href="../../css/jquery.tablaProveedor.css">
-        <link rel="stylesheet" type="text/css" href="../../css/proveedor.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.tabla.css">
+        <link rel="stylesheet" type="text/css" href="../../css/estilocrud.css">
         <!-- JS-->
         <script src="../../js/jquery-1.10.2.js"></script>
         <script src="../../js/jquery.dataTables.js"></script>
