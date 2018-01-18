@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="../../css/catalogo/fonts/style.css">
 
 </head>
-<body>
+<body background="../../images/log1.jpg">
 <?php
 include '../menu/menu.php';
 ?>
