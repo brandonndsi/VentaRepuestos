@@ -1,0 +1,44 @@
+*{
+	margin:0 auto;
+	padding: 0;
+
+}
+body{
+background-image: url("../../images/catalogo/contacto.JPG");
+background-size: 100vw 100vh;
+background-attachment: fixed;
+margin: 0;
+display: flex;
+min-height: 100vh;
+flex-wrap: wrap;
+}
+#principal {
+	margin-top:60px;
+	width: 90%;
+	height: 80%;
+	background: #fff;
+	color: black;
+	text-align: center;
+	padding: 20px;
+	border: 1px solid black;
+}
+#empresa{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+#informacion{
+	padding: 10px;
+	border: 2px solid black;
+	border-radius: 8px;
+	height: 100%;
+}
+#informacion h2{
+color:#535FFD;
+text-align: center;
+padding-bottom: 5px;
+}
+#informacion p{
+	font-size: 8px;
+	text-align: justify all;
+}

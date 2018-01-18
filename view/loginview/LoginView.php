@@ -8,9 +8,14 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="../../css/login.css">
+<link rel="stylesheet" type="text/css" href="../../css/catalogo/principal.css">
+	<link rel="stylesheet" type="text/css" href="../../css/catalogo/fonts/style.css">
 
 </head>
 <body>
+<?php
+include '../menu/menu.php';
+?>
     <div class="page-container">
         
         <form action="../../business/sesionaccion/SesionIniciarAccion.php" method="post" name="frm_ingreso">
@@ -24,6 +29,5 @@
                 
         </form>
     </div>
-
 </body>
 </html>

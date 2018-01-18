@@ -1,143 +1,173 @@
 <?php
-/**
- * AUTOR: David Salas Lorente.
- */
-class DataProveedor {
 
-    private $conexion;
+ class DataProveedor{
+ private $conexion;
 
-    function DataProveedor() {
-        include_once '../../data/dbconexion/Conexion.php';
-        $this->conexion = new Conexion();
-    }
+ public function DataProveedor(){
+    include '../../data/dbconexion/Conexion.php';
+   // include '../../domain/proveedores/Proveedores.php';
+    $this->conexion = new Conexion();
 
-    //insertar
-    public function insertarProveedor($proveedor) {
-        if ($this->conexion->crearConexion()->set_charset('utf8')) {
-            $nuevoPersona=$this->conexion->crearConexion()->query("INSERT INTO `tbpersonas`
-            ( `cedula`, `personanombre`, `personaapellido1`, `personaapellido2`,
-             `personatelefono`, `personacorreo`, `personaestado`) VALUES 
-             ('".$proveedor->getPersonaCedula()."',
-             '".$proveedor->getPersonaNombre()."',
-             '".$proveedor->getPersonaApellido1()."',
-             '".$proveedor->getPersonaApellido2()."',
-             '".$proveedor->getPersonaTelefono()."',
-             '".$proveedor->getCorreo()."',
-             '1');");
-            /*opteniendo el id de la persona*/
-            $personaid=$this->conexion->crearConexion()->query("SELECT `personaid` 
-            FROM `tbpersonas` WHERE cedula='".$proveedor->getPersonaCedula()."';");
+ }
 
-            while ($resultado = $RePersonaid->fetch_assoc()) {
-                $con = $resultado['personaid'];
-            }
-            /* verificamos si es un string ya formulado */
-             if(is_string($con)){
-            $proveedor->setPersonaId($con);
-             }
+ /*funcion de cargado de la data table*/
+            public function mostrarProveedor() {
+               if ($this->conexion->crearConexion()->set_charset('utf8')) {
 
-            $this->conexion->cerrarConexion();
-            $nuevoProveedor=$this->conexion->crearConexion()->query("INSERT INTO `tbproveedores`
-            ( `personaid`, `productoid`, `proveedorestado`) VALUES 
-            ('".$proveedor->getPersonaId()."',
-            '".$proveedor->getProveedorProductoId()."',
-            '1');");
-            $this->conexion->cerrarConexion();
+                    $array = array();
 
-            $resultado=$nuevoProveedor;
-            return $resultado;
-        }
-    }
+                    $buscarProveedor = $this->conexion->crearConexion()->query("CALL mostrarproveedores();");
 
-    //modificar
-    public function modificarProveedor($proveedor) {
-        if ($this->conexion->crearConexion()->set_charset('utf8')) {
-            $actualizandoProveedor = $this->conexion->crearConexion()->query("UPDATE `tbproveedores`
-             SET `productoid`='".$proveedor->getProveedorProductoId()."'
-             WHERE proveedorid='".$proveedor->getProveedorId()."';");
+                    $this->conexion->cerrarConexion();
+                    $tabla="";
+                    while ($row = $buscarProveedor->fetch_assoc()) {
+
+                        $editar = '<button  onclick=\"actualizarMostrar('.$row['proveedorid'].','
+                        .'\''.$row['cedula'].'\','
+                        .'\''.$row['personanombre'].'\','
+                        .'\''.$row['personaapellido1'].'\','
+                        .'\''.$row['personaapellido2'].'\','
+                        .'\''.$row['personatelefono'].'\','
+                        .'\''.$row['personacorreo'].'\','
+                        .'\''.$row['productoid'].'\');\"'
+                        .'class=\"btn btn-primary\">Modificar</button>';
+
+                        $ver = '<button onclick=\"verAbrir('.$row['cedula'].','
+                        .'\''.$row['personanombre'].'\','
+                        .'\''.$row['personaapellido1'].'\','
+                        .'\''.$row['personaapellido2'].'\','
+                        .'\''.$row['personatelefono'].'\','
+                        .'\''.$row['personacorreo'].'\','
+                        .'\''.$row['productoid'].'\');\"'
+                        .'class=\"btn btn-info\">Ver</button>';
+
+                        $eliminar = '<button onclick=\"eliminarAbrir('.$row['proveedorid'].');\"'
+                        .'class=\"btn btn-danger\" >Eliminar</button>';
+
+                        $tabla .= '{
+                          "nombre":"' . $row['personanombre'] . '",
+                          "apellido1":"' . $row['personaapellido1'] . '",
+                          "apellido2":"' . $row['personaapellido2'] . '",
+                          "cedula":"' . $row['cedula'] . '",   
+                          "acciones":"' . $editar . $ver . $eliminar . '"
+                        },';
+                    }
+                    //eliminamos la coma que sobra
+                    $tabla = substr($tabla, 0, strlen($tabla) - 1);
+                    echo '{"data":[' . $tabla . ']}';
+                    
+                } 
+            } 
+
+            public function eliminarProveedor($proveedorid) {
+              if ($this->conexion->crearConexion()->set_charset('utf8')) {
+                $eliminado=$this->conexion->crearConexion()->query("CALL eliminarproveedores('".$proveedorid."');");
                 $this->conexion->cerrarConexion();
-            //recuperando lo que es el id de la persona en proveedor.
-            $recuperandoIdPersona = $this->conexion->crearConexion()->query("SELECT `personaid`
-                FROM `tbproveedores` WHERE proveedorid='" . $proveedor->getProveedorId() . "';");
-                $this->conexion->cerrarConexion();
-            /* transformando los datos del id objeto a un string */
-            while ($resultado = $recuperandoIdPersona->fetch_assoc()) {
-                $con = $resultado['personaid'];
+
+                return $eliminado;
+                    }  
+                        }
+
+            //insertar
+            public function insertarProveedor($proveedor) {
+                if ($this->conexion->crearConexion()->set_charset('utf8')) {
+                    $nuevoPersona=$this->conexion->crearConexion()->query(
+                     "CALL nuevaPersona(
+                     '".$proveedor->getPersonaCedula()."',
+                     '".$proveedor->getPersonaNombre()."',
+                     '".$proveedor->getPersonaApellido1()."',
+                     '".$proveedor->getPersonaApellido2()."',
+                     '".$proveedor->getPersonaTelefono()."',
+                     '".$proveedor->getCorreo()."',
+                     '1');");
+                    /*opteniendo el id de la persona*/
+                    $personaid=$this->conexion->crearConexion()->query(
+                    "CALL buscarPersonaID(
+                    '".$proveedor->getPersonaCedula()."');");
+
+                    while ($resultado = $personaid->fetch_assoc()) {
+                        $con = $resultado['personaid'];
+                    }
+                    /* verificamos si es un string ya formulado */
+                     if(is_string($con)){
+                    $proveedor->setPersonaId($con);
+                     }
+
+                    $this->conexion->cerrarConexion();
+                    $nuevoProveedor=$this->conexion->crearConexion()->query(
+                    "CALL nuevoProveedor( 
+                    '".$proveedor->getPersonaId()."',
+                    '".$proveedor->getProveedorProductoId()."',
+                    '1');");
+                    $this->conexion->cerrarConexion();
+
+                    $resultado=$nuevoProveedor;
+                    return $resultado;
+                }
             }
-            /* verificamos si es un string ya formulado */
-            if (is_string($con)) {
-                $proveedor->setPersonaId($con);
+
+            //modificar
+            public function modificarProveedor($proveedor) {
+                 $conID ="";
+                if ($this->conexion->crearConexion()->set_charset('utf8')) {
+                    $actualizandoProveedor = $this->conexion->crearConexion()->query(
+                    "CALL actualizarProveedor(
+                     '".$proveedor->getProveedorProductoId()."'
+                     '".$proveedor->getProveedorId()."');");
+
+                        $this->conexion->cerrarConexion();
+                    //recuperando lo que es el id de la persona en proveedor.
+                    $recuperandoIdPersona = $this->conexion->crearConexion()->query(
+                        "CALL buscarPersonaIDProveedor(
+                        '" . $proveedor->getProveedorId() . "');");
+                        $this->conexion->cerrarConexion();
+                    /* transformando los datos del id objeto a un string */
+                    while ($resultado = $recuperandoIdPersona->fetch_assoc()) {
+                        $conID = $resultado['personaid'];
+                        echo $conID;
+                    }
+                    /* verificamos si es un string ya formulado */
+                    if (is_numeric($conID)) {
+                        $proveedor->setPersonaId($conID);
+                    }
+
+                    //modificando el tb persona
+                    $personanuevo = $this->conexion->crearConexion()->query(
+                    "CALL actualizarPersona( 
+                    '".$proveedor->getPersonaCedula()."',
+                    '" . $proveedor->getPersonaNombre() . "',
+                    '" . $proveedor->getPersonaApellido1() . "',
+                    '" . $proveedor->getPersonaApellido2() . "',
+                    '" . $proveedor->getPersonaTelefono() . "',
+                    '" . $proveedor->getCorreo() . "',
+                    '" . $proveedor->getPersonaId() . "');");
+
+                    $this->conexion->cerrarConexion();
+                    
+                }
+                return $personanuevo ;
+                
             }
 
-            //modificando el tb persona
-            $personanuevo = $this->conexion->crearConexion()->query("UPDATE `tbpersonas` SET 
-            `cedula`='".$proveedor->getPersonaCedula()."',
-            `personanombre`='" . $proveedor->getPersonaNombre() . "',
-            `personaapellido1`='" . $proveedor->getPersonaApellido1() . "',
-            `personaapellido2`='" . $proveedor->getPersonaApellido2() . "',
-            `personatelefono`='" . $proveedor->getPersonaTelefono() . "',
-            `personacorreo`='" . $proveedor->getCorreo() . "'
-            WHERE personaid='" . $proveedor->getPersonaId() . "';");
+            //buscar
+            public function buscarProveedor($proveedorid) {
+                if ($this->conexion->crearConexion()->set_charset('utf8')) {
 
-            $this->conexion->cerrarConexion();
-            
-        }
-        return $personanuevo ;
-        
-    }
+                    $array = array();
 
-    //eliminar
-    public function eliminarProveedor($proveedorid) {
-      if ($this->conexion->crearConexion()->set_charset('utf8')) {
-        $eliminado=$this->conexion->crearConexion()->query("UPDATE `tbproveedores` SET `proveedorestado`=0 WHERE proveedorid='".$proveedorid."';");
-        $this->conexion->cerrarConexion();
+                     $buscarProveedor = $this->conexion->crearConexion()->query("buscarproveedores('".$proveedorid."');");
 
-        return $eliminar;
-      }  
-    }
-
-    //buscar
-    public function buscarProveedor($proveedorid) {
-        if ($this->conexion->crearConexion()->set_charset('utf8')) {
-
-            $array = array();
-
-            $buscarProveedor = $this->conexion->crearConexion()->query("SELECT *
-                FROM tbproveedores e
-                INNER JOIN tbpersonas p ON e.personaid= p.personaid
-                INNER JOIN tbproductos z ON z.productoid= e.productoid
-                WHERE e.proveedorid='" . $proveedorid . "' AND e.proveedorestado = '1';");
-
-            $this->conexion->cerrarConexion();
-            
-            while ($resultado = $buscarProveedor->fetch_assoc()) {
-                array_push($array, $resultado);
+                    $this->conexion->cerrarConexion();
+                    
+                    while ($resultado = $buscarProveedor->fetch_assoc()) {
+                        array_push($array, $resultado);
+                    }
+                    return $array;
+                }
             }
-            return $array;
-        }
-    }
 
-    //mostrar clientes
-    public function mostrarProveedor() {
-       if ($this->conexion->crearConexion()->set_charset('utf8')) {
 
-            $array = array();
 
-            $buscarProveedor = $this->conexion->crearConexion()->query("SELECT *
-                FROM tbproveedores e
-                INNER JOIN tbpersonas p ON e.personaid= p.personaid
-                INNER JOIN tbproductos z ON z.productoid= e.productoid
-                WHERE  e.proveedorestado = '1';");
-
-            $this->conexion->cerrarConexion();
-            
-            while ($resultado = $buscarProveedor->fetch_assoc()) {
-                array_push($array, $resultado);
-            }
-            return $array;
-        } 
-    }
-
-}
+ }
 
 ?>

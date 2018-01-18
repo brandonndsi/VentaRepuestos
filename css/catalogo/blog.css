@@ -1,0 +1,30 @@
+#blog .contenedor{
+	display: flex;
+	justify-content: center;
+	
+	flex-wrap: wrap;
+}
+#blog h3, h4{
+	text-align: center;
+}
+#blog article{
+	margin: 15px;
+}
+
+#blog img{
+	width:100px;
+	height: 100px;
+	max-width: 280px;
+}
+
+@media (min-width:480px){
+#blog{
+	width: 40%;
+}
+
+}
+
+@media (min-width:900px){
+#blog{
+	width: auto;
+}

@@ -1,0 +1,101 @@
+*{
+	margin:0 auto;
+	padding: 0;
+
+}
+body{
+background-image: url("../../images/catalogo/contacto.jpeg");
+background-size: 100vw 100vh;
+background-attachment: fixed;
+margin: 0;
+font-family: monospace;
+display: flex;
+min-height: 100vh;
+flex-wrap: wrap;
+}
+#contacto{
+	margin-top: 80px;
+	/*background: #fff;*/
+	color: black;
+	text-align: center;
+	padding: 20px;
+}
+#contenedor{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+#juancho{
+	border: 1px solid black;
+	margin: 20px;
+	background:	#000000;
+	border: 1px solid red;
+}
+#contenedor img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 5px solid black;
+}
+ #contacto p h2,h4{
+	font-size: 8px;
+	text-align: justify;
+}
+#contacto h4{
+	font-size: 10px;
+}
+#log{
+	padding:10px;
+	border-radius: 7px;
+	background: rgba(0,0,0,0.4);
+	margin-bottom: 10px;
+	color: #fff;
+}
+@media (min-width: 480px){
+	#log{
+		width: 40%;
+		border-radius: 20px;
+		background: rgba(0,0,0,0.4);
+		margin-bottom: 10px;
+		color: #fff;
+	}
+	#contacto h2 h4 p {
+		font-size: all;
+	}
+	#contacto h4{
+		font-size: 10px;
+		text-align: center;
+	}
+	#contenedor img{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 5px solid black;
+	}
+}
+@media (min-width: 900px){
+	#log{
+		width: auto;
+		border-radius: 30px;
+		background: rgba(0,0,0,0.4);
+		margin-bottom: 10px;
+		color: #fff;
+	}
+	#contacto h2{
+		font-size: 16px;
+	}
+	#contacto h4 p{
+		font-size: 12px;
+		text-align: center;
+	}
+	#contenedor img{
+	width: 230px;
+	height: 230px;
+	border-radius: 50%;
+	border: 5px solid black;
+	}
+	.contenedor{
+		width: 900px;
+	}
+}

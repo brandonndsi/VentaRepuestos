@@ -11,7 +11,7 @@ form{
 	background: rgba(0,0,0,0.4);
 	padding: 10px 20px;/*para que se ajuste lo adentro del formulario*/
 	box-sizing:  border-box;
-	margin-top: 50px;/*para separar la parte de arriba del formulario con la del navegador*/
+	margin-top: 80px;/*para separar la parte de arriba del formulario con la del navegador*/
 	border-radius: 10px;/*para ponerle lo que es el borde redondiado al formulario*/
 }
 h2{

@@ -1,3 +1,10 @@
+body{
+/*para lo de la imagen de fondo*/
+background-image: url("../images/fondos/wallpaper.jpg");
+background-size: 100vw 100vh;
+background-attachment: fixed;
+font-family: sans-serif;
+}
 ul{
 	list-style-type: none;
 	margin: 0;
@@ -7,7 +14,7 @@ ul{
 }
 
 li{
-	float: left;
+	float: left;/*para que se ubiquen como una lista los link*/
 }
 
 li a {
@@ -21,4 +28,218 @@ text-decoration: none;/*para quitar la raya de la referencia*/
 li a:hover{
 	cursor: pointer;
 	background-color: #111;
+}
+
+li a.active{
+	background-color: #4CAF50;/*para lo que es el color verde del menu*/
+}
+/*TRABAJANDO CON LOS MODALES*/
+
+/*modal nuevo empleado*/
+#modalNuevo{
+width: 100%;/*para lo que es de derecha a izquierda*/
+height: 100%;/*anchura de arriba a bajo*/
+color : #fff;/*para el color del texto*/
+position: fixed;
+/*background-color: rgba(0,0,0,0.6);*//*color de fondo de pantalla*/
+top:0px;/*es la parte de arriba que se pocicione al principio*/
+left:0px;/*izquierda en el borde se adacte a la pantalla*/
+-webkit-transition: all 6s;
+display: none;
+}
+#form{
+	width: 95%;
+	margin: auto;
+	max-width: 500px;
+	background: white;/*color de la ventana*/
+	border-radius: 7px;
+}
+#nu{
+	background: deepskyblue;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	font-weight: 100;
+	font-size: 30px;
+	border-top-left-radius: 7px;/*lado izquierdo superior*/
+	border-top-right-radius: 7px;/*lado derecho superior*/
+	border-bottom: 5px solid crimson;/*para la raya de abajo del titulo de color rojo*/
+}
+#contenedorNuevo{
+	padding: 10px 20px;
+	display: flex;/*para que se ordenen en fila*/
+	flex-wrap: wrap;/*para lo que no quedan en linea se bajen a bajo*/
+	justify-content: space-between;
+}
+.input-50, .input-100{
+	margin-bottom: 15px;/*parte de abajo de los inputs*/
+	padding: 8px;/*padding es de adento hacia afuera*/
+	border-radius: 4px;
+	border: 1px solid gray;
+}
+.input-50{
+	width: 45%;
+
+}
+.input-100{
+	width: 100%;
+}
+
+#enviar{
+	background: #40E849;/*color del boton en verde*/
+	color: #fff;/*El color del texto en blanco*/
+	padding: 10px;/*El tamaño del boton*/
+}
+#enviar:hover{
+	cursor: pointer;/*para poner las manita cuando estoy en el boton*/ 
+}
+#cancelar{
+	background: #FD4435;/*El color del boton en rojo*/
+	color: #fff;/*El color del boton en rojo*/
+	padding: 10px;/*El tamaño del boton*/
+}
+#cancelar:hover{
+	cursor: pointer;/*para poner las manita cuando estoy en el boton*/ 
+}
+/*cerrando el modal del nuevo empleado*/
+
+/*comensando con el modal de eliminar.*/
+#modalEliminar{
+width: 100%;/*para lo que es de derecha a izquierda*/
+height: 100%;/*anchura de arriba a bajo*/
+color : #fff;/*para el color del texto*/
+position: fixed;
+/*background-color: rgba(0,0,0,0.6);*//*color de fondo de pantalla*/
+top:0px;/*es la parte de arriba que se pocicione al principio*/
+left:0px;/*izquierda en el borde se adacte a la pantalla*/
+-webkit-transition: all 6s;
+display: none;	
+}
+#formEliminar{
+	width: 450px;
+	margin: auto;
+	background: rgba(0,0,0,0.8);
+	padding: 10px 20px;/*para que se ajuste lo adentro del formulario*/
+	box-sizing:  border-box;
+	margin-top: 100px;/*para separar la parte de arriba del formulario con la del navegador*/
+	border-radius: 10px;/*para ponerle lo que es el borde redondiado al formulario*/	
+}
+#lblEliminar{	
+	color: #FC3434;/*color rojo el lbl*/
+	text-align: center;
+	margin: auto;
+	margin-bottom: 30px;
+}
+h3{
+	text-align: center;
+	margin: auto;
+	margin-bottom: 10%;/*para separar la parte de abajo en un 10% del resto*/
+}
+#eliEm{
+background: #40E849;/*color del boton en verde*/
+color: #fff;/*El color del texto en blanco*/
+padding: 10px;
+width:30%;
+margin-right: 15%;/*margen de la derecha para separar los objetos*/
+margin-left: 4%;/*margen de la izquierda*/
+
+}
+#eliEm{
+cursor: pointer;/*la manito */
+}
+#eliCe{
+background: #FD5050;/*color del boton en rojo*/
+color: #fff;/*El color del texto en blanco*/
+padding: 10px;/*El tamaño del boton*/
+width: 30%;
+margin-right: 4%;/*margen de la derecha para separar los objetos*/
+margin-left: 15%;/*margen de la izquierda*/
+}
+#eliCe{
+cursor: pointer;/*la manito */
+}
+/*terminando  con el modal de eliminar.*/
+
+/*comensando con el modal de Ver el proveedor.*/
+#verModal{
+width: 100%;/*para lo que es de derecha a izquierda*/
+height: 100%;/*anchura de arriba a bajo*/
+color : #fff;/*para el color del texto*/
+position: fixed;
+/*background-color: rgba(0,0,0,0.6);*//*color de fondo de pantalla*/
+top:0px;/*es la parte de arriba que se pocicione al principio*/
+left:0px;/*izquierda en el borde se adacte a la pantalla*/
+-webkit-transition: all 6s;
+display: none;
+}
+#formVer{
+	width: 95%;
+	margin: auto;
+	max-width: 500px;
+	background: white;/*color de la ventana*/
+	border-radius: 7px;	
+}
+#nuVer{
+	background: deepskyblue;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	font-weight: 100;
+	font-size: 30px;
+	border-top-left-radius: 7px;/*lado izquierdo superior*/
+	border-top-right-radius: 7px;/*lado derecho superior*/
+	border-bottom: 5px solid crimson;/*para la raya de abajo del titulo de color rojo*/
+}
+#contenerdorVer{
+padding: 10px;
+display: flex;/*para que se ordenen en fila*/
+flex-wrap: wrap;/*para lo que no quedan en linea se bajen a bajo*/
+justify-content: space-between;	
+color: black;
+
+}
+#cerrar{
+	background: #40E849;/*color del boton en verde*/
+	color: #fff;/*El color del texto en blanco*/
+	width: 100%;
+	height: 100%;
+	padding-left: 30%;
+	padding-right: 30%;
+	margin-left: 30%;
+	margin-right: 30%;
+	
+	border: 1px solid red;
+
+}
+
+#formVer input{
+width: 90%;
+margin-bottom: 15px;/*parte de abajo de los inputs*/
+	padding: 0px;/*padding es de adento hacia afuera*/
+	border-radius: 4px;
+	font-size: 16px;
+	border: 1px solid gray;
+	height: 65%;
+}
+
+label{
+	padding: 5px;
+	margin-left:5px 5px;
+}
+#lbl-50{
+	width: 45%;
+}
+/*terminando con el modal de Ver el proveedor.*/
+
+/*formulario de modificar proveedor.*/
+#modalModificar{
+width: 100%;/*para lo que es de derecha a izquierda*/
+height: 100%;/*anchura de arriba a bajo*/
+color : #fff;/*para el color del texto*/
+position: fixed;
+/*background-color: rgba(0,0,0,0.6);*//*color de fondo de pantalla*/
+top:0px;/*es la parte de arriba que se pocicione al principio*/
+left:0px;/*izquierda en el borde se adacte a la pantalla*/
+-webkit-transition: all 6s;
+display: none;
 }
