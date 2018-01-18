@@ -15,7 +15,7 @@
                 <div id="contenedor">
                     <div id="log">
                         <h2>Juan Rodrigez Salas.</h2>
-                        <img src="../../images/catalogo/juancho.jpeg">
+                        <img src="../../images/administrador/juancho.jpeg">
                         <h4>Ingeniero en Sistemas de Infomatica.</h4>
                         <p>Especialista en el area de los porcesos administrativos, <br>
                             posee 4 años de experiencia en el campo de la venta de repuestos<br>
@@ -26,7 +26,7 @@
                     </div>
                     <div id="log">
                         <h2>Brandon Rodr&iacute;gez M&eacute;ndez.</h2>
-                        <img src="../../images/catalogo/brandon.jpg">
+                        <img src="../../images/administrador/brandon.jpg">
                         <h4>Ingeniero en Sistemas de Informática.</h4>
                         <p>Especialista en el área de la interfaz gráfica administrativos,<br>
                             posee 2 años de experiencia en el campo de la venta de repuestos<br>
@@ -37,7 +37,7 @@
                     </div>
                     <div id="log">
                         <h2>David Salas Lorente.</h2>
-                        <img src="../../images/catalogo/david.jpeg">
+                        <img src="../../images/administrador/david.jpeg">
                         <h4>Ingeniero en Sistemas de Infomatica.</h4>
                         <p>Especialista en el area de los porcesos administrativos, <br>
                             posee 6 años de experiencia en el campo de la venta de repuestos<br>
