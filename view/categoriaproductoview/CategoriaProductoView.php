@@ -4,7 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Repuestos.</title>
-        <link rel="stylesheet" type="text/css" href="../../css/catalogo/principal.css">
+        <!--<link rel="stylesheet" type="text/css" href="../../css/catalogo/principal.css">-->
+        <link rel="stylesheet" type="text/css" href="../../css/catalogo/menu.css">
 		<link rel="stylesheet" type="text/css" href="../../css/catalogo/fonts/style.css">
 		<link rel="stylesheet" type="text/css" href="../../css/categoriaProducto.css">
     </head>
