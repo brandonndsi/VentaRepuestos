@@ -16,7 +16,7 @@
      ?>
     <main>
        <section id="banner">
-       <img src="../../images/catalogo/banner.jpg">
+       <img src="../../images/fondos/banner.jpg">
        <div class="contenedor">
        <h2>Repuestos de buena calidad.</h2>
        <p>¿preguntas frecuentes?</p>

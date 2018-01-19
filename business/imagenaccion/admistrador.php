@@ -6,14 +6,14 @@
 		$action=$_POST['accion'];/*Se optiene del metodo pos la variable*/
 
 		if($ation == "cargar"){
-			if(isset($_POST['personaid'])){
+			if(isset($_POST['id'])){
 				
-				if(strlen($_POST['personaid'])){
+				if(strlen($_POST['id'])){
 					echo "hola imagen";
 					//$imagen = new imagen($_POST['personaid'],null,null,null);
 
 					$DataImagen = new DataImagenAdministrador();
-					$result = $DataImagen->mostrarAdministrador($_POST['personaid']);
+					$result = $DataImagen->mostrarAdministrador($_POST['id']);
 					echo $result;
 				}
 			}

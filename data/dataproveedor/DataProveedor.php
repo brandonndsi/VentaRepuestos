@@ -30,7 +30,7 @@
                         .'\''.$row['personatelefono'].'\','
                         .'\''.$row['personacorreo'].'\','
                         .'\''.$row['productoid'].'\');\"'
-                        .'class=\"btn btn-primary\">Modificar</button>';
+                        .'class=\"btnEditar\">Modificar</button>';
 
                         $ver = '<button onclick=\"verAbrir('.$row['cedula'].','
                         .'\''.$row['personanombre'].'\','
@@ -39,10 +39,10 @@
                         .'\''.$row['personatelefono'].'\','
                         .'\''.$row['personacorreo'].'\','
                         .'\''.$row['productoid'].'\');\"'
-                        .'class=\"btn btn-info\">Ver</button>';
+                        .'class=\"btnVer\">Ver</button>';
 
                         $eliminar = '<button onclick=\"eliminarAbrir('.$row['proveedorid'].');\"'
-                        .'class=\"btn btn-danger\" >Eliminar</button>';
+                        .'class=\"btnEliminar\" >Eliminar</button>';
 
                         $tabla .= '{
                           "nombre":"' . $row['personanombre'] . '",

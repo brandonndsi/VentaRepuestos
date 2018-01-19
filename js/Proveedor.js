@@ -87,9 +87,6 @@ if($('#proveedorid').val()!=""){
         });
     }
      eliminarCerrar(); 
-     /*var table=mostrarProveedor();*/
-    table = $('#listaProveedor').DataTable(); 
-              table.ajax.reload( null, true);
 }
 /*modal para mostrar el actualizar*/
 function actualizarMostrar($id,$cedula,$nombre,$apellido1,$apellido2,$telefono,$correo,$productoid){
@@ -145,7 +142,7 @@ function actualizarProveedor(){
 function mostrarProveedor() {
     $(document).ready(function () {
 
-       table = $('#listaProveedor').DataTable({
+       var table = $('#listaProveedor').DataTable({
             "destroy": true,
             "bDeferRender": true,
         "paging": true,
@@ -203,8 +200,13 @@ function mostrarProveedor() {
                 }
             }
         });
-//
+
+        setInterval(function () {
+        table.ajax.reload(null, false);
+        }, 1000);
     });
+   
+
 
 }
 /*fin de la funcion de terminacion de la paginacion de data table*/

@@ -20,12 +20,9 @@
 
     </head>
     <body>
-      <nav>
-          <ul>
-            <li><a class="active" href="../../index.php">Menu</a></li>
-            <li style="float:right"><a  href="#about">Salir</a></li>
-          </ul>
-        </nav>
+      <?php 
+        include_once '../menu/menuAdministrador.php';
+        ?>
         <center>
         <h1>
             Proveedor

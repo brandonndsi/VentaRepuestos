@@ -4,24 +4,22 @@ mostrarAdministrador();
 }
                
 	function mostrarAdministrador(){
-	personaid = document.getElementById("personaid").value;
-	$(document).ready(function(){
-	$.post('../../business/imagenaccion/admistrador.php',{
-		accion: 'nuevo',
-		personaid:personaid
-	},function(response){
+	//perso = document.getElementById("personaid").value;
+	var valor =document.getElementById("personaid").value;
+	//alert(valor);
+	//val=valor+"";
+	
+	$.ajax({
+		url:'../../business/imagenaccion/admistrador.php',
+		type: "POST",
+		data:{
+			accion: 'nuevo',
+			id:valor },
+		success: function(response){
 		alert(response);
-		dato=response;
-		document.getElementById("nuevo").src=dato;
-		//var capa=document.getElementById("imagen");
-		/*var imagen =document.createElement("img");
-		img.innerHTML="<img src="+dato+">";*/
-		//capa.appendChild(cargarImagen(dato));
-		//$("#imagen").html("<img src="+dato+">");
-	});
-	
-});
-	
+		
+			}
+		});
 }
 
 function cargarImagen(url)

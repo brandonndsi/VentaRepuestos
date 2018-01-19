@@ -1,5 +1,5 @@
 *{	
-background-image: url("../images/fondos/administrador.jpg");
+background-image: url("../images/fondos/log.jpg");
 background-size: 100vw 100vh;
 background-attachment: fixed;
 margin: 0;
@@ -21,16 +21,6 @@ border-radius:20px;
 padding: 20px;
 height: 400px;
 background: #6C6969;
-/*box-shadow: 5px 5px 0px #F9F0F0;
-align-content: center;
-
-margin-top:10px;
-margin-bottom: 50px;
-margin-left:5%; 
-width: 25%;
-background: black;
-border-radius:20px;
-border: 2px solid black;*/
 }
 #navegador a {
 	display: block;
@@ -48,6 +38,8 @@ cursor: pointer;
 background: rgba(255,255,255,0.5);
 color: black;
 box-shadow: 5px 5px 0px black;
+padding:5px;
+transition: 2s;
 }
 #datos h3{
 	text-align: center;

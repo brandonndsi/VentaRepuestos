@@ -14,7 +14,7 @@
         <script src="../../js/Cliente.js"></script>
 
     </head>
-    <body background="../../images/log.jpg">
+    <body background="../../images/fondos/log3.jpg">
         <?php
         include '../menu/menu.php';
         ?>
