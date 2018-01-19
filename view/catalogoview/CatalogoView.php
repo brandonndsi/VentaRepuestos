@@ -27,54 +27,52 @@
             <h2>Bienvenido a DJB</h2>
             <p> Ofrecemos los mejores repuestos para su vehiculo y  a un buen precio en la zona de Sarapiqui.</p>
         </section>
-        <section id="blog">
-            <h3>Imagenes de las categorias de repuestos.</h3>
-            <div class="contenedor">
-                <article>
-                   <img src="../../images/catalogo/carro.png">
-                   <h4>Escoge tu carro repuesto</h4> 
+        <div id="contenedor_carrucel">
+            <!--<h3>Imagenes de las categorias de repuestos.</h3>-->
+            <ul id="carrucel">
+                <li>
+                   <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/carro.png" id="carru"></a>
+                   <!-- <h4>Escoge tu carro repuesto</h4> --> 
                    
-                </article>
-                <article>
-                
-                  <img src="../../images/catalogo/moto.jpg">
-                   <h4>Escoge tu moto repuesto</h4>
+                </li>
+                <li>
+                  <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/moto.jpg" id="carru"></a>
+                   <!-- <h4>Escoge tu moto repuesto</h4> -->
                    
-                </article>
-                <article>
+                </li>
+                <li>
                 
-                  <img src="../../images/catalogo/scooter.jpg">
-                   <h4>Escoge tu scooter repuesto</h4>
+                  <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/scooter.jpg" id="carru"></a>
+                   <!-- <h4>Escoge tu scooter repuesto</h4> -->
                   
-                </article>
-                <article>
-                
-                  <img src="../../images/catalogo/trailer.jpg">
-                   <h4>Escoge tu trailers repuesto</h4>
+                </li>
+                <li>
+                <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/trailer.jpg" id="carru"></a>
+                   <!-- <h4>Escoge tu trailers repuesto</h4> -->
                   
-                </article>
-            </div>
-        </section>
+                </li>
+            </ul>
+        </div>
         <section id="info">
             <h3>Los articulos que ofrecemos para las categorias de vehiculos.
         </h3>
         <div class="contenedor">
         <div class="info-repuesto">
-          <a href="carrucelCarro.php"><img src="../../images/catalogo/carro.png"></a>
+          <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/carro.png"></a>
             <h4>Carros</h4>
         </div>
 
         <div class="info-repuesto">
-          <a href="carrucelMoto.php"><img src="../../images/catalogo/moto.jpg"></a> 
+          <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/moto.jpg"></a> 
             <h4>Motos</h4>
         </div>
 
         <div class="info-repuesto">
-          <a href="carrucelScooter.php"><img src="../../images/catalogo/scooter.jpg"></a>
+          <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/scooter.jpg"></a>
             <h4>Scooters</h4>
         </div>
         <div class="info-repuesto">
-          <a href="carrucelTrailer.php"><img src="../../images/catalogo/trailer.jpg"></a>
+          <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/trailer.jpg"></a>
             <h4>Trailers</h4>
         </div>
         </div>
