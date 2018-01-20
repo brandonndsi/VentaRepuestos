@@ -1,0 +1,20 @@
+@import url(eliminar.css);
+@import url(actualizar.css);
+@import url(nuevo.css);
+
+h3{
+	text-align: center;
+	margin: auto;
+	margin-bottom: 10%;/*para separar la parte de abajo en un 10% del resto*/
+}
+#eliCeder{
+background: #68F56A;/*color del boton en rojo*/
+color: #fff;/*El color del texto en blanco*/
+padding: 8px;/*El tamaño del boton*/
+width: 15%;
+border-radius: 20%;/*para el borde de el boton*/
+margin-left: 45%;/*margen de la izquierda*/
+}
+#eliCeder:hover{
+cursor: pointer;/*la manito */
+}

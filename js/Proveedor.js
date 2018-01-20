@@ -26,7 +26,19 @@ function nuevoMostrar(){
     document.getElementById("modalNuevo").style.display = "block";
 }
 function nuevoCerra(){
-   document.getElementById("modalNuevo").style.display = "none"; 
+    
+   document.getElementById("modalNuevo").style.display = "none";
+   nuevoLimpiar();
+    
+}
+function nuevoLimpiar(){
+    $('#cedula').val("");
+    $('#nombre').val("");
+    $('#apellido1').val("");
+    $('#apellido2').val("");
+    $('#correo').val("");
+    $('#producto').val("");
+    $('#telefono').val("");
 }
 function nuevoProveedor(){
     if($('#cedula').val()!="" && $('#nombre').val()!="" &&
@@ -53,11 +65,13 @@ function nuevoProveedor(){
                 telefono: telefono,
                 producto: producto
             }, function(response) {
-                alert(response);
+                //alert(response);
+                nuevoCerra();
+                notificacionNuevoAbrir();
             });
         });
     }
-    nuevoCerra();
+    
 }
 /*fin del modal del nuevo proveedor*/
 
@@ -82,12 +96,16 @@ if($('#proveedorid').val()!=""){
                 accion: 'eliminar',
                 id: id
             }, function(response) {
-                alert(response);
+                eliminarCerrar();
+                notificacionEliminarAbrir();/*final mensaje de confirmacion*/ 
+                //alert(response);
             });
         });
     }
-     eliminarCerrar(); 
+       
 }
+/*fin de eliminar proveedor*/
+
 /*modal para mostrar el actualizar*/
 function actualizarMostrar($id,$cedula,$nombre,$apellido1,$apellido2,$telefono,$correo,$productoid){
 $("#idActualizar").val($id);
@@ -132,12 +150,46 @@ function actualizarProveedor(){
                 telefono: telefono,
                 producto: producto
             }, function(response) {
-                alert(response);
+                actualizarCerra();
+               notificacionActualizarAbrir();
             });
         });
-    }
-    actualizarCerra();
+    }   
 }
+/*fin de actualizar proveedor*/
+
+/*comenzando con las notificaciones finales*/
+
+/*notificaion de proceso eliminado exitozamente.*/
+function notificacionEliminarAbrir(){
+    document.getElementById("notificacionEliminar").style.display = "block";
+}
+
+function notificacionEliminarCerrar(){
+    document.getElementById("notificacionEliminar").style.display = "none"; 
+}
+/*finalizando con las notificaciones de eliminar exitoza.*/
+
+/*comenzando con las notificacione de actualizar proveedor exitozamente.*/
+function notificacionActualizarAbrir(){
+    document.getElementById("notificacionActualizar").style.display = "block";
+}
+
+function notificacionActualizarCerrar(){
+    document.getElementById("notificacionActualizar").style.display = "none"; 
+}
+/*finalizando con las notificaciones de actualizar proveedor exitozamente*/
+
+/*comenzando con las notificacione de nuevo proveedor exitozamente.*/
+function notificacionNuevoAbrir(){
+    document.getElementById("notificacionNuevo").style.display = "block";
+}
+
+function notificacionNuevoCerrar(){
+    document.getElementById("notificacionNuevo").style.display = "none"; 
+}
+/*finalizando con las notificaciones de nuevo proveedor exitozamente*/
+
 /*funcion de js para mostrar el data table con paginacion*/
 function mostrarProveedor() {
     $(document).ready(function () {
@@ -203,7 +255,7 @@ function mostrarProveedor() {
 
         setInterval(function () {
         table.ajax.reload(null, false);
-        }, 1000);
+        }, 300);
     });
    
 

@@ -91,9 +91,8 @@ if ($action=="nuevo") {
 
                 $DataProveedor = new DataProveedor();
 
-                $result = $DataProveedor->modificarProveedor($proveedor);
 
-                return $result;
+                return $DataProveedor->modificarProveedor($proveedor);
             }
         }
    

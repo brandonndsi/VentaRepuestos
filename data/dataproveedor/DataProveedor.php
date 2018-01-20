@@ -101,8 +101,9 @@
                     '1');");
                     $this->conexion->cerrarConexion();
 
-                    $resultado=$nuevoProveedor;
-                    return $resultado;
+                     return $nuevoProveedor;   
+                    
+                    
                 }
             }
 
@@ -145,8 +146,8 @@
                     $this->conexion->cerrarConexion();
                     
                 }
-                return $personanuevo ;
-                
+                        return $personanuevo;
+
             }
 
             //buscar

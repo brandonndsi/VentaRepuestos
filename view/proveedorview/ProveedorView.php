@@ -8,6 +8,7 @@
         <!-- CSS-->
         <link rel="stylesheet" type="text/css" href="../../css/jquery.tabla.css">
         <link rel="stylesheet" type="text/css" href="../../css/estilocrud.css">
+        <link rel="stylesheet" type="text/css" href="../../css/notificaciones/todo.css">
         <!-- JS-->
         <script src="../../js/jquery-1.10.2.js"></script>
         <script src="../../js/jquery.dataTables.js"></script>
@@ -67,7 +68,7 @@
         <input type="text" placeholder="producto" name="producto" id="producto" class="input-100">
         <input type="submit"  value="Enviar" onclick="nuevoProveedor()" id="enviar" class="input-50">
         <input type="submit" value="Cancelar" onclick="nuevoCerra()" id="cancelar" class="input-50"> 
-         </div>
+        </div>
         </div>    
     </div>
     <!-- Modal de proveedor eliminar -->
@@ -79,7 +80,7 @@
         <input type="submit"  value="Enviar" onclick="eliminarProveedor()" id="eliEm">
         <input type="submit" value="Cancelar" onclick="eliminarCerrar()" id="eliCe">
         </div>      
-    </div> 
+        </div> 
     <!--Modal ver proveedor -->
     <div id="verModal">
         <div id="formVer">
@@ -95,7 +96,7 @@
         <input type="submit"  value="Cerrar" onclick="cerrarVer()" id="cerrar"> 
         </div>
         </div>    
-    </div>
+        </div>
     <!-- modal de modificar proveedor -->
     <div id="modalModificar">
         <div id="form">
@@ -111,10 +112,27 @@
         <input type="text"  name="producto" id="productoM" class="input-100">
         <input type="submit"  value="Enviar" onclick="actualizarProveedor()" id="enviar" class="input-50">
         <input type="submit" value="Cancelar" onclick="actualizarCerra()" id="cancelar" class="input-50"> 
-         </div>
+        </div>  
+        </div>
         </div>    
+         <!-- notificacion de eliminar modal de confirmacion -->   
+    <div id="notificacionEliminar">
+        <?php 
+            include_once '../modalnotificaciones/eliminar.php';
+         ?>
     </div>
-
+        <!--  notificacion de actualizar modal de confirmacion-->
+    <div id="notificacionActualizar">
+        <?php
+        include_once '../modalnotificaciones/actualizar.php';
+        ?>
+    </div>
+    <!--  notificacion de nuevo modal de confirmacion-->
+    <div id="notificacionNuevo">
+        <?php
+        include_once '../modalnotificaciones/nuevo.php';
+        ?>
+    </div>
     </body>
 </html>
 

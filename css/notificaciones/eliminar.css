@@ -1,0 +1,20 @@
+#notificacionEliminar{
+width: 100%;/*para lo que es de derecha a izquierda*/
+height: 100%;/*anchura de arriba a bajo*/
+color : #fff;/*para el color del texto*/
+position: fixed;
+/*background-color: rgba(0,0,0,0.6);*//*color de fondo de pantalla*/
+top:0px;/*es la parte de arriba que se pocicione al principio*/
+left:0px;/*izquierda en el borde se adacte a la pantalla*/
+-webkit-transition: all 6s;
+display: none;	
+}
+#notificacionEli{
+	width: 450px;
+	margin: auto;
+	background:rgba(0,0,0,0.8);
+	padding: 10px 20px;/*para que se ajuste lo adentro del formulario*/
+	box-sizing:  border-box;
+	margin-top: 100px;/*para separar la parte de arriba del formulario con la del navegador*/
+	border-radius: 10px;/*para ponerle lo que es el borde redondiado al formulario*/	
+}
