@@ -32,7 +32,7 @@ input{
 #entrar{
 	background: #31384A;
 	color: #fff;
-	padding: 20px;
+	padding: 10px;
 }
 #entrar:hover{
 	cursor: pointer;/*para poner las manita cuando estoy en el boton*/ 

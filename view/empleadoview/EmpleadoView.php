@@ -20,15 +20,20 @@
         <script>
             $(document).ready(function () {
                 mostrarEmpleados();
+                searching: false
             });
         </script>
 
     </head>
 
-    <body>
-        <?php 
-        include_once '../menu/menuAdministrador.php';
-         ?>
+    <body background="">
+        <nav>
+            <ul>
+                <li><a class="active" href="../../view/ventanaprincipalview/VentanaPrincipalView.php">Menu</a></li>
+                <li style="float:right"><a  href="../../business/sesionaccion/SesionDesconectarAccion.php">Salir</a></li>
+            </ul>
+        </nav>
+
     <center>
         <h1>
             Empleados
@@ -181,7 +186,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" onclick="cerrarModalModificar()">Cancelar</button>
-                    <button onclick="modificarEmpleado();" class="btn btn-success">Actualizar</button>
+                    <button onclick="modificarEmpleado();" class="btn btn-success" >Actualizar</button>
                 </div>
             </div>
         </div>
@@ -192,7 +197,7 @@
 
     <!-- Modal -->
     <div class="modal" id="modalElimEmpleado" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog " role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalElimEmpleado">Eliminar</h5>
@@ -213,7 +218,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" onclick="cerrarModalEliminar()">Cancelar</button>
-                    <button data-remodal-action="confirm" onclick="eliminarEmpleado();" class="btn btn-success" data-dismiss="modal">Eliminar</button>
+                    <button onclick="eliminarEmpleado();" class="btn btn-success">Eliminar</button>
 
                 </div>
             </div>

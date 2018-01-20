@@ -47,9 +47,3 @@ footer .contenedor{
 	justify-content: center;
 	padding-bottom: 25px;
 }
-
-@media (min-width: 800px){
-	.contenedor{
-		width: 900px;
-	}
-}

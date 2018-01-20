@@ -3,7 +3,7 @@
 function mostrarEmpleados() {
     $(document).ready(function () {
 
-        $('#listaEmpleados').DataTable({
+        var table = $('#listaEmpleados').DataTable({
 
             "bDeferRender": true,
             "sPaginationType": "full_numbers",
@@ -60,10 +60,10 @@ function mostrarEmpleados() {
             }
         });
 
-        /// refresca la tabla cada cierto tiempo
-        //setInterval(function () {
-        //  table.ajax.reload(null, false);
-        //}, 5000);
+        //refresca la tabla cada cierto tiempo
+        setInterval(function () {
+        table.ajax.reload(null, false);
+        }, 5000);
     });
 
 }
@@ -95,6 +95,8 @@ function RegistrarEmpleado(){
             accion: "insertar"
         });
     });
+    
+    cerrarModalRegistrar();
 }
 function verRegistrarEmpleado() {
 
@@ -151,6 +153,8 @@ var cuenta = document.getElementById("empleadocuentabancaria3").value;
             accion: "modificar"
             });
     });
+    
+    cerrarModalModificar();
 }
 
 function verModalEditar($id, $nombre, $apellido1, $apellido2, $cedula, $telefono, $correo, $contra, $age, $sex,
@@ -198,6 +202,8 @@ function eliminarEmpleado() {
             accion: "eliminar"
         });
     });
+    
+    cerrarModalEliminar();
 }
 
 function verModalEliminar($parm1, $parm2, $parm3, $parm4) {
