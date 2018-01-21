@@ -1,7 +1,7 @@
 <footer>
             <div class="contenedor">
-                <p class="copy" style="color: #ccccff;">
-                    <span>Copyright © 2018 Ventas Online DJB, All rights reserved</span>
+                <p class="copy">
+                    <span>Derecho reservador © 2018 Ventas Online DJB.</span>
                 </p>
 
                 <div class="sociales">     
