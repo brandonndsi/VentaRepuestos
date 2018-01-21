@@ -255,7 +255,7 @@ function mostrarProveedor() {
 
         setInterval(function () {
         table.ajax.reload(null, false);
-        }, 300);
+        }, 1000);
     });
    
 

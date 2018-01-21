@@ -791,7 +791,7 @@ button.close {
 
 .form-control {
     display: block;
-    width: 50%;
+    width: 100%;
     //padding: 0.4rem 0.5rem;
     font-size: 1rem;
     line-height: 1.25;

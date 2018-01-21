@@ -63,7 +63,7 @@ function mostrarEmpleados() {
         //refresca la tabla cada cierto tiempo
         setInterval(function () {
         table.ajax.reload(null, false);
-        }, 5000);
+        }, 1000);
     });
 
 }

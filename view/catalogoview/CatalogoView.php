@@ -22,7 +22,7 @@
                 <img src="../../images/fondos/banner.jpg">
                 <div class="contenedor">
                     <h2>Repuestos de buena calidad.</h2>
-                    <p>¿Cuál es el mejor repuesto para usted?</p>
+                    <p>Conozca sobre nosotros</p>
                     <a onclick="mostrarModalInfoRepuesto();">Leer más.</a> 
                 </div>
 
@@ -38,25 +38,25 @@
                     <ul id="carrucel" >
                         <li data-target="#contenedor_carrucel">
                             <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
-                                <strong>Mas Vendido</strong>
+                                <strong style="color:black;">Autos</strong>
                                 <img src="../../images/catalogo/carro.jpg" id="carru">
                             </a>
                         </li>
                         <li data-target="#contenedor_carrucel">
                             <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
-                                <strong>Lo mas Nuevo</strong>
+                                <strong style="color:black;">Motocicletas</strong>
                                 <img src="../../images/catalogo/moto.jpg" id="carru">
                             </a>
                         </li>
                         <li data-target="#contenedor_carrucel">
                             <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
-                                <strong>Repuestos Familiares</strong>
+                                <strong style="color:black;">Scooters</strong>
                                 <img src="../../images/catalogo/scooter.jpg" id="carru">
                             </a>
                         </li>
                         <li data-target="#contenedor_carrucel">
                             <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
-                                <strong>Lo mejor</strong>
+                                <strong style="color:black;">Trailers</strong>
                                 <img src="../../images/catalogo/trailer.jpg" id="carru">
                             </a>
                         </li>
@@ -70,22 +70,20 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div style="font-size:20px;" class="modal-header">
-                            <h5 class="modal-title" ><strong>Consejos al Comprar Repuestos de tu Carro</strong></h5>
+                            <h5 class="modal-title" ><strong>Conoce DJB</strong></h5>
                             <button type="button" class="close" onclick="cerrarModalInfoRepuesto();">
                                 <span aria-hidden="true">&times;</span>
                             </button>            
                         </div>
                         <div class="modal-body">
-                            <ol style="color:black;">
-                                <li><p>Cuando se trata de comprar un Repuesto, tómese el tiempo justo para hacer la búsqueda de su repuesto ideal y haga todas las comparaciones necesarias entre varias opciones, antes de tomar la decisión final.</p>
-                                <li><p>Presupueste el dinero que está dispuesto a invertir en la compra de su Repuesto.</p>
-                                <li><p>Aprende a “escuchar” a tu carro.</p>
-                                <li><p>Aproveche la luz del día o un lugar muy bien iluminado y preste atención a todas las imperfecciones que saltan a la vista en el repuesto.</p>
-                                <li><p>Información y repuestos 100% confiables.</p>
-                            </ol>
+                            <p><h2>Misi&oacute;n.</h2>
+                            <p>..............................
+                                
+                            <P><br><h2>Visi&oacute;n.</h2>
+                            <p>..............................
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" onclick="cerrarModalInfoRepuesto();">Cerrar</button>
+                            <button type="button" class="btn btn-danger" onclick="cerrarModalInfoRepuesto();">Cerrar</button>
                         </div>
                     </div>
                 </div>
