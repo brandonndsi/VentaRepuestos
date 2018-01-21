@@ -1,6 +1,5 @@
 
 body{
-    background:#F7DA55;
     font-family: 'Open Sans', sans-serif;
 
 }
@@ -44,7 +43,7 @@ body{
 }
 .main h2{
     font-size:25px;
-    color:#676767;
+    color:#cccccc;
     font-family: 'Open Sans', sans-serif;
     font-weight:400;
     padding-top: 19%;
@@ -59,7 +58,7 @@ body{
     text-align: center;
 }
 .main form p a {
-    color: #888;
+    color: #99ffff;
     font-family: 'Open Sans', sans-serif;
 }
 form p a:hover {

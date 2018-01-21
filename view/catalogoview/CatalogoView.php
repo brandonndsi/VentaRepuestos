@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="es">
@@ -9,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="../../css/catalogo/fonts/style.css">
         <link rel="stylesheet" type="text/css" href="../../css/catalogo/principal.css"> 
         <link rel="stylesheet" href="../../css/styles.css">
-        
+
         <!--JS -->
         <script src="../../js/Catalogo.js"></script>
 
@@ -34,34 +33,37 @@
             </section>
 
             <!--Carrucel-->
-            <div id="contenedor_carrucel">
-                <!--<h3>Imagenes de las categorias de repuestos.</h3>-->
-                <ul id="carrucel">
-                    <li>
-                        <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/carro.png" id="carru"></a>
-                        <!-- <h4>Escoge tu carro repuesto</h4> --> 
+            <section id="bienvenidos">
+                <div id="contenedor_carrucel">
+                    <ul id="carrucel" >
+                        <li data-target="#contenedor_carrucel">
+                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
+                                <strong>Mas Vendido</strong>
+                                <img src="../../images/catalogo/carro.jpg" id="carru">
+                            </a>
+                        </li>
+                        <li data-target="#contenedor_carrucel">
+                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
+                                <strong>Lo mas Nuevo</strong>
+                                <img src="../../images/catalogo/moto.jpg" id="carru">
+                            </a>
+                        </li>
+                        <li data-target="#contenedor_carrucel">
+                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
+                                <strong>Repuestos Familiares</strong>
+                                <img src="../../images/catalogo/scooter.jpg" id="carru">
+                            </a>
+                        </li>
+                        <li data-target="#contenedor_carrucel">
+                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
+                                <strong>Lo mejor</strong>
+                                <img src="../../images/catalogo/trailer.jpg" id="carru">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-                    </li>
-                    <li>
-                        <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/moto.jpg" id="carru"></a>
-                        <!-- <h4>Escoge tu moto repuesto</h4> -->
-
-                    </li>
-                    <li>
-
-                        <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/scooter.jpg" id="carru"></a>
-                        <!-- <h4>Escoge tu scooter repuesto</h4> -->
-
-                    </li>
-                    <li>
-                        <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/trailer.jpg" id="carru"></a>
-                        <!-- <h4>Escoge tu trailers repuesto</h4> -->
-
-                    </li>
-                </ul>
-            </div>
-
-            <!--modal-->
             <!-- Modal -->
             <div class="modal" id="modalInfoRepuesto" role="dialog">    
                 <div class="modal-dialog modal-lg">
@@ -91,11 +93,10 @@
 
             <!--articulos-->
             <section id="info">
-                <h3>Los articulos que ofrecemos para las categorias de vehiculos.
-                </h3>
+                <h3>Los articulos que ofrecemos para las categorias de vehiculos.</h3>
                 <div class="contenedor">
                     <div class="info-repuesto">
-                        <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/carro.png"></a>
+                        <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/carro.jpg"></a>
                         <h4>Carros</h4>
                     </div>
 

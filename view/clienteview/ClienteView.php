@@ -13,8 +13,8 @@
 
         <nav>
             <ul>
-                <li><a class="active" href="../../index.php">Menu</a></li>
-                <li style="float:right"><a  href="#about">Salir</a></li>
+                <li><a class="active" href="../../view/ventanaprincipalview/VentanaPrincipalView.php">Menu</a></li>
+                <li style="float:right"><a  href="../../business/sesionaccion/SesionDesconectarAccion.php">Salir</a></li>
             </ul>
         </nav>
         <!--<h2>CLIENTES</h2>-->
