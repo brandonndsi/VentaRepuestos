@@ -10,9 +10,15 @@
 .sociales a{
 color: #392323;
 text-decoration: none;
+
 }
 footer{
+	align-content: center;
 	align-self: flex-end;
 	margin-top: auto;/*para que se quede en la parte de abajo el footer*/
 	/*border: 1px solid black;*/
+}
+.contenedor_foorter{
+display: flex;
+text-align: center;
 }

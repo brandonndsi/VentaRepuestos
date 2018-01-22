@@ -66,7 +66,18 @@ h4{
 	margin-top: 4px;
 	/*border: 1px solid red;*/
 	margin-left:8%;  
+}/*es para modificar unos datos que no calsan en el footer*/
+.sociales{
+	font-size: 28px;
+	width: 100%;
+	text-align: center;
 }
+.sociales a{
+color: #392323;
+text-decoration: none;
+
+}
+/*la terminacion de los datos del footer*/
 .contenedor{
 	padding: 10px;
 }

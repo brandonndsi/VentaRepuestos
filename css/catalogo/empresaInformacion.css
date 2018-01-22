@@ -13,9 +13,11 @@ min-height: 100vh;
 flex-wrap: wrap;
 }
 #principal {
+	 
+	/*border-radius: 10px;*/
 	margin-top:60px;
 	width: 90%;
-	height: 80%;
+	height: 100%;
 	background: #fff;
 	color: black;
 	text-align: center;
@@ -23,22 +25,302 @@ flex-wrap: wrap;
 	border: 1px solid black;
 }
 #empresa{
+	box-shadow: 5px 5px 0px black;
+	height: 95%;
+	border-radius:10px;
+	border: 1px solid black;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	
 }
-#informacion{
+#marcaLPScroll{
+width: 100%;
+height: 100%;
+/*overflow: scroll;*/
+display: none;	
+}
+/*cominezo de la informacion de la empresa.*/
+#informacionLP{
+	/*display: none;*//*********/
 	padding: 10px;
-	border: 2px solid black;
+	height: 100%;
+	width: 100%;
+
+}
+#informacionLP #imagen{
+	margin:5px;
+	border-right: 1px solid black;
 	border-radius: 8px;
+	width: 90%;
+	height: 150px;	
+}
+#informacionLP #imagen img{
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 100%;
 	height: 100%;
 }
-#informacion h2{
+#informacionLP h2{
 color:#535FFD;
 text-align: center;
 padding-bottom: 5px;
 }
-#informacion p{
+#informacionLP p{
 	font-size: 8px;
 	text-align: justify all;
+}
+/*Fin de informacion */
+
+/*informacion de la marca con css*/
+#marcaLP{
+padding: 10px;
+height: 100%;
+width: 100%;
+/**display: none;*/
+}
+#marcaLP p{
+font-size: 8px;
+text-align: justify all;
+}
+/*fin de la marca con css*/
+
+/*informacion de la mision con css*/
+#misionLP{
+padding: 10px;
+height: 100%;
+width: 100vh;
+display: none;
+}
+#misionLP p{
+font-size: 8px;
+text-align: justify all;
+}
+/*fin de la mision con css*/
+
+/*informacion de la vision con css*/
+#visionLP{
+padding: 10px;
+height: 100%;
+width: 100%;
+display: none;
+}
+#visionLP p{
+font-size: 8px;
+text-align: justify all;
+}
+/*fin de la vision con css*/
+
+/*informacion de la ubicacion con css*/
+#ubicacionLP{
+padding: 10px;
+height: 100%;
+width: 100%;
+display: none;
+}
+/*comienzo de imagen de localizacion*/
+#ubicacionLP #imagen{
+	margin:5px;
+	border-right: 1px solid black;
+	border-radius: 8px;
+	width: 90%;
+	height: 150px;	
+}
+#ubicacionLP #imagen img{
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 100%;
+	height: 100%;
+}
+/*fin de imagen de localizacion*/
+#ubicacionLP p{
+font-size: 8px;
+text-align: justify all;
+}
+/*fin de la ubicacion con css*/
+
+/*rabajando con las marca honda*/
+#honda{
+	border-radius: 5px;
+	/*border: 1px solid black;*/
+	display: flex;
+}
+#honda #imagen{
+	margin:5px;
+	border-right: 1px solid black;
+	border-radius: 8px;
+	width: 45%;
+	height: 100px;
+}
+#honda #imagen img{
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 100%;
+	height: 100%;
+}
+#honda #informacion_Honda{
+	width: 45%;
+	margin:5px 0px 5px 5px; /*arriba,derecha,abajo , izquierda*/
+	border: 1px solid black;
+	padding: 2px;
+	border-radius: 5px;
+}
+/*terminacion del honda*/
+
+/*comensando con el bmw*/
+#bmw{
+	border-radius: 5px;
+	/*border: 1px solid black;*/
+	display: flex;
+}
+#bmw #imagen{
+	margin:5px;
+	border-right: 1px solid black;
+	border-radius: 8px;
+	width: 45%;
+	height: 100px;
+}
+#bmw #imagen img{
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 100%;
+	height: 100%;
+}
+#bmw #informacion_bmw{
+	width: 45%;
+	margin:5px 0px 5px 5px; /*arriba,derecha,abajo , izquierda*/
+	border: 1px solid black;
+	padding: 2px;
+	border-radius: 5px;
+}
+/*termiancion del bmw*/
+
+/*comensando con el kia*/
+#kia{
+	border-radius: 5px;
+	/*border: 1px solid black;*/
+	display: flex;
+}
+#kia #imagen{
+	margin:5px;
+	border-right: 1px solid black;
+	border-radius: 8px;
+	width: 45%;
+	height: 100px;
+}
+#kia #imagen img{
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 100%;
+	height: 100%;
+}
+#kia #informacion_kia{
+	width: 45%;
+	margin:5px 0px 5px 5px; /*arriba,derecha,abajo , izquierda*/
+	border: 1px solid black;
+	padding: 2px;
+	border-radius: 5px;
+}
+/*termiancion del kia*/
+
+/*comensando con el suzuki*/
+#suzuki{
+	border-radius: 5px;
+	/*border: 1px solid black;*/
+	display: flex;
+}
+#suzuki #imagen{
+	margin:5px;
+	border-right: 1px solid black;
+	border-radius: 8px;
+	width: 45%;
+	height: 100px;
+}
+#suzuki #imagen img{
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 100%;
+	height: 100%;
+}
+#suzuki #informacion_suzuki{
+	width: 45%;
+	margin:5px 0px 5px 5px; /*arriba,derecha,abajo , izquierda*/
+	border: 1px solid black;
+	padding: 2px;
+	border-radius: 5px;
+}
+/*termiancion del suzuki*/
+
+/*comensando con el toyota*/
+#toyota{
+	border-radius: 5px;
+	/*border: 1px solid black;*/
+	display: flex;
+}
+#toyota #imagen{
+	margin:5px;
+	border-right: 1px solid black;
+	border-radius: 8px;
+	width: 45%;
+	height: 100px;
+}
+#toyota #imagen img{
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 100%;
+	height: 100%;
+}
+#toyota #informacion_toyota{
+	width: 45%;
+	margin:5px 0px 5px 5px; /*arriba,derecha,abajo , izquierda*/
+	border: 1px solid black;
+	padding: 2px;
+	border-radius: 5px;
+}
+/*termiancion del toyota*/
+
+@media (min-width: 500px){
+#informacionLP #imagen{
+	margin-left: 8px;
+	width: 95%;
+	height: 230px;
+}
+#ubicacionLP #imagen{
+	width: 95%;
+	height: 200px;
+}
+#empresa{
+	border-radius:20px;
+	height: 95%;
+}
+#informacionLP p{
+	padding: 5px;
+	text-align: justify;
+	font-size: 16px;
+	margin: auto;
+}
+#marcaLP p{	
+	padding: 5px;
+	text-align: justify;
+	font-size: 16px;
+	margin: auto;	
+}
+#misionLP p{	
+	padding: 5px;
+	text-align: justify;
+	font-size: 16px;
+	margin: auto;	
+}
+#visionLP p{	
+	padding: 5px;
+	text-align: justify;
+	font-size: 16px;
+	margin: auto;	
+}
+#ubicacionLP p{	
+	padding: 5px;
+	text-align: justify;
+	font-size: 16px;
+	margin: auto;	
+}
 }

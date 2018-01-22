@@ -1,14 +1,14 @@
 <footer>
-            <div class="contenedor">
+            <div class="contenedor_footer">
                 <p class="copy">
-                    <span>Derecho reservador © 2018 Ventas Online DJB.</span>
+                    <span>Derecho Ventas DJB © 2018.</span>
                 </p>
 
                 <div class="sociales">     
                     <a class="icon-facebook" href="https://www.facebook.com/"></a>
                     <a class="icon-twitter" href="https://twitter.com/"></a>
                     <a class="icon-instagram" href="https://www.instagram.com/?hl=es-la"></a>
-                    <a href="" class="icon-google" href="#"></a>
+                    <a class="icon-google" href="https://www.google.com/intl/es/gmail/about/#"></a>
                 </div>
             </div>
 
