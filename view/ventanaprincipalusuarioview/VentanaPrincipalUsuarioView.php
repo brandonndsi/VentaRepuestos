@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Catalogo De Repuestos</title>
+        <title>Cliente</title>
 
         <!--CSS-->    
         <link rel="stylesheet" href="../../css/Administrador.css">
@@ -13,13 +13,18 @@
     <body>
         <?php
         session_start();
-        $persona = $_SESSION['usuario'];
-        $id = $persona[0];
+        if (!isset($_SESSION['usuario'])) {
+            header("location: ../loginview/LoginView.php");
+        } else {
+            $persona = $_SESSION['usuario'];
+            $id = $persona[0];
+        }
         ?>
         <div id="contenedor">
             <div id="navegador">
                 <a href="../../business/sesionaccion/SesionDesconectarAccion.php">Cerrar</a>
-                <a href="../categoriaproductoview/CategoriaProductoView.php" class="btn btn-info">Categorias </a>
+                <a href="">Buzon de entrada </a>
+                <a href="../ventanaprincipalusuarioview/CatalogoUsuarioView.php">Catalogo </a>
             </div>
             <div id="datos">
                 <h3>Bienvenido</h3>

@@ -20,8 +20,12 @@
     <body>
         <?php
         session_start();
-        $persona = $_SESSION['usuario'];
-        $id = $persona[0];
+        if (!isset($_SESSION['usuario'])) {
+            header("location: ../loginview/LoginView.php");
+        } else {
+            $persona = $_SESSION['usuario'];
+            $id = $persona[0];
+        }
         ?>
         <div id="contenedor">
             <div id="navegador">

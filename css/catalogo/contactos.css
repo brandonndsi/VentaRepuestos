@@ -8,7 +8,6 @@ background-image: url("../../images/fondos/wallpaper2.jpg");
 background-size: 100vw 100vh;
 background-attachment: fixed;
 margin: 0;
-font-family: monospace;
 display: flex;
 min-height: 100vh;
 flex-wrap: wrap;
@@ -101,8 +100,5 @@ flex-wrap: wrap;
 	}
 	#contenedor #tro{
 	width: 30%;	
-	}
-	.contenedor{
-		width: 900px;
 	}
 }
