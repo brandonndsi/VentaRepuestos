@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="../../css/Administrador.css">
         <!-- js -->
         <script type="text/javascript" src="../../js/imagen.js"></script>
+
     </head>
     <script>
         $(document).ready(function () {
@@ -39,8 +40,11 @@
                 <div id="imagen">
                     <img src="../../images/administrador/administrador.png" id="nuevo">
                 </div>
-                <p id="nombre"><b><?php $persona[1]; ?></b></p>
-                <p>La principal persona responsable que le da soporte a la paguina de repuestos de la virgen de sarapiqui, ademas eres el encargado de crear los respuestos, editar los precios,agregar nuevas categorias que se adacten al cliente, entre otras cosas, evitar que los hackers roben informacion de la misma base de datos de la aplicacion , el responsable de todo.</p>
+                <p id="nombre"><b><?php echo " " . $persona[1]; ?></b></p>
+                <p>La principal persona responsable que le da soporte a la paguina de repuestos de la virgen de sarapiqui,
+                    ademas eres el encargado de crear los respuestos, editar los precios,agregar nuevas categorias que se
+                    adacten al cliente, entre otras cosas, evitar que los hackers roben informacion de la misma base de datos
+                    de la aplicacion , el responsable de todo.</p>
             </div>  
         </div>
         <input type="hidden" id="personaid" value="<?php echo $id; ?>">

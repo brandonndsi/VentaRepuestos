@@ -82,7 +82,7 @@
                         <h4>Se ha registrado correctamente.</h4> 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" onclick="cerrarModalvalido()">Cancelar</button>
+                        <input type="button" class="btn btn-success" onclick="location='../loginview/LoginView.php'" value="Inicia Sesi&oacute;n"/>
                     </div>
                 </div>
             </div>

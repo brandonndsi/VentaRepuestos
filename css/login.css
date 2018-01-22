@@ -1,50 +1,46 @@
 body{
-background-size: 100vw 100vh;
-background-attachment: fixed;
-margin: 0;
-font-family: monospace;/*para el tipo de letra del body*/
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: monospace;/*para el tipo de letra del body*/
 }
 form{
-	width: 450px;
-	margin: auto;
-	background: rgba(0,0,0,0.4);
-	padding: 10px 20px;/*para que se ajuste lo adentro del formulario*/
-	box-sizing:  border-box;
-	margin-top: 80px;/*para separar la parte de arriba del formulario con la del navegador*/
-	border-radius: 10px;/*para ponerle lo que es el borde redondiado al formulario*/
+    width: 450px;
+    margin: auto;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 20px;/*para que se ajuste lo adentro del formulario*/
+    box-sizing:  border-box;
+    margin-top: 80px;/*para separar la parte de arriba del formulario con la del navegador*/
+    border-radius: 10px;/*para ponerle lo que es el borde redondiado al formulario*/
 }
 h2{
-	color: #fff;/*Cambiarle el color blanco de la letra del titulo*/
-	text-align: center;/*Para que el texto se alinie en el centro*/
-	margin: 0;
-	font-size: 30px;/*Es tamaño de la fuente de la letra*/
-	margin-bottom: 20px;
+    color: #fff;/*Cambiarle el color blanco de la letra del titulo*/
+    text-align: center;/*Para que el texto se alinie en el centro*/
+    margin: 0;
+    font-size: 30px;/*Es tamaño de la fuente de la letra*/
+    margin-bottom: 20px;
 }
 
 input{
-	width: 100%;/*para que se adacte al total de la caja del formulario*/
-	margin-bottom: 20px;/*para separar la parte de abajo de los input de los demas*/
-	padding: 7px;
-	box-sizing: border-box;/*para arreglar el borde de la parte derecha del input y que no se salga*/
-	font-size: 17px;
+    margin-bottom: 20px;/*para separar la parte de abajo de los input de los demas*/
+    padding: 7px;
+    box-sizing: border-box;/*para arreglar el borde de la parte derecha del input y que no se salga*/
+    font-size: 17px;
 }
 
 #entrar{
-	background: #31384A;
-	color: #fff;
-	padding: 10px;
+    background: #31384A;
+    color: #fff;
+    padding: 10px;
 }
 #entrar:hover{
-	cursor: pointer;/*para poner las manita cuando estoy en el boton*/ 
+    cursor: pointer;/*para poner las manita cuando estoy en el boton*/ 
 }
 
 /*para lo del response para los dispositivos moviles*/
 @media(max-width: 480px){
 
-form{
-	width: 100%;/*para que el formulario se adacte al tamaño de la ventana*/
-}
-input{
-	width: 100%;/*para que los input se adacten a el tamaño de la ventana*/
-}
+    form{
+        width: 100%;/*para que el formulario se adacte al tamaño de la ventana*/
+    }
 }

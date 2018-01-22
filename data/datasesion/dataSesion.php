@@ -29,5 +29,25 @@ class dataSesion {
             return $array;
         }
     }
+    
+    //buscar un empleado
+    Public function logueoCliente($email, $password) {
+
+        if ($this->conexion->crearConexion()->set_charset('utf8') == true) {
+
+            $array = array();
+
+            $buscarsesioncliente = $this->conexion->crearConexion()->query("SELECT *
+                FROM tbclientes c
+                INNER JOIN tbpersonas p ON c.personaid= p.personaid
+                WHERE p.personacorreo='$email' AND c.clienteclave='$password' AND c.clienteestado=1");
+
+            $this->conexion->cerrarConexion();
+            while ($fila = $buscarsesioncliente->fetch_assoc()) {
+                array_push($array, $fila);
+            }
+            return $array;
+        }
+    }
 
 }
