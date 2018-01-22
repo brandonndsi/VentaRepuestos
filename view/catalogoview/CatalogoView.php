@@ -77,10 +77,10 @@
                         </div>
                         <div class="modal-body">
                             <p><h2>Misi&oacute;n.</h2>
-                            <p>..............................
+                            <p>Satisfacer con excelencia las necesidades de repuestos y servicios del mercado automotriz, procurando la preferencia de nuestros clientes por la calidad en el servicio y la competitividad de los precios en el mercado.</p>
                                 
                             <P><br><h2>Visi&oacute;n.</h2>
-                            <p>..............................
+                            <p>Ser la empresa líder en importación y comercialización de repuestos automotrices para las marcas Mercedes Benz y Volkswagen, reconocida por la calidad y variedad de sus productos y la vocación de servicio al cliente.</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" onclick="cerrarModalInfoRepuesto();">Cerrar</button>
