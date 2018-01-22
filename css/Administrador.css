@@ -1,5 +1,5 @@
 *{	
-background-image: url("../images/fondos/log.jpg");
+background-image: url("../images/fondos/carretera.jpg");
 background-size: 100vw 100vh;
 background-attachment: fixed;
 margin: 0;
@@ -74,12 +74,9 @@ box-shadow: 5px 5px 0px black;
 padding:20px;
 margin:30px;
 width: auto;
-color: #fff;
-background:#9AABF8;
 height: 400px;
 box-sizing: border-box;
 border-radius: 20px;
-border: 3px solid black;
 /*
 margin: 20%;
 */

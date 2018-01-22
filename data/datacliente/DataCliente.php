@@ -11,7 +11,7 @@ class DataCliente {
 
     //insertar
     public function insertarCliente($cliente) {
-        
+
         if ($this->conexion->crearConexion()->set_charset('utf8')) {
             $nuevoPersona = $this->conexion->crearConexion()->query(
                     "CALL nuevaPersona(
@@ -39,8 +39,8 @@ class DataCliente {
             $nuevoCliente = $this->conexion->crearConexion()->query(
                     "CALL nuevoCliente( 
                     '" . $cliente->getPersonaId() . "',
-                    '" . $cliente->getClientedireccionexacta() . "',
-                    '" . $cliente->getClienteclave() . "',    
+                    '" . $cliente->getClienteclave() . "',     
+                    '" . $cliente->getClientedireccionexacta() . "',   
                     '1');");
             $this->conexion->cerrarConexion();
 

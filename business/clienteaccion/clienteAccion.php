@@ -27,7 +27,7 @@ if ($action == "insertar") {
 
             if (!is_numeric($nombre)) {
 
-                $cliente = new Clientes(null, $direccion, $clave, 1);
+                $cliente = new Clientes(null, $clave,$direccion, 1);
 
                 $cliente->setPersonaCedula(null);
                 $cliente->setPersonaNombre($nombre);
