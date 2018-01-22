@@ -1,74 +1,98 @@
 function registrarCliente() {
-    
-    var nombre = document.getElementById("personanombre").value;
-    var apellido1 = document.getElementById("personaapellido1").value;
-    var apellido2 = document.getElementById("personaapellido1").value;
-    var telefono = document.getElementById("personatelefono").value;
-    var correo = document.getElementById("personacorreo").value;
-    var clave = document.getElementById("clienteclave").value;
-    var direccion = document.getElementById("clientedireccionexacta").value;
-    
-    
-    var errorEncontrado = "";
-    
-    if (validarClave(errorEncontrado)===true) {
-        alert("PASSWORD VÁLIDO");
-        
-        $(document).ready(function () {
-            $.post("../../business/clienteaccion/clienteAccion", {
 
-                Clientenombre: nombre,
-                Clienteapellido1: apellido1,
-                Clienteapellido2: apellido2,
-                Clientetelefono: telefono,
-                Clientecorreo: correo,
-                Clienteclave: clave,
-                Clientedireccion: direccion,
-                accion: "insertar"
+    if (document.getElementById("personanombre").value !== "" && document.getElementById("personaapellido1").value !== "" &&
+            document.getElementById("personaapellido2").value !== "" && document.getElementById("personatelefono").value !== ""
+            && document.getElementById("personacorreo").value !== "" && document.getElementById("clienteclave").value !== ""
+            && document.getElementById("clientedireccionexacta").value !== "") {
 
-            }, function (responseText) {
-                alert(responseText);
-            });
-            alert("se envian los datos");
-        });    
-    } else {
-        alert("PASSWORD NO VÁLIDO: " + errorEncontrado);
-    }
-
-    function validarClave(errorClave) {
-        
+        var nombre = document.getElementById("personanombre").value;
+        var apellido1 = document.getElementById("personaapellido1").value;
+        var apellido2 = document.getElementById("personaapellido2").value;
+        var telefono = document.getElementById("personatelefono").value;
+        var correo = document.getElementById("personacorreo").value;
         var clave = document.getElementById("clienteclave").value;
-        var minusculas = /[a-z]/;
-        var mayusculas = /[A-Z]/;
-        var numeros = /[0-9]/;
-        
-        if (clave.length < 6) {
-            errorClave = "La clave debe tener al menos 6 caracteres";
-            alert(errorClave);
-            return false;
+        var direccion = document.getElementById("clientedireccionexacta").value;
+
+        if (telefono.length === 8) {
+            if (validarClave() === true) {
+
+                $(document).ready(function () {
+                    $.post('../../business/clienteaccion/clienteAccion.php', {
+                        accion: 'insertar',
+                        nombre: nombre,
+                        apellido1: apellido1,
+                        apellido2: apellido2,
+                        correo: correo,
+                        telefono: telefono,
+                        clave: clave,
+                        direccion: direccion
+                    }, function () {
+                        mostrarModalvalido();
+                    });
+                });
+            } else {
+                mostrarModalinvalido();
+            }
+        } else {
+            mostrarModalinvalidotel();
         }
-        if (clave.length > 16) {
-            errorClave = "La clave no puede tener más de 16 caracteres";
-            alert(errorClave);
-            return false;
-        }
-        if (!clave.match(minusculas)) {
-            errorClave = "La clave debe tener al menos una letra minúscula";
-            alert(errorClave);
-            return false;
-        }
-        if (!clave.match(mayusculas)) {
-            errorClave = "La clave debe tener al menos una letra mayúscula";
-            alert(errorClave);
-            return false;
-        }
-        if (!clave.match(numeros)) {
-            errorClave = "La clave debe tener al menos un caracter numérico";
-            alert(errorClave);
-            return false;
-        }
-        errorClave = "";
-        return true;
+    } else {
+        mostrarModalDatos();
     }
-    
+
+}
+
+// funcion validar pass
+function validarClave() {
+
+    var clave = document.getElementById("clienteclave").value;
+    var minusculas = /[a-z]/;
+    var mayusculas = /[A-Z]/;
+    var numeros = /[0-9]/;
+
+    if (clave.length < 6) {
+        return false;
+    }
+    if (clave.length > 16) {
+        return false;
+    }
+    if (!clave.match(minusculas)) {
+        return false;
+    }
+    if (!clave.match(mayusculas)) {
+        return false;
+    }
+    if (!clave.match(numeros)) {
+        return false;
+    }
+    return true;
+}
+
+/*modal mostrar campos de datos*/
+function mostrarModalDatos() {
+document.getElementById("modaldatos").style.display = "block";
+}
+function cerrarModalDatos() {
+document.getElementById("modaldatos").style.display = "none";
+}
+/*modal pass valida*/
+function mostrarModalvalido() {
+document.getElementById("modalvalido").style.display = "block";
+}
+function cerrarModalvalido() {
+document.getElementById("modalvalido").style.display = "none";
+}
+/*modal pass invalida*/
+function mostrarModalinvalido() {
+document.getElementById("modalinvalido").style.display = "block";
+}
+function cerrarModalinvalido() {
+document.getElementById("modalinvalido").style.display = "none";
+}
+/*modal tel invalida*/
+function mostrarModalinvalidotel() {
+document.getElementById("modalinvalidotel").style.display = "block";
+}
+function cerrarModalinvalidotel() {
+document.getElementById("modalinvalidotel").style.display = "none";
 }

@@ -233,7 +233,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalVerMasEmpleado">Ver mas Informacion</h5>
-                    <button type="button" onclick="cerrarModalBuscar()">
+                    <button type="button" class="close" onclick="cerrarModalBuscar()">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>

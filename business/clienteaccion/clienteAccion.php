@@ -3,32 +3,51 @@
 include '../../data/datacliente/DataCliente.php';
 include '../../domain/clientes/Clientes.php';
 
-/* @var $action type */
 $action = $_POST['accion'];
 
 if ($action == "insertar") {
 
-    $conexion = new DataEmpleado();
-    
-    $clienteNombre = $_POST['Clientenombre'];
-    $clienteApellido1 = $_POST['Clienteapellido1'];
-    $clienteApellido2 = $_POST['Clienteapellido2'];
-    $clienteTelefono = $_POST['Clientetelefono'];
-    $clienteCorreo = $_POST['Clientecorreo'];
-    $clienteClave = $_POST['Clienteclave'];
-    $clientedireccionexacta = $_POST['Clientedireccion'];
+    if (isset($_POST['nombre']) && isset($_POST['apellido1']) &&
+            isset($_POST['apellido2']) && isset($_POST['telefono']) &&
+            isset($_POST['correo']) && isset($_POST['clave']) &&
+            isset($_POST['direccion'])) {
 
-    if (!empty($clienteNombre) && !empty($clienteApellido1) && !empty($clienteApellido2) 
-            && !empty($personaCedula) && !empty($personaTelefono) && !empty($personaDireccion) 
-            && !empty($personaCorreo)) {
+        $nombre = $_POST['nombre'];
+        $apellido1 = $_POST['apellido1'];
+        $apellido2 = $_POST['apellido2'];
+        $telefono = $_POST['telefono'];
+        $correo = $_POST['correo'];
+        $clave = $_POST['clave'];
+        $direccion = $_POST['direccion'];
 
-        $cliente = new Clientes("", $clienteNombre,$clienteApellido1, $clienteApellido2,
-                $clienteTelefono, $clienteCorreo, $clienteClave, $clientedireccionexacta);
-        $result = $conexion->insertarCliente();
-        
+        if (strlen($nombre) > 0 && strlen($apellido1) > 0 &&
+                strlen($apellido2) > 0 && strlen($telefono) > 0 &&
+                strlen($correo) > 0 && strlen($clave) > 0 &&
+                strlen($direccion) > 0) {
+
+            if (!is_numeric($nombre)) {
+
+                $cliente = new Clientes(null, $direccion, $clave, 1);
+
+                $cliente->setPersonaCedula(null);
+                $cliente->setPersonaNombre($nombre);
+                $cliente->setPersonaApellido1($apellido1);
+                $cliente->setPersonaApellido2($apellido2);
+                $cliente->setPersonaTelefono($telefono);
+                $cliente->setCorreo($correo);
+                $cliente->setClienteclave($clave);
+                $cliente->setClientedireccionexacta($direccion);
+
+                $conexion = new DataCliente();
+                $result = $conexion->insertarCliente($cliente);
+
+                return $result;
+            }
+        }
     } else {
-        $error = "Error de Registro";
-        echo $error;
+        // retorna un error al tratar de ingresar los datos del nuevo cliente
+        $error = "ErrorNuevo";
+        return $error;
     }
 } else if ($action == "modificar") {
     
