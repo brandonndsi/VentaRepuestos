@@ -9,7 +9,6 @@
 			if(isset($_POST['id'])){
 				
 				if(strlen($_POST['id'])){
-					echo "hola imagen";
 					//$imagen = new imagen($_POST['personaid'],null,null,null);
 
 					$DataImagen = new DataImagenAdministrador();
