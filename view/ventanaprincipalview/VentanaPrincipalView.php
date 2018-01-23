@@ -9,6 +9,7 @@
         <!--CSS-->    
         <link rel="stylesheet" href="../../css/Administrador.css">
         <!-- js -->
+        <!-- <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script> se ocupa para cargar la imagen -->
         <script type="text/javascript" src="../../js/imagen.js"></script>
 
     </head>
@@ -37,7 +38,7 @@
                 <a href="../tipoempleadoview/TipoEmpleadoView.php">Tipo Empleado</a>
                 <a href="../clienteview/ClienteView.php">Cliente</a>
                 <a href="../proveedorview/ProveedorView.php">Proveedor</a>
-                <a href="../productoview/ProductoView.php">Catalogo</a> 
+                <a href="../ventanaprincipalview/CatalogoAdmiView.php">Catalogo</a> 
             </div>
             <div id="datos">
                 <h3>Bienvenido</h3>

@@ -15,7 +15,7 @@
     </head>
     <body>
         <?php
-        require '../ventanaprincipalusuarioview/menuUsuario.php';
+        require '../ventanaprincipalview/menuAdmi.php';
         session_start();
         if (!isset($_SESSION['usuario'])) {
             header("location: ../loginview/LoginView.php");

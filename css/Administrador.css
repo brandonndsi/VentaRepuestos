@@ -61,14 +61,12 @@ box-shadow: 5px 5px 0px black;
 	/*box-shadow: 5px 5px 0px black;*/
 }
 #datos img{
-	width: 90px;/*para que la imagen tome el 100 del div que la contiene*/
+	width: 100px;/*para que la imagen tome el 100 del div que la contiene*/
 	height: auto;/*para que la imagen tome el alto del div*/
 	display: block;/*para poder quitar el flex y tener la posivilida de centrar elementos*/
 	margin: auto;/*centra el elemento del div*/
 	border-radius: 50%;
-	background: #74F189;
 	border: 5px solid black;
-	padding-bottom: 4px;
 }
 #datos{
 padding:20px;

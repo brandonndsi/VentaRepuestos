@@ -5,7 +5,7 @@
 
 		$action=$_POST['accion'];/*Se optiene del metodo pos la variable*/
 
-		if($ation == "cargar"){
+		if($action == "nuevo"){
 			if(isset($_POST['id'])){
 				
 				if(strlen($_POST['id'])){

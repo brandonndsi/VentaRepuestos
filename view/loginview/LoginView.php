@@ -20,6 +20,16 @@
     <body onload="nobackbutton()">
         <?php
         include '../menu/menu.php';
+        session_start();
+        if (isset($_SESSION['usuario'])) {
+            $persona = $_SESSION['usuario'];
+            $element = $persona[2];
+            if (ctype_digit($element)) {
+                header("location: ../../view/ventanaprincipalview/VentanaPrincipalView.php");
+            } else if(!ctype_digit($element)){
+                header("location: ../../view/ventanaprincipalusuarioview/ventanaprincipalUsuarioview.php");
+            }
+        }
         ?>
         <div class="main">
             <div class="login-form">
