@@ -25,7 +25,9 @@ h4{
 	margin-top: 80px;
 	border: 2px solid black;
 	background: #fff;
-	border-radius:8px; 
+	border-radius:8px;
+	flex-wrap: wrap;
+	display: flex; 
 
 }
 #principal #ver{
@@ -34,7 +36,7 @@ h4{
 	margin-left: 28%;
 	text-align: center;
 	margin-bottom: 4px;
-	background: #2CF746;
+	background: #76E7FE;
 	padding:2px;
 
 }
@@ -46,20 +48,60 @@ h4{
 	animation: 2s;
 	animation-delay: 2s;
 	}
-#principal article{
+#principal #contenedor_imagen{
 	background:rgba(51,51,51,0.5);
 	justify-content: center;
 	border: 1px solid black;
 	border-radius: 7px;
 	width:60%;
+	margin-bottom: 2px;
+	/*flex-wrap: wrap;
+	display: flex;*/
 }
-
+/*contenedor que acoge lo que es la imagen*/
+#contenedor_imagen #imagen{
+	margin-top: 4px;
+	width:90%;
+	height: 90px;
+	
+}
+/*trabajando con las proporciones de la imagen del div*/
+#contenedor_imagen #imagen img{
+	width:100%;/*para que agarre el 100 del div que lo contiene*/
+	height:88px;/*para que agarre el 90px del div que lo contiene*/
+	display: block;
+	margin: auto;
+	border:2px solid black;
+	border-radius: 3px;
+}/*trabajando con el a de referencia del div de imagen*/
+#contenedor_imagen a{
+	padding: 2px;
+	display: block;
+	margin:2px 25px 4px 38px;
+	text-decoration: none;
+	text-align: center;
+	background: #8CEF83;
+	border-radius: 3px;
+	border: 1px solid #64FB48;
+	color: #fff;
+}
+#contenedor_imagen a:hover{
+	font-size: 12px;
+	background: rgba(255,255,255,0.3);
+	cursor: pointer;
+	animation-direction: width;
+	animation: 2s;
+	animation-delay: 2s;
+	color:black;
+}
 #blog{
 	display: flex;
 	flex-wrap: wrap;
 	box-sizing: border-box;
 	/*border: 1px solid black;*/
 	border-radius: 7px;
+	flex-wrap: wrap;
+	display: flex;
 }
 .contenedor img{
 	width: 100px; 
@@ -81,7 +123,92 @@ text-decoration: none;
 .contenedor{
 	padding: 10px;
 }
-@media (min-width:500px){
+/*datos del modal para ver las cosas*/
+#modal_informacion{
+
+padding-top: 80px; /*80px 20px 80px 20px;*/
+width: 100%;/*para lo que es de derecha a izquierda*/
+height: 100vh;/*anchura de arriba a bajo*/
+color : #fff;/*para el color del texto*/
+position: fixed;
+background-color: rgba(0,0,0,0.6);/*color de fondo de pantalla*/
+top:0px;/*es la parte de arriba que se pocicione al principio*/
+left:0px;/*izquierda en el borde se adacte a la pantalla*/
+transition-property: width;
+transition:0.5s;
+display: none;
+}
+#principal article a{
+	width: 10%;
+	height: 10%;
+	padding: 5px;
+	color:black;
+	margin: 10px;
+	text-align: center;
+	background: red;
+	border-radius: 2px;
+	text-decoration: none;
+	font-size: 10px;
+}
+#informacion{
+	width: 90%;
+	height: 95%;
+	margin:auto;
+	background: white;/*color de la ventana*/
+	border-radius: 10px;
+	color:black;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+#informacion #imagen{
+	margin:2px 10px 4px 10px;
+	width: 100%;
+	height: 100px;
+	border: 2px solid black;
+	border-radius: 30px;
+}
+#informacion #imagen img{
+	width:100%;/*para que la imagen tome el 100 del div que la contiene*/
+	height: 100px;/*para que la imagen tome el alto del div*/
+	display: block;/*para poder quitar el flex y tener la posivilida de centrar elementos*/
+	/*centra el elemento del div*/
+	/*border-radius: 50%;*/
+	align-content: center;
+}
+#informacion #tabla{
+	border:2px solid blue;
+	width: 100%;
+	height: 50%;
+}
+#informacion #tabla #tab{
+width: 50px;
+border-collapse: collapse;
+border: 1px solid black;
+}
+#informacion #titulo{
+	margin:0;
+	text-align: center;
+	width: 100%;
+	height: 80px;
+	background: #76E3F6;
+	border-bottom-right-radius:10px;
+	border-bottom-left-radius: 10px;
+	padding: 8px;
+}
+#informacion #agregar,#cancelar{
+	width: 45%;
+	padding: 2px;
+	margin: 4px;
+}
+#informacion #descripcion{
+	width: 100%;
+	font-size: 8px;
+	margin:1px;
+	padding: 4px;
+}
+/*datos finales*/
+@media (min-width:480px){
 #principal article{
 	width:auto;
 	margin-bottom: 5px;
@@ -96,8 +223,11 @@ text-decoration: none;
 	/*border: 1px solid red;*/
 	  
 }
-
+#contenedor_imagen{
+	width: 40%;
 }
+}
+
 @media (min-width:900px){
 #principal article{
 	width:20%;
@@ -111,5 +241,7 @@ text-decoration: none;
 	margin-left: 32%;
 	padding:4px;
 }
-
+#contenedor_imagen{
+	width: auto;
+}
 }

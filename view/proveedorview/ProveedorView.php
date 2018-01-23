@@ -5,17 +5,20 @@
     <head>
         <meta charset="UTF-8" content="text/html; charset=ISO-8859-1">
         <title>Proveedor</title>
-        <!-- CSS-->
-        <link rel="stylesheet" type="text/css" href="../../css/jquery.tabla.css">
-        <link rel="stylesheet" type="text/css" href="../../css/estilocrud.css">
-        <link rel="stylesheet" type="text/css" href="../../css/notificaciones/todo.css">
         <!-- JS-->
         <script src="../../js/jquery-1.10.2.js"></script>
         <script src="../../js/jquery.dataTables.js"></script>
         <script type="text/javascript" src="../../js/Proveedor.js"></script>
+        <script src="../../js/jquery-ui.js"></script>
+        <!-- CSS-->
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.tabla.css">
+        <link rel="stylesheet" type="text/css" href="../../css/estilocrud.css">
+        <link rel="stylesheet" type="text/css" href="../../css/notificaciones/todo.css">
+        
         <script>
             $(document).ready(function () {
                 mostrarProveedor();
+                
             });
         </script>
 

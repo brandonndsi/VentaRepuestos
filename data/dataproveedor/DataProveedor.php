@@ -167,8 +167,20 @@
                 }
             }
 
-
+            public function autoCompleta($dato){
+               if ($this->conexion->crearConexion()->set_charset('utf8')) {
+                $auto =$this->conexion->crearConexion()->query(
+                    "SELECT `productonombre` FROM `tbproductos` WHERE productonombre LIKE '%".$dato."%';");
+                        $arrays =array();
+                while ($resultado = $auto->fetch_assoc()) {
+                        array_push($arrays, $resultado);
+                    }
+                    return  $arrays;
+               } 
+            }
 
  }
-
+/*$datt= new DataProveedor();
+$d=$datt->autoCompleta("ll");
+print_r($d);*/
 ?>

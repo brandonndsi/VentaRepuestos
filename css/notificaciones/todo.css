@@ -1,6 +1,7 @@
 @import url(eliminar.css);
 @import url(actualizar.css);
 @import url(nuevo.css);
+@import url(jquery-ui.css);
 
 h3{
 	text-align: center;

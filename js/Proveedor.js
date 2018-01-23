@@ -1,8 +1,43 @@
  var table;
-function actualizarProveedor(){
+ var datoAuto;
+ $(document).ready(function(){
+     $("#producto").autocomplete({
+        source:function(request,response){
+            $.ajax({
+                url: '../../business/proveedoraccion/ProveedorAccion.php',
+                datatype:'json',
+                type: 'POST',
+                data:{accion: 'auto',
+                      contenido:request.term},
+                      success:function(data){
+                        response(data);
+                      }
+            });
+        },
+        minLength: 1,
+        select:function(event, ui){
+            alert("selecciono :" + ui.item.label);
+        }
 
+     });
+   
+ });
+
+function autoCargado(){
+    $.post('../../business/proveedoraccion/ProveedorAccion.php', {
+                accion: 'auto',
+            }, function(response) {
+                dat= new Array();
+                datoAuto = JSON.parse(respose);
+                for (i = 0; i < datoAuto.length; i++) {
+                    dat[i]=datoAuto[i].productonombre;
+                }
+                $("#producto").autocomplete({
+                source:dat
+                });
+                
+            });
 }
-
 /*Modal de ver mas los detalles del proveedor para poder verlo*/
 function verAbrir($cedula,$nombre,$apellido1,$apellido2,$telefono,$correo,$productoid){
 $("#cedulaVer").val($cedula);
