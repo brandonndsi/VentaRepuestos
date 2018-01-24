@@ -15,6 +15,5 @@ mostrarAdministrador();
         document.getElementById("nuevo").src=ruta[0];
         }
     });
-    
-	
+    	
 }
