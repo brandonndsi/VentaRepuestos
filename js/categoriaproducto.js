@@ -19,8 +19,8 @@ function cargarCategorias(){
         success:function(data){
             var code=JSON.parse(data);
             alert(" nombre: "+code[1]);
-            var r=$code[4];
-            var n=$code[1];
+            var r=code[4];
+            var n=code[1];
             cargarDiv(r,n);
         }
     });
@@ -28,36 +28,19 @@ function cargarCategorias(){
     codigo,nombre,descripcion,precio,ruta
     */
 }
-function cargarDiv($ruta,$nombre){
-  var div="<div id="+"imagen"+"><img src="+$ruta+"></div>"+
-                  "<h4>"+$nombre+"</h4>"+
-                  "<div id="+"ver"+">"+
-                  "<a href="+"javascript:abrirModal();"+"><span class="+"icon-circle-with-plus"+"></span>Detalles</a>"+
+function cargarDiv(ruta,nombre){
+  var div="<div id="+"imagen"+"><img src="+ruta+"></div>"+
+                  "<h4>"+nombre+"</h4>"+
+                  "<div id='ver'>"+
+                  "<a href='javascript:abrirModal();'><span class='icon-circle-with-plus'></span>Detalles</a>"+
                   "</d>"+
-                  "<div id="+"carr"+">"+
-                  "<a href="+""+"><span class="+"icon-shopping-cart"+">Carrito</span></a>"+
+                  "<div id='carr'>"+
+                  "<a href=''><span class='icon-shopping-cart'>Carrito</span></a>"+
                   "</div>"+
                   "</div>";
-document.getElementById("contenedor_principal").append(div);
-
+document.getElementById("contenedor_principal").innerHTML = document.getElementById("contenedor_principal").innerHTML + div;
+//document.getElementById("contenedor_principal").append(div);
 }
-/*
-<div id="contenedor_imagen">
-                    <div id="imagen">
-                   <img src="../../images/catalogoTipo/aros.jpg">
-                    </div>
-                   <h4>Aros 18.</h4>
-                   <div id="ver">
-                    <a href="javascript:abrirModal();"><span class="icon-circle-with-plus"></span>Detalles</a>
-                   </div>
-                   <div id="carr">
-                   <a href=""><span class="icon-shopping-cart">Carrito</span></a>  
-                   </div>
-                </div>
- */
-
-
-
 /*
  $.ajax({
                     type: "POST",

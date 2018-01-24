@@ -23,14 +23,14 @@
  });
 
 /*Modal de ver mas los detalles del proveedor para poder verlo*/
-function verAbrir($cedula,$nombre,$apellido1,$apellido2,$telefono,$correo,$productoid){
-$("#cedulaVer").val($cedula);
-$("#nombreVer").val($nombre);
-$("#apellido1Ver").val($apellido1);
-$("#apellido2Ver").val($apellido2);
-$("#telefonoVer").val($telefono);
-$("#correoVer").val($correo);
-$("#productoVer").val($productoid);
+function verAbrir(cedula,nombre,apellido1,apellido2,telefono,correo,productoid){
+$("#cedulaVer").val(cedula);
+$("#nombreVer").val(nombre);
+$("#apellido1Ver").val(apellido1);
+$("#apellido2Ver").val(apellido2);
+$("#telefonoVer").val(telefono);
+$("#correoVer").val(correo);
+$("#productoVer").val(productoid);
 abrirVer();
 
 }
@@ -128,9 +128,9 @@ function nuevoProveedor(){
 /*fin del modal del nuevo proveedor*/
 
 /*inicio del modal de eliminar proveedor*/
-function eliminarAbrir($id){
+function eliminarAbrir(id){
    // alert($id);
-$("#proveedorid").val($id);
+$("#proveedorid").val(id);
 document.getElementById("modalEliminar").style.display = "block";
 }
 function eliminarCerrar(){
@@ -159,15 +159,15 @@ if($('#proveedorid').val()!=""){
 /*fin de eliminar proveedor*/
 
 /*modal para mostrar el actualizar*/
-function actualizarMostrar($id,$cedula,$nombre,$apellido1,$apellido2,$telefono,$correo,$productoid){
-$("#idActualizar").val($id);
-$("#cedulaM").val($cedula);
-$("#nombreM").val($nombre);
-$("#apellido1M").val($apellido1);
-$("#apellido2M").val($apellido2);
-$("#telefonoM").val($telefono);
-$("#correoM").val($correo);
-$("#productoM").val($productoid);
+function actualizarMostrar(id,cedula,nombre,apellido1,apellido2,telefono,correo,productoid){
+$("#idActualizar").val(id);
+$("#cedulaM").val(cedula);
+$("#nombreM").val(nombre);
+$("#apellido1M").val(apellido1);
+$("#apellido2M").val(apellido2);
+$("#telefonoM").val(telefono);
+$("#correoM").val(correo);
+$("#productoM").val(productoid);
 
     document.getElementById("modalModificar").style.display = "block";
 }

@@ -43,7 +43,7 @@
                   </div>
                    <h4>Manivela de cambio</h4>
                    <div id="ver">
-                    <a href=""><span class="icon-circle-with-plus"></span>Detalles</a>
+                    <a href="javascript:abrirModal();"><span class="icon-circle-with-plus"></span>Detalles</a>
                    </div>
                    <div id="carr">
                    <a href=""><span class="icon-shopping-cart">Carrito</span></a>
@@ -55,7 +55,7 @@
                   </div>
                    <h4>Mufla estandar</h4>
                   <div id="ver">
-                    <a href=""><span class="icon-circle-with-plus"></span>Detalles</a>
+                    <a href="javascript:abrirModal();"><span class="icon-circle-with-plus"></span>Detalles</a>
                    </div>
                    <div id="carr">
                   <a href=""><span class="icon-shopping-cart">Carrito</span></a>
@@ -67,7 +67,7 @@
                   </div>
                    <h4>Rueda 4x4 Discoveri</h4>
                   <div id="ver">
-                    <a href=""><span class="icon-circle-with-plus"></span>Detalles</a>
+                    <a href="javascript:abrirModal();"><span class="icon-circle-with-plus"></span>Detalles</a>
                    </div>
                    <div id="carr">
                   <a href=""><span class="icon-shopping-cart">Carrito</span></a>
