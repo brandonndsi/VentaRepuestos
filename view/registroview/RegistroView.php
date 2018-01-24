@@ -43,7 +43,7 @@
                         <input type="password" name="clienteclave" id="clienteclave" placeholder="Clave" required />
                     </div>
                     <div>
-                        <input type="submit" class="btn btn-success" name="insertar" id="insertar"value="Reg&iacute;strarme" onclick="registrarCliente();"/>
+                        <input type="submit" class="btn btn-success" name="insertar" id="insertar"value="Reg&iacute;strarme"/>
                     </div>
                     <p><a href="../loginview/LoginView.php">Inicia Sesi&oacute;n</a></p>
                 </form>

@@ -12,13 +12,13 @@ if ($action == "insertar") {
             isset($_POST['correo']) && isset($_POST['clave']) &&
             isset($_POST['direccion'])) {
 
-        $nombre = $_POST['nombre'];
-        $apellido1 = $_POST['apellido1'];
-        $apellido2 = $_POST['apellido2'];
-        $telefono = $_POST['telefono'];
-        $correo = $_POST['correo'];
-        $clave = $_POST['clave'];
-        $direccion = $_POST['direccion'];
+        $nombre = htmlentities($_POST['nombre']);
+        $apellido1 = htmlentities($_POST['apellido1']);
+        $apellido2 = htmlentities($_POST['apellido2']);
+        $telefono = htmlentities($_POST['telefono']);
+        $correo = htmlentities($_POST['correo']);
+        $clave = htmlentities($_POST['clave']);
+        $direccion = htmlentities($_POST['direccion']);
 
         if (strlen($nombre) > 0 && strlen($apellido1) > 0 &&
                 strlen($apellido2) > 0 && strlen($telefono) > 0 &&
@@ -27,7 +27,7 @@ if ($action == "insertar") {
 
             if (!is_numeric($nombre)) {
 
-                $cliente = new Clientes(null, $clave,$direccion, 1);
+                $cliente = new Clientes(null, $clave, $direccion, 1);
 
                 $cliente->setPersonaCedula(null);
                 $cliente->setPersonaNombre($nombre);
