@@ -77,16 +77,16 @@
         <!--  modal de la informacion-->
         <div id="modal_informacion">
           <div id="informacion">
-            <div id="terminar">
-              <a href="" id="btnTerminar">X</a>
-            </div>
+
           <h2 id="titulo">TITULO DE LOS DATOS</h2>
           <div id="imagen">
             <img src="../../images/administrador/administrador.png">
           </div>
           <p id="descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, magnam tenetur, maiores animi magni dignissimos fugit suscipit sapiente eaque voluptatem. Velit ipsum, voluptas tempore non quibusdam earum alias atque. Labore vel, eligendi ipsa veritatis, neque quis ex id officia pariatur!</p>
           <div id="tabla">
-          
+          <label>costo:</label>
+          <br>
+          <label>Modelo:</label>
           </div>
           <input id="agregar" type="submit" value="Agregar" onclick="" ></input>
           <input id="cancelar" type="submit" value="Cancelar" onclick="cerrarModal()"></input>
