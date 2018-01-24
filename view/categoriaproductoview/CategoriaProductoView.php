@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="../../css/catalogo/fonts/style.css">
 		<link rel="stylesheet" type="text/css" href="../../css/categoriaProducto.css">
     <!--JS -->
+    <script type="text/javascript" src="../../js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="../../js/categoriaproducto.js"></script>
     </head>
     <body>
@@ -73,28 +74,18 @@
         <!--  modal de la informacion-->
         <div id="modal_informacion">
           <div id="informacion">
+            <div id="terminar">
+              <a href="" id="btnTerminar">X</a>
+            </div>
           <h2 id="titulo">TITULO DE LOS DATOS</h2>
           <div id="imagen">
             <img src="../../images/administrador/administrador.png">
           </div>
           <p id="descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, magnam tenetur, maiores animi magni dignissimos fugit suscipit sapiente eaque voluptatem. Velit ipsum, voluptas tempore non quibusdam earum alias atque. Labore vel, eligendi ipsa veritatis, neque quis ex id officia pariatur!</p>
           <div id="tabla">
-          <table id="tab">
-            <tr>
-              <th scope="col">Marca</th>
-              <th scope="col">dato</th>
-            </tr>
-            <tr>
-              <th></th>
-              <th>dato</th>
-            </tr>
-            <tr>
-              <th>Marca</th>
-              <th>dato</th>
-            </tr>
-          </table>
+          
           </div>
-          <input id="agregar" type="submit" value="Agregar" onclick=""></input>
+          <input id="agregar" type="submit" value="Agregar" onclick="" ></input>
           <input id="cancelar" type="submit" value="Cancelar" onclick="cerrarModal()"></input>
           </div>
       </div>

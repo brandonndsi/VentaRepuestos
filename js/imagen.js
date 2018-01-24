@@ -3,15 +3,19 @@ mostrarAdministrador();
 });
                
 	function mostrarAdministrador(){
+        //var objimagen= new Image();
       valor = document.getElementById("personaid").value;
-	//$(document).ready(function(){
-            $.post('../../business/imagenaccion/administrador.php', {
-                accion: 'nuevo',
-                id: valor
-            }, function(response) {
-                alert(response);
-               
-            });
-        //});
+	$.ajax({
+        url: '../../business/imagenaccion/admistrador.php',
+        type: 'POST',
+        dataType: 'html',
+        data: {accion: 'nuevo',id:valor},
+        success: function(data){
+            var ruta=JSON.parse(data);
+            rut=ruta[0];
+        document.getElementById("nuevo").src=ruta[0];
+        }
+    });
+    
 	
 }

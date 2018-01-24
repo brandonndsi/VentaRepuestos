@@ -13,9 +13,18 @@
 
 					$DataImagen = new DataImagenAdministrador();
 					$result = $DataImagen->mostrarAdministrador($_POST['id']);
-					echo $result;
+					echo json_encode($result);
 				}
 			}
 			
+		}else if($action=="categoria"){
+			$id=$_POST['id'];
+			if(isset($id)){
+
+				$datos=new DataImagenAdministrador();
+				$resultado = $datos->cargarCategoria($id);
+				echo json_encode($resultado);
+				
+			}
 		}
  ?>

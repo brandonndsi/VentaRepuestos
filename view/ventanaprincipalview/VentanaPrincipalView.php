@@ -6,10 +6,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Administrador</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <!--CSS-->    
+        <!-- CSS -->    
         <link rel="stylesheet" href="../../css/Administrador.css">
         <!-- js -->
-        <!-- <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script> se ocupa para cargar la imagen -->
+        <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="../../js/imagen.js"></script>
 
     </head>
@@ -44,7 +44,6 @@
                 <h3>Bienvenido</h3>
                 <div id="imagen">
                     <img src="../../images/administrador/administrador.png" id="nuevo">
-                </div>
                 <p id="nombre"><b><?php echo " " . $persona[1]; ?></b></p>
                 <p>La principal persona responsable que le da soporte a la paguina de repuestos de la virgen de sarapiqui,
                     ademas eres el encargado de crear los respuestos, editar los precios,agregar nuevas categorias que se
