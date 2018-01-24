@@ -3,7 +3,6 @@ mostrarAdministrador();
 });
                
 	function mostrarAdministrador(){
-        //var objimagen= new Image();
       valor = document.getElementById("personaid").value;
 	$.ajax({
         url: '../../business/imagenaccion/admistrador.php',

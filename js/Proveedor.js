@@ -2,20 +2,19 @@
  var datoAuto;
  $(document).ready(function(){
     $("#producto").autocomplete({
-        source:function(request,response){
+        source: function(request, response){
             $.ajax({
                 url: '../../business/proveedoraccion/ProveedorAccion.php',
                 datatype:'json',
                 type: 'POST',
-                data:{accion: 'auto',
-                      contenido: request.term},
-                      success:function(data){
+                data: {accion: 'auto', c: request.term},
+                      success: function(data){
                         response(data);
                       }
             });
         },
-        minLength: 1,
-        select:function(event, ui){
+        minLength:1,
+        select: function(event, ui){
             alert("selecciono :"+ui.item.label);
         }
 

@@ -152,9 +152,10 @@ if ($action=="nuevo") {
                 echo $DataProveedor->mostrarProveedor();
 
 } else if($action =='auto'){
+    $id=$_POST['c'];
 
     $DataProveedor = new DataProveedor();
-    $resy=$DataProveedor->autoCompleta($_POST['contenido']);
+    $resy = $DataProveedor->autoCompleta($id);
 
     echo json_encode($resy);
 }else {
