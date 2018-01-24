@@ -32,14 +32,14 @@
 
                     <div style="width:50%; float:left;">
                         <input type="hidden" name="clienteid" id="clienteid" >
-                        <input type="text" name="personanombre" id="personanombre" placeholder="Nombre" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/> 
-                        <input type="text" name="personaapellido1" id="personaapellido1" placeholder="Primer Apellido" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/>
-                        <input type="text" name="personaapellido2" id="personaapellido2" placeholder="Segundo Apellido" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/> 
-                        <input type="text" name="clientedireccionexacta" id="clientedireccionexacta" placeholder="Direcci&oacute;n" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/> 
+                        <input type="text" name="personanombre" id="personanombre" placeholder="Nombre" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ. ]{2,25})"/> 
+                        <input type="text" name="personaapellido1" id="personaapellido1" placeholder="Primer Apellido" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ. ]{2,25})"/>
+                        <input type="text" name="personaapellido2" id="personaapellido2" placeholder="Segundo Apellido" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ. ]{2,25})"/> 
+                        <input type="text" name="clientedireccionexacta" id="clientedireccionexacta" placeholder="Direcci&oacute;n" required pattern="({2,25})"/> 
                     </div>
                     <div style="width:50%; float:left;">
                         <input type="text" name="personatelefono" id="personatelefono" placeholder="Teléfono (fijo o móvil)" required pattern="[0-9]{8}"/>
-                        <input type="text" name="personacorreo" id="personacorreo" placeholder="Correo Electr&oacute;nico (E-mail)" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required/> 
+                        <input type="text" name="personacorreo" id="personacorreo" placeholder="Correo Electr&oacute;nico (E-mail)" pattern='^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{11,}))$' required/> 
                         <input type="password" name="clienteclave" id="clienteclave" placeholder="Clave" required />
                     </div>
                     <div>
@@ -73,7 +73,7 @@
             <div class="modal-dialog " role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalElimEmpleado">Clave Correcta.</h5>
+                        <h5 class="modal-title" id="modalElimEmpleado">Registro Correcto.</h5>
                         <button type="button" class="close" onclick="cerrarModalvalido()">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -82,7 +82,7 @@
                         <h4>Se ha registrado correctamente.</h4> 
                     </div>
                     <div class="modal-footer">
-                        <input type="button" class="btn btn-success" onclick="location='../loginview/LoginView.php'" value="Inicia Sesi&oacute;n"/>
+                        <input type="button" class="btn btn-success" onclick="location = '../loginview/LoginView.php'" value="Inicia Sesi&oacute;n"/>
                     </div>
                 </div>
             </div>
@@ -92,12 +92,14 @@
             <div class="modal-dialog " role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalElimEmpleado">Clave Incorrecta.</h5>
+                        <h5 class="modal-title" id="modalElimEmpleado">Formato Incorrecto.</h5>
                         <button type="button" class="close" onclick="cerrarModalinvalido()">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
+                        <h4>El Fortamo ingresado no es el correcto.</h4> 
+                        <h4>Introduzca un formato de correo valido.</h4> 
                         <h4>La clave debe tener al menos 6 caracteres.</h4> 
                         <h4>La clave no puede tener más de 16 caracteres.</h4> 
                         <h4>La clave debe tener al menos una letra minúscula.</h4> 

@@ -14,7 +14,7 @@ function registrarCliente() {
         var direccion = document.getElementById("clientedireccionexacta").value;
 
         if (telefono.length === 8) {
-            if (validarClave() === true) {
+            if (validateName() === true && validarClave() === true && validateCorreo() === true) {
 
                 $(document).ready(function () {
                     $.post('../../business/clienteaccion/clienteAccion.php', {
@@ -39,7 +39,6 @@ function registrarCliente() {
     } else {
         mostrarModalDatos();
     }
-
 }
 
 // funcion validar pass
@@ -67,32 +66,66 @@ function validarClave() {
     }
     return true;
 }
+/*Validamos que el nombre no tenga caracteres extraños
+ y que su longitud sea mayor que 4*/
+function validateName() {
 
+    var nombre = document.getElementById("personanombre").value;
+    var apellido1 = document.getElementById("personaapellido1").value;
+    var apellido2 = document.getElementById("personaapellido2").value;
+
+    var caracteres = /[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]/;
+
+    if (nombre.length < 3 && apellido1.length < 3 && apellido2.length < 3) {
+        return false;
+    }
+    if (!nombre.match(caracteres) && !apellido1.match(caracteres) && !apellido2.match(caracteres)) {
+        return false;
+    }
+    return true;
+}
+/*Validamos que el correo*/
+function validateCorreo() {
+
+    var correo = document.getElementById("personacorreo").value;
+
+    var formato = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (correo.length < 11) {
+        $("input#personacorreo").focus();
+        return false;
+    }
+    if (!correo.match(formato)) {
+        $("input#personacorreo").focus();
+        return false;
+    }
+    return true;
+}
 /*modal mostrar campos de datos*/
 function mostrarModalDatos() {
-document.getElementById("modaldatos").style.display = "block";
+    document.getElementById("modaldatos").style.display = "block";
 }
 function cerrarModalDatos() {
-document.getElementById("modaldatos").style.display = "none";
+    document.getElementById("modaldatos").style.display = "none";
 }
 /*modal pass valida*/
 function mostrarModalvalido() {
-document.getElementById("modalvalido").style.display = "block";
+    document.getElementById("modalvalido").style.display = "block";
 }
 function cerrarModalvalido() {
-document.getElementById("modalvalido").style.display = "none";
+    document.getElementById("modalvalido").style.display = "none";
 }
 /*modal pass invalida*/
 function mostrarModalinvalido() {
-document.getElementById("modalinvalido").style.display = "block";
+    document.getElementById("modalinvalido").style.display = "block";
 }
 function cerrarModalinvalido() {
-document.getElementById("modalinvalido").style.display = "none";
+    document.getElementById("modalinvalido").style.display = "none";
 }
 /*modal tel invalida*/
 function mostrarModalinvalidotel() {
-document.getElementById("modalinvalidotel").style.display = "block";
+    document.getElementById("modalinvalidotel").style.display = "block";
 }
 function cerrarModalinvalidotel() {
-document.getElementById("modalinvalidotel").style.display = "none";
+    document.getElementById("modalinvalidotel").style.display = "none";
 }
