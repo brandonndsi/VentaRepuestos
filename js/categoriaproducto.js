@@ -18,7 +18,7 @@ function cargarCategorias(){
         data: {accion: 'categoria',id: valor},
         success:function(data){
             var code=JSON.parse(data);
-            alert(" nombre: "+code[1]);
+            alert("codigo :"+code[0]+"nombre: "+code[1]);
             var r=code[4];
             var n=code[1];
             cargarDiv(r,n);
@@ -29,7 +29,8 @@ function cargarCategorias(){
     */
 }
 function cargarDiv(ruta,nombre){
-  var div="<div id="+"imagen"+"><img src="+ruta+"></div>"+
+  var div="<div id='contenedor_imagen'>"+
+          "<div id="+"imagen"+"><img src="+ruta+"></div>"+
                   "<h4>"+nombre+"</h4>"+
                   "<div id='ver'>"+
                   "<a href='javascript:abrirModal();'><span class='icon-circle-with-plus'></span>Detalles</a>"+

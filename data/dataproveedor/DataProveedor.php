@@ -173,7 +173,7 @@
                     "SELECT `productonombre` FROM `tbproductos` WHERE productonombre LIKE '%$dato%';");
                         $arrays =array();
                 while ($resultado = $auto->fetch_assoc()) {
-                        array_push($arrays,$resultado['productonombre']);
+                        array_push($arrays,$resultado);
                     }
                     return  $arrays;
                } 

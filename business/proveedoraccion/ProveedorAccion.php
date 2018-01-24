@@ -151,13 +151,14 @@ if ($action=="nuevo") {
 
                 echo $DataProveedor->mostrarProveedor();
 
-} else if($action =='auto'){
+} else if($action =="auto"){
     $id=$_POST['c'];
 
     $DataProveedor = new DataProveedor();
     $resy = $DataProveedor->autoCompleta($id);
-
+    //->autoCompleta($id);
     echo json_encode($resy);
+
 }else {
     //esto lo que retorna es un json  que dice que hay un error al tratar de obtener todos lo datos
     $error = "ErrorTodo";

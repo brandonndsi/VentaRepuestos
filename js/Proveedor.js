@@ -1,7 +1,38 @@
  var table;
  var datoAuto;
+
+ function autoCompletado(input){
+   // alert(input.value);
+   var todo=input.value;
+    $(document).ready(function(){
+   
+    $(todo).autocomplete({
+
+        source: function(request, response){
+            $.ajax({
+                url: '../../business/proveedoraccion/ProveedorAccion.php',
+                datatype:'json',
+                type: 'Post',
+                data: {accion: 'auto', c: request.term},
+                      success: function(data){
+                        response(data);
+                      }
+            });
+        },
+        minLength:1,
+        select: function(event, ui){
+
+            alert("selecciono :"+ui.item.label);
+        }
+
+     });
+   
+ });
+ }
  $(document).ready(function(){
+   
     $("#producto").autocomplete({
+
         source: function(request, response){
             $.ajax({
                 url: '../../business/proveedoraccion/ProveedorAccion.php',
@@ -15,6 +46,7 @@
         },
         minLength:1,
         select: function(event, ui){
+
             alert("selecciono :"+ui.item.label);
         }
 

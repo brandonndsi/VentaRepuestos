@@ -25,7 +25,7 @@
                 <div id="til">
                   <h3>Imagenes de las categorias de repuestos.</h3>
                 </div>
-                  <div id="contenedor_imagen">
+                <!--  <div id="contenedor_imagen">
                     <div id="imagen">
                    <img src="../../images/catalogoTipo/aros.jpg">
                     </div>
@@ -65,14 +65,14 @@
                   <div id="imagen">
                   <img src="../../images/catalogoTipo/ruedaDiscoverer.jpg">
                   </div>
-                   <h4>Rueda 4x4 Discoveri</h4>
+                   <h4>Rueda 4x4 Discovery</h4>
                   <div id="ver">
                     <a href="javascript:abrirModal();"><span class="icon-circle-with-plus"></span>Detalles</a>
                    </div>
                    <div id="carr">
                   <a href=""><span class="icon-shopping-cart">Carrito</span></a>
-                  </div>  
-                </div>
+                  </div> 
+                </div>-->
         </div>
         <!--  modal de la informacion-->
         <div id="modal_informacion">

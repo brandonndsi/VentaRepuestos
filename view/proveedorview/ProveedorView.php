@@ -69,7 +69,7 @@
         <input type="text" placeholder="Apellido2" name="apellido2" id="apellido2" class="input-50" required>
         <input type="email" placeholder="Correo" name="correo" id="correo" class="input-100" required>
         <input type="text" placeholder="Telefono" name="telefono" id="telefono" class="input-100" required>
-        <input type="text" placeholder="producto" name="producto" id="producto" class="input-100" >
+        <input type="text" placeholder="producto" onkeyup="autoCompletado(this)" name="producto" id="producto" class="input-100" >
         <input type="submit"  value="Enviar" onclick="nuevoProveedor()" id="enviar" class="input-50">
         <input type="submit" value="Cancelar" onclick="nuevoCerra()" id="cancelar" class="input-50"> 
         </div>
