@@ -37,25 +37,25 @@
                 <div id="contenedor_carrucel">
                     <ul id="carrucel" >
                         <li data-target="#contenedor_carrucel">
-                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
+                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php?id=2">
                                 <strong style="color:black;">Autos</strong>
                                 <img src="../../images/catalogo/carro.jpg" id="carru">
                             </a>
                         </li>
                         <li data-target="#contenedor_carrucel">
-                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
+                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php?id=3">
                                 <strong style="color:black;">Motocicletas</strong>
                                 <img src="../../images/catalogo/moto.jpg" id="carru">
                             </a>
                         </li>
                         <li data-target="#contenedor_carrucel">
-                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
+                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php?id=1">
                                 <strong style="color:black;">Scooters</strong>
                                 <img src="../../images/catalogo/scooter.jpg" id="carru">
                             </a>
                         </li>
                         <li data-target="#contenedor_carrucel">
-                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php">
+                            <a style="color:white;" href="../categoriaproductoview/CategoriaProductoView.php?id=4">
                                 <strong style="color:black;">Trailers</strong>
                                 <img src="../../images/catalogo/trailer.jpg" id="carru">
                             </a>
@@ -94,21 +94,21 @@
                 <h3>Los articulos que ofrecemos para las categorias de vehiculos.</h3>
                 <div class="contenedor">
                     <div class="info-repuesto">
-                        <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/carro.jpg"></a>
+                        <a href="../categoriaproductoview/CategoriaProductoView.php?id=2"><img src="../../images/catalogo/carro.jpg"></a>
                         <h4>Carros</h4>
                     </div>
 
                     <div class="info-repuesto">
-                        <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/moto.jpg"></a> 
+                        <a href="../categoriaproductoview/CategoriaProductoView.php?id=3"><img src="../../images/catalogo/moto.jpg"></a> 
                         <h4>Motos</h4>
                     </div>
 
                     <div class="info-repuesto">
-                        <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/scooter.jpg"></a>
+                        <a href="../categoriaproductoview/CategoriaProductoView.php?id=1"><img src="../../images/catalogo/scooter.jpg"></a>
                         <h4>Scooters</h4>
                     </div>
                     <div class="info-repuesto">
-                        <a href="../categoriaproductoview/CategoriaProductoView.php"><img src="../../images/catalogo/trailer.jpg"></a>
+                        <a href="../categoriaproductoview/CategoriaProductoView.php?id=4"><img src="../../images/catalogo/trailer.jpg"></a>
                         <h4>Trailers</h4>
                     </div>
                 </div>

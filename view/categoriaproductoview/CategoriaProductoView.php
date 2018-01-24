@@ -15,14 +15,17 @@
     <body>
     	<?php 
     	include '../menu/menu.php';
+      if($_GET['id']){
+        $dato=$_GET['id'];
+      }
     	 ?>
+       <input type="hidden" id="pase" value="<?php echo $dato; ?>">
     	<main id="principal">
-            
-            <div class="contenedor_principal">
+            <div class="contenedor_principal" id="contenedor_principal">
                 <div id="til">
                   <h3>Imagenes de las categorias de repuestos.</h3>
                 </div>
-                <div id="contenedor_imagen">
+                  <div id="contenedor_imagen">
                     <div id="imagen">
                    <img src="../../images/catalogoTipo/aros.jpg">
                     </div>

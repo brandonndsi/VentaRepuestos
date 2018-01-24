@@ -6,7 +6,7 @@
             <label class="icon-menu" for="menu-bar"></label>
             <nav class="menu">
             <a href="../../index.php">Inicio</a>
-            <a href="../categoriaproductoview/CategoriaProductoView.php">Repuestos</a>
+            <a href="../categoriaproductoview/CategoriaProductoView.php?id=1">Repuestos</a>
             <a href="../catalogoview/EmpresaInformacion.php">Quienes somos</a>
             <a href="../catalogoview/Contactos.php">Contacto</a>
             <a href="../loginview/LoginView.php">Ingresa</a>
