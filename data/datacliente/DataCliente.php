@@ -13,8 +13,20 @@ class DataCliente {
     public function insertarCliente($cliente) {
 
         if ($this->conexion->crearConexion()->set_charset('utf8')) {
-            $nuevoPersona = $this->conexion->crearConexion()->query(
-                    "CALL nuevaPersona(
+            
+            $con=$this->conexion->crearConexion();
+            $usuario = $con->query("CALL buscarPersonaCorreo('" . $cliente->getCorreo() . "');");
+            
+            $númeroFilas = mysql_num_rows($usuario);
+            
+            if ($númeroFilas > 0) {
+
+                echo '<script>alert("El correo de usuario ya existe. Por favor elije otro.");</script>';
+                echo '<script>history.back(1);</script>';
+                
+            } else {
+                $nuevoPersona = $this->conexion->crearConexion()->query(
+                        "CALL nuevaPersona(
                      '" . $cliente->getPersonaCedula() . "',
                      '" . $cliente->getPersonaNombre() . "',
                      '" . $cliente->getPersonaApellido1() . "',
@@ -22,29 +34,29 @@ class DataCliente {
                      '" . $cliente->getPersonaTelefono() . "',
                      '" . $cliente->getCorreo() . "',
                      '1');");
-            /* opteniendo el id de la persona */
-            $personaid = $this->conexion->crearConexion()->query(
-                    "CALL buscarPersonaCorreo(
-                    '" . $cliente->getCorreo() . "');");
+                /* opteniendo el id de la persona */
+                $personaid = $this->conexion->crearConexion()->query(
+                        "CALL buscarPersonaCorreo('" . $cliente->getCorreo() . "');");
 
-            while ($resultado = $personaid->fetch_assoc()) {
-                $con = $resultado['personaid'];
-            }
-            /* verificamos si es un string ya formulado */
-            if (is_string($con)) {
-                $cliente->setPersonaId($con);
-            }
+                while ($resultado = $personaid->fetch_assoc()) {
+                    $con = $resultado['personaid'];
+                }
+                /* verificamos si es un string ya formulado */
+                if (is_string($con)) {
+                    $cliente->setPersonaId($con);
+                }
 
-            $this->conexion->cerrarConexion();
-            $nuevoCliente = $this->conexion->crearConexion()->query(
-                    "CALL nuevoCliente( 
+                $this->conexion->cerrarConexion();
+                $nuevoCliente = $this->conexion->crearConexion()->query(
+                        "CALL nuevoCliente( 
                     '" . $cliente->getPersonaId() . "',
                     '" . $cliente->getClienteclave() . "',     
                     '" . $cliente->getClientedireccionexacta() . "',   
                     '1');");
-            $this->conexion->cerrarConexion();
+                $this->conexion->cerrarConexion();
 
-            return $nuevoCliente;
+                return $nuevoCliente;
+            }
         }
     }
 
