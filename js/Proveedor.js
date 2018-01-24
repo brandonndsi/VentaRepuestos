@@ -1,14 +1,14 @@
  var table;
  var datoAuto;
  $(document).ready(function(){
-     $("#producto").autocomplete({
+    $("#producto").autocomplete({
         source:function(request,response){
             $.ajax({
                 url: '../../business/proveedoraccion/ProveedorAccion.php',
                 datatype:'json',
                 type: 'POST',
                 data:{accion: 'auto',
-                      contenido:request.term},
+                      contenido: request.term},
                       success:function(data){
                         response(data);
                       }
@@ -16,28 +16,13 @@
         },
         minLength: 1,
         select:function(event, ui){
-            alert("selecciono :" + ui.item.label);
+            alert("selecciono :"+ui.item.label);
         }
 
      });
    
  });
 
-function autoCargado(){
-    $.post('../../business/proveedoraccion/ProveedorAccion.php', {
-                accion: 'auto',
-            }, function(response) {
-                dat= new Array();
-                datoAuto = JSON.parse(respose);
-                for (i = 0; i < datoAuto.length; i++) {
-                    dat[i]=datoAuto[i].productonombre;
-                }
-                $("#producto").autocomplete({
-                source:dat
-                });
-                
-            });
-}
 /*Modal de ver mas los detalles del proveedor para poder verlo*/
 function verAbrir($cedula,$nombre,$apellido1,$apellido2,$telefono,$correo,$productoid){
 $("#cedulaVer").val($cedula);
@@ -80,7 +65,7 @@ function nuevoProveedor(){
     $('#apellido1').val()!="" && $('#apellido2').val()!=""
     && $('#correo').val()!="" && $('#producto').val()!=""
     && $('#telefono').val()!=""){
- //aler("hola nuevo");
+
         cedula = $("#cedula").val();
         nombre = $("#nombre").val();
         apellido1 = $("#apellido1").val();
@@ -105,6 +90,39 @@ function nuevoProveedor(){
                 notificacionNuevoAbrir();
             });
         });
+    }else{
+        /*variable a utilizar*/
+        var txtCedula=$("#cedula").val();
+        var txtnombre=$("#nombre").val();
+
+        var txtapellido1 = $("#apellido1").val();
+        var txtapellido2 = $("#apellido2").val();
+
+        var txtCorreo=$("#correo").val();
+        var txtTelefono=$("#telefono").val();
+        
+        
+
+        if(txtnombre == null || txtnombre.length == 0 || /^\s+$/.test(txtnombre)){
+            //txtnombre.style.borderColor="#ff0000";
+            alert('ERROR: El campo nombre no debe ir vacío o lleno de solamente espacios en blanco');
+        }if(txtTelefono == null || txtTelefono.length ==0 || isNaN(txtTelefono) || txtTelefono.length <8){
+            //txtTelefono.style.color="red";
+            alert('ERROR:El telefono es incorrecto.');
+        } if(!(/\S+@\S+\.\S+/.test(txtCorreo))){
+            alert("ERROR: Ingrese un correo valido.");
+        } if(txtCedula == null || txtCedula.length ==0 || isNaN(txtCedula) || txtCedula.length < 10){
+            alert("ERROR: La cedula es incorrecta");
+        }
+        if(txtapellido1 == null || txtapellido1.length == 0 || /^\s+$/.test(txtapellido1)){
+            //txtnombre.style.borderColor="#ff0000";
+            alert('ERROR: El campo Apellido 1 no debe ir vacío o lleno de solamente espacios en blanco');
+        }
+        if(txtapellido2 == null || txtapellido2.length == 0 || /^\s+$/.test(txtapellido2)){
+            //txtnombre.style.borderColor="#ff0000";
+            alert('ERROR: El campo Apellido 2 no debe ir vacío o lleno de solamente espacios en blanco');
+        }
+        alert("ERROR: El producto es incorrecto");
     }
     
 }

@@ -8,50 +8,68 @@
         <link rel="stylesheet" type="text/css" href="../../css/catalogo/menu.css">
 		<link rel="stylesheet" type="text/css" href="../../css/catalogo/fonts/style.css">
 		<link rel="stylesheet" type="text/css" href="../../css/categoriaProducto.css">
+    <!--JS -->
+    <script type="text/javascript" src="../../js/categoriaproducto.js"></script>
     </head>
     <body>
     	<?php 
     	include '../menu/menu.php';
     	 ?>
     	<main id="principal">
-    		<section id="blog">
-            <h3>Imagenes de las categorias de repuestos.</h3>
-            <div class="contenedor">
+            
+            <div class="contenedor_principal">
+                <div id="til">
+                  <h3>Imagenes de las categorias de repuestos.</h3>
+                </div>
                 <div id="contenedor_imagen">
                     <div id="imagen">
                    <img src="../../images/catalogoTipo/aros.jpg">
                     </div>
                    <h4>Aros 18.</h4>
-                   <input type="submit" value="ver detalles" id="ver">
+                   <div id="ver">
+                    <a href="javascript:abrirModal();"><span class="icon-circle-with-plus"></span>Detalles</a>
+                   </div>
+                   <div id="carr">
                    <a href=""><span class="icon-shopping-cart">Carrito</span></a>  
-                   
+                   </div>
                 </div>
                 <div id="contenedor_imagen">
                   <div id="imagen">
                   <img src="../../images/catalogoTipo/cambioManivela.jpg">
                   </div>
                    <h4>Manivela de cambio</h4>
-                   <input type="submit" value="ver detalles" id="ver">
-                   <a href=""><span class="icon-shopping-cart">Carrito</span></a>  
+                   <div id="ver">
+                    <a href=""><span class="icon-circle-with-plus"></span>Detalles</a>
+                   </div>
+                   <div id="carr">
+                   <a href=""><span class="icon-shopping-cart">Carrito</span></a>
+                   </div>  
                 </div>
                 <div id="contenedor_imagen">
                   <div id="imagen">
                   <img src="../../images/catalogoTipo/mufla.jpg">
                   </div>
                    <h4>Mufla estandar</h4>
-                  <input type="submit" value="ver detalles" id="ver">
-                  <a href=""><span class="icon-shopping-cart">Carrito</span></a>  
+                  <div id="ver">
+                    <a href=""><span class="icon-circle-with-plus"></span>Detalles</a>
+                   </div>
+                   <div id="carr">
+                  <a href=""><span class="icon-shopping-cart">Carrito</span></a>
+                  </div>  
                 </div>
                 <div id="contenedor_imagen">
                   <div id="imagen">
                   <img src="../../images/catalogoTipo/ruedaDiscoverer.jpg">
                   </div>
                    <h4>Rueda 4x4 Discoveri</h4>
-                  <input type="submit" value="ver detalles" id="ver">
-                  <a href=""><span class="icon-shopping-cart">Carrito</span></a>  
+                  <div id="ver">
+                    <a href=""><span class="icon-circle-with-plus"></span>Detalles</a>
+                   </div>
+                   <div id="carr">
+                  <a href=""><span class="icon-shopping-cart">Carrito</span></a>
+                  </div>  
                 </div>
-            </div>
-        </section>
+        </div>
         <!--  modal de la informacion-->
         <div id="modal_informacion">
           <div id="informacion">
@@ -76,8 +94,8 @@
             </tr>
           </table>
           </div>
-          <input id="agregar" type="submit" value="Agregar"></input>
-          <input id="cancelar" type="submit" value="Cancelar"></input>
+          <input id="agregar" type="submit" value="Agregar" onclick=""></input>
+          <input id="cancelar" type="submit" value="Cancelar" onclick="cerrarModal()"></input>
           </div>
       </div>
     	</main>
