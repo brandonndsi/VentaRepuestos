@@ -1,22 +1,18 @@
 *{	
 margin: 0;
 padding: 0;
-	/*box-sizing: border-box;*/
 }
 body{
 	font-family: sans-serif;
-	/*min-height: 100vh;
-	flex-wrap: wrap;
-	display: flex;*/
-	/*font-family: monospace;*/
 }
 #contenedor{
 top:0;
 left: 0;
+display: flex;
 }
+/*Comenzando con lo que es el div de el nav de administrador.*/
 #navegador{
-/*position: fixed;*/
-	/*todo esto para ajustar la imagen al div*/
+/*todo esto para ajustar la imagen al div*/
 -webkit-background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;
@@ -32,24 +28,15 @@ height: 100vh;
 box-sizing: border-box;
 border: 1px solid black;
 overflow: auto;
-/*border: 2px solid black;
-border-radius:20px;
-
-height: 400px;
-background: #6C6969;*/
+padding: 20px;
 }
 #navegador ul {
 	background-color: transparent;
 	display: block;
-	/*border: 1px solid black;*/
 	padding: 20px;
-	color: #fff;
-	
-	/*border: 1px solid #D3D6F6;*/
-	/*border-radius: 10px;
-	/*box-shadow: 5px 5px 0px #F9F0F0;*/
 }
 #navegador li{
+	,margin:0;
 	width: 80%;
 	list-style: none;
   	overflow: hidden; /* Limpiamos errores de float */
@@ -57,27 +44,51 @@ background: #6C6969;*/
 	color: #fff;
 	border-bottom: 2px solid #fff;
 	font-size: 16px; 
+	height:100%;
 }
-#navegador li a{
-width: 100%;
-color: #fff;
-text-decoration: none;
-}
-
 #navegador li:hover{
 cursor: pointer;
-background-color: #f0f0f0;
-/*background: rgba(255,255,255,0.5);*/
-color: black;
-/*box-shadow: 5px 5px 0px black;*/
-padding:5px;
-transition: 2s;
-border-radius: 10px;
 }
-#navegador li a:hover{
+/*esta es el div del navegador del administrador para lo que es la imagen*/
+#navegador ul li #imagenAdmin{
+	width:100%;
+	background-color: transparent;
+	height:150px;
+	margin:0;
+}
+#navegador ul li #imagenAdmin img{
+	width:100%;/*para que agarre el 100 del div que lo contiene*/
+	height:150px;/*para que agarre el 90px del div que lo contiene*/
+	display: block;/*para que pueda agarrar los parametros de el div*/
+	margin: auto;/*margin auto para que se ajuste a la pantalla*/
+	/*border:2px solid black;*/
+	border-radius: 50%;/*para uqe tome la forma redondiada del div*/
+}
+/*finalizacion del ul y li del administrador*/
+
+/*comienzo del a de administrador el nav de redireccionamiento.*/
+#navegador  a{
+border-radius: 20px;
+display: block;
+width: 80%;
+color: #fff;
+padding:20px;
+text-decoration: none;
+margin:10px;
+}
+#navegador a:hover{
+display: block;
 cursor: pointer;
-color: black;	
+color: black;
+transition: 0.4s;/*esto es para la transicion de  el hover*/
+border-radius: 10px;
+background: #f0f0f0;
+box-shadow: 5px 5px 0px black;	
 }
+/*terminacion del css de a del nav de administrador efectos*/
+/*se finalizo lo que es le div del navegador el administrador*/
+
+/*comenzando con los datos que se mostraran dependiendo de la opcion del administrador*/
 #datos h3{
 	text-align: center;
 	padding: 10px;
@@ -95,7 +106,6 @@ box-shadow: 5px 5px 0px black;
 	padding:4px;
 	width: 100%;
 	height: 120px;
-	/*box-shadow: 5px 5px 0px black;*/
 }
 #datos img{
 	width: 100px;/*para que la imagen tome el 100 del div que la contiene*/
@@ -111,32 +121,21 @@ box-shadow: 5px 5px 0px black;
  -o-background-size: cover;
  background-size: cover; 
  background-image: url("../images/fondos/administrador.jpg");
-  
  
-/*background-image: url("../images/fondos/administrador.jpg");
-background-size: cover;
-background-position: center;
-background-attachment: fixed;*/
 padding:20px;
 margin: auto;
 width: 75%;
 height: 100vh;
 box-sizing: border-box;
-/*border-radius: 20px;*/
-/*
-margin: 20%;
-*/
 }
 #datos p {
-/*margin-top: 10px;*/
 padding:10px;
 padding-top: 1px; 
 text-align: justify;
 color: #000000;
-background: #ffff;
+background: #fff;
 border-bottom-left-radius:20px;
 border-bottom-right-radius: 20px;
-/*box-shadow: 5px 5px 0px black;*/
 }
 b{
 background: #F9F6F6;	
@@ -146,9 +145,6 @@ background: #F9F6F6;
 	background: #F9F6F6;
 	border-radius:0px;
 
-}
-#contenedor{
-display: flex;
 }
 
 /******************************/
@@ -162,7 +158,7 @@ div#navegador::-webkit-scrollbar-track
 div#navegador::-webkit-scrollbar
 {
 	width: 5px;
-	background-color: #F5F5F5;
+	background-color: transparent;/*#F5F5F5;*/
 }
 
 div#navegador::-webkit-scrollbar-thumb
