@@ -30,15 +30,47 @@
         ?>
         <div id="contenedor">
             <div id="navegador">
-                <a href="../../business/sesionaccion/SesionDesconectarAccion.php">Cerrar</a>
-                <a href="../compraview/CompraView.php">Registrar Compra</a>
-                <a href="../ordencompraview/OrdenCompraView.php">orden de Compra</a>
-                <a href="../facturaview/FacturaView.php">Factura</a>
-                <a href="../empleadoview/EmpleadoView.php">Empleado</a>
+                <ul>
+                <li>
+                    <a href="../../business/sesionaccion/SesionDesconectarAccion.php">Cerrar</a>
+                </li>
+                <li>
+                    <a href="../compraview/CompraView.php">Registrar Compra</a>
+                <li/>
+                <li>
+                    <a href="../ordencompraview/OrdenCompraView.php">orden de Compra</a>
+                </li>
+                <li>
+                    <a href="../facturaview/FacturaView.php">Factura</a>
+                </li>
+                <li>
+                    <a href="../empleadoview/EmpleadoView.php">Empleado</a>
+                </li>
+                <li>
                 <a href="../tipoempleadoview/TipoEmpleadoView.php">Tipo Empleado</a>
-                <a href="../clienteview/ClienteView.php">Cliente</a>
-                <a href="../proveedorview/ProveedorView.php">Proveedor</a>
-                <a href="../ventanaprincipalview/CatalogoAdmiView.php">Catalogo</a> 
+                </li>
+                <li>
+                    <a href="../clienteview/ClienteView.php">Cliente</a>
+                </li>
+                <li>
+                    <a href="../proveedorview/ProveedorView.php">Proveedor</a>
+                </li>
+                <li>
+                    <a href="../ventanaprincipalview/CatalogoAdmiView.php">Catalogo</a>
+                </li>
+                <li>
+                    <a href="../ventanaprincipalview/CatalogoAdmiView.php">Catalogo</a>
+                </li>
+                <li>
+                    <a href="../ventanaprincipalview/CatalogoAdmiView.php">Catalogo</a>
+                </li>
+                <li>
+                    <a href="../ventanaprincipalview/CatalogoAdmiView.php">Catalogo</a>
+                </li>
+                <li>
+                    <a href="../ventanaprincipalview/CatalogoAdmiView.php">Catalogo</a>
+                </li>
+            </ul>
             </div>
             <div id="datos">
                 <h3>Bienvenido</h3>
