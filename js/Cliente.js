@@ -1,152 +1,348 @@
-function registrarCliente() {
+ var table;
+ var datoAuto;
 
-    if (document.getElementById("personanombre").value !== "" && document.getElementById("personaapellido1").value !== "" &&
-            document.getElementById("personaapellido2").value !== "" && document.getElementById("personatelefono").value !== ""
-            && document.getElementById("personacorreo").value !== "" && document.getElementById("clienteclave").value !== ""
-            && document.getElementById("clientedireccionexacta").value !== "") {
+ function autoCompletado(input){
+   // alert(input.value);
+   var todo=input.value;
+    $(document).ready(function(){
+   
+    $(todo).autocomplete({
 
-        var nombre = document.getElementById("personanombre").value;
-        var apellido1 = document.getElementById("personaapellido1").value;
-        var apellido2 = document.getElementById("personaapellido2").value;
-        var telefono = document.getElementById("personatelefono").value;
-        var correo = document.getElementById("personacorreo").value;
-        var clave = document.getElementById("clienteclave").value;
-        var direccion = document.getElementById("clientedireccionexacta").value;
+        source: function(request, response){
+            $.ajax({
+                url: '../../business/clienteaccion/ClienteAccion.php',
+                datatype:'json',
+                type: 'Post',
+                data: {accion: 'auto', c: request.term},
+                      success: function(data){
+                        response(data);
+                      }
+            });
+        },
+        minLength:1,
+        select: function(event, ui){
 
-        if (validateTelefono() === true) {
-            if (validateName() === true && validarClave() === true && validateCorreo() === true) {
-
-                $(document).ready(function () {
-                    $.post('../../business/clienteaccion/clienteAccion.php', {
-                        accion: 'insertar',
-                        nombre: nombre,
-                        apellido1: apellido1,
-                        apellido2: apellido2,
-                        correo: correo,
-                        telefono: telefono,
-                        clave: clave,
-                        direccion: direccion
-                    }, function () {
-                        mostrarModalvalido();
-                    });
-                });
-            } else {
-                mostrarModalinvalido();
-            }
-        } else {
-            mostrarModalinvalidotel();
+            alert("selecciono :"+ui.item.label);
         }
-    } else {
-        mostrarModalDatos();
+
+     });
+   
+ });
+ }
+ $(document).ready(function(){
+   
+    $("#persona").autocomplete({
+
+        source: function(request, response){
+            $.ajax({
+                url: '../../business/clienteaccion/ClienteAccion.php',
+                datatype:'json',
+                type: 'POST',
+                data: {accion: 'auto', c: request.term},
+                      success: function(data){
+                        response(data);
+                      }
+            });
+        },
+        minLength:1,
+        select: function(event, ui){
+
+            alert("selecciono :"+ui.item.label);
+        }
+
+     });
+   
+ });
+
+/*Modal de ver mas los detalles del cliente para poder verlo*/
+function verAbrir(cedula,nombre,apellido1,apellido2,telefono,correo,personaid){
+$("#cedulaVer").val(cedula);
+$("#nombreVer").val(nombre);
+$("#apellido1Ver").val(apellido1);
+$("#apellido2Ver").val(apellido2);
+$("#telefonoVer").val(telefono);
+$("#correoVer").val(correo);
+$("#personaVer").val(personaid);
+abrirVer();
+
+}
+function cerrarVer(){
+    document.getElementById("verModal").style.display="none";
+}
+function abrirVer(){
+   document.getElementById("verModal").style.display="block"; 
+}
+/*funciones del modal de nuevo cliente de java script*/
+function nuevoMostrar(){
+    document.getElementById("modalNuevo").style.display = "block";
+}
+function nuevoCerra(){
+    
+   document.getElementById("modalNuevo").style.display = "none";
+   nuevoLimpiar();
+    
+}
+function nuevoLimpiar(){
+    $('#cedula').val("");
+    $('#nombre').val("");
+    $('#apellido1').val("");
+    $('#apellido2').val("");
+    $('#correo').val("");
+    $('#persona').val("");
+    $('#telefono').val("");
+}
+function nuevoCliente(){
+    if($('#cedula').val()!="" && $('#nombre').val()!="" &&
+    $('#apellido1').val()!="" && $('#apellido2').val()!=""
+    && $('#correo').val()!="" && $('#persona').val()!=""
+    && $('#telefono').val()!=""){
+
+        cedula = $("#cedula").val();
+        nombre = $("#nombre").val();
+        apellido1 = $("#apellido1").val();
+        apellido2 = $("#apellido2").val();
+        correo = $("#correo").val();
+        telefono = $("#telefono").val();
+        persona = $("#persona").val();
+
+        $(document).ready(function(){
+            $.post('../../business/clienteaccion/ClienteAccion.php', {
+                accion: 'nuevo',
+                cedula: cedula,
+                nombre: nombre,
+                apellido1: apellido1,
+                apellido2: apellido2,
+                correo: correo,
+                telefono: telefono,
+                persona: persona
+            }, function(response) {
+                //alert(response);
+                nuevoCerra();
+                notificacionNuevoAbrir();
+            });
+        });
+    }else{
+        /*variable a utilizar*/
+        var txtCedula=$("#cedula").val();
+        var txtnombre=$("#nombre").val();
+
+        var txtapellido1 = $("#apellido1").val();
+        var txtapellido2 = $("#apellido2").val();
+
+        var txtCorreo=$("#correo").val();
+        var txtTelefono=$("#telefono").val();
+        
+        
+
+        if(txtnombre == null || txtnombre.length == 0 || /^\s+$/.test(txtnombre)){
+            //txtnombre.style.borderColor="#ff0000";
+            alert('ERROR: El campo nombre no debe ir vacío o lleno de solamente espacios en blanco');
+        }if(txtTelefono == null || txtTelefono.length ==0 || isNaN(txtTelefono) || txtTelefono.length <8){
+            //txtTelefono.style.color="red";
+            alert('ERROR:El telefono es incorrecto.');
+        } if(!(/\S+@\S+\.\S+/.test(txtCorreo))){
+            alert("ERROR: Ingrese un correo valido.");
+        } if(txtCedula == null || txtCedula.length ==0 || isNaN(txtCedula) || txtCedula.length < 10){
+            alert("ERROR: La cedula es incorrecta");
+        }
+        if(txtapellido1 == null || txtapellido1.length == 0 || /^\s+$/.test(txtapellido1)){
+            //txtnombre.style.borderColor="#ff0000";
+            alert('ERROR: El campo Apellido 1 no debe ir vacío o lleno de solamente espacios en blanco');
+        }
+        if(txtapellido2 == null || txtapellido2.length == 0 || /^\s+$/.test(txtapellido2)){
+            //txtnombre.style.borderColor="#ff0000";
+            alert('ERROR: El campo Apellido 2 no debe ir vacío o lleno de solamente espacios en blanco');
+        }
+        alert("ERROR: El persona es incorrecto");
     }
+    
+}
+/*fin del modal del nuevo cliente*/
+
+/*inicio del modal de eliminar cliente*/
+function eliminarAbrir(id){
+   // alert($id);
+$("#clienteid").val(id);
+document.getElementById("modalEliminar").style.display = "block";
+}
+function eliminarCerrar(){
+document.getElementById("modalEliminar").style.display = "none";    
 }
 
-// funcion validar pass
-function validarClave() {
+function eliminarCliente(){
 
-    var clave = document.getElementById("clienteclave").value;
-    var minusculas = /[a-z]/;
-    var mayusculas = /[A-Z]/;
-    var numeros = /[0-9]/;
+if($('#clienteid').val()!=""){
 
-    if (clave.length < 6) {
-        return false;
+        id = $("#clienteid").val();
+
+        $(document).ready(function(){
+            $.post('../../business/clienteaccion/ClienteAccion.php', {
+                accion: 'eliminar',
+                id: id
+            }, function(response) {
+                eliminarCerrar();
+                notificacionEliminarAbrir();/*final mensaje de confirmacion*/ 
+                //alert(response);
+            });
+        });
     }
-    if (clave.length > 16) {
-        return false;
-    }
-    if (!clave.match(minusculas)) {
-        return false;
-    }
-    if (!clave.match(mayusculas)) {
-        return false;
-    }
-    if (!clave.match(numeros)) {
-        return false;
-    }
-    return true;
+       
 }
-/*Validamos que el nombre no tenga caracteres extraños
- y que su longitud sea mayor que 4*/
-function validateName() {
+/*fin de eliminar cliente*/
 
-    var nombre = document.getElementById("personanombre").value;
-    var apellido1 = document.getElementById("personaapellido1").value;
-    var apellido2 = document.getElementById("personaapellido2").value;
+/*modal para mostrar el actualizar*/
+function actualizarMostrar(id,cedula,nombre,apellido1,apellido2,telefono,correo,personaid){
+$("#idActualizar").val(id);
+$("#cedulaM").val(cedula);
+$("#nombreM").val(nombre);
+$("#apellido1M").val(apellido1);
+$("#apellido2M").val(apellido2);
+$("#telefonoM").val(telefono);
+$("#correoM").val(correo);
+$("#personaM").val(personaid);
 
-    var caracteres = /[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]/;
-    var numeros = /[0-9]/;
-
-    if (nombre.length < 3 && apellido1.length < 3 && apellido2.length < 3) {
-        return false;
-    }
-    if (!nombre.match(caracteres) && !apellido1.match(caracteres) && !apellido2.match(caracteres)) {
-        return false;
-    }
-    if (nombre.match(numeros) && apellido1.match(numeros) && apellido2.match(numeros)) {
-        return false;
-    }
-    return true;
+    document.getElementById("modalModificar").style.display = "block";
 }
-/*Validamos que el correo*/
-function validateCorreo() {
-
-    var correo = document.getElementById("personacorreo").value;
-    var formato = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (correo.length < 11) {
-        $("input#personacorreo").focus();
-        return false;
-    }
-    if (!correo.match(formato)) {
-        $("input#personacorreo").focus();
-        return false;
-    }
-    return true;
+function actualizarCerra(){
+   document.getElementById("modalModificar").style.display = "none"; 
 }
 
-/*Validamos que el correo*/
-function validateTelefono() {
+function actualizarCliente(){
+    if($('#cedulaM').val()!="" && $('#nombreM').val()!="" &&
+    $('#apellido1M').val()!="" && $('#apellido2M').val()!=""
+    && $('#correoM').val()!="" && $('#personaM').val()!=""
+    && $('#telefonoM').val()!="" && $('#idActualizar').val()!=""){
+ //alert("hola actualizar");
+        id = $("#idActualizar").val();
+        cedula = $("#cedulaM").val();
+        nombre = $("#nombreM").val();
+        apellido1 = $("#apellido1M").val();
+        apellido2 = $("#apellido2M").val();
+        correo = $("#correoM").val();
+        telefono = $("#telefonoM").val();
+        persona = $("#personaM").val();
 
-    var telefono = document.getElementById("personatelefono").value;
+        $(document).ready(function(){
+            $.post('../../business/clienteaccion/ClienteAccion.php', {
+                accion: 'actualizar',
+                id: id,
+                cedula: cedula,
+                nombre: nombre,
+                apellido1: apellido1,
+                apellido2: apellido2,
+                correo: correo,
+                telefono: telefono,
+                persona: persona
+            }, function(response) {
+                actualizarCerra();
+               notificacionActualizarAbrir();
+            });
+        });
+    }   
+}
+/*fin de actualizar cliente*/
 
-    var caracteres = '/^([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{8})$/';
+/*comenzando con las notificaciones finales*/
 
-    if (telefono.length !== 8) {
-        $("input#personacorreo").focus();
-        return false;
-    }
-    if (telefono.match(caracteres)) {
-        $("input#personacorreo").focus();
-        return false;
-    }
-    return true;
+/*notificaion de proceso eliminado exitozamente.*/
+function notificacionEliminarAbrir(){
+    document.getElementById("notificacionEliminar").style.display = "block";
 }
-/*modal mostrar campos de datos*/
-function mostrarModalDatos() {
-    document.getElementById("modaldatos").style.display = "block";
+
+function notificacionEliminarCerrar(){
+    document.getElementById("notificacionEliminar").style.display = "none"; 
 }
-function cerrarModalDatos() {
-    document.getElementById("modaldatos").style.display = "none";
+/*finalizando con las notificaciones de eliminar exitoza.*/
+
+/*comenzando con las notificacione de actualizar cliente exitozamente.*/
+function notificacionActualizarAbrir(){
+    document.getElementById("notificacionActualizar").style.display = "block";
 }
-/*modal pass valida*/
-function mostrarModalvalido() {
-    document.getElementById("modalvalido").style.display = "block";
+
+function notificacionActualizarCerrar(){
+    document.getElementById("notificacionActualizar").style.display = "none"; 
 }
-function cerrarModalvalido() {
-    document.getElementById("modalvalido").style.display = "none";
+/*finalizando con las notificaciones de actualizar cliente exitozamente*/
+
+/*comenzando con las notificacione de nuevo cliente exitozamente.*/
+function notificacionNuevoAbrir(){
+    document.getElementById("notificacionNuevo").style.display = "block";
 }
-/*modal pass invalida*/
-function mostrarModalinvalido() {
-    document.getElementById("modalinvalido").style.display = "block";
+
+function notificacionNuevoCerrar(){
+    document.getElementById("notificacionNuevo").style.display = "none"; 
 }
-function cerrarModalinvalido() {
-    document.getElementById("modalinvalido").style.display = "none";
+/*finalizando con las notificaciones de nuevo cliente exitozamente*/
+
+/*funcion de js para mostrar el data table con paginacion*/
+function mostrarCliente() {
+    $(document).ready(function () {
+
+       var table = $('#listaCliente').DataTable({
+            "destroy": true,
+            "bDeferRender": true,
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": false,
+        "responsive": true,
+        "autoWidth": false,
+        "pageLength": 10,
+            "sPaginationType": "full_numbers",
+            "ajax": {
+                 "url": "../../business/clienteaccion/dataCliente.php",
+                "type": "POST"
+            },
+            "columns": [
+                {"data": "nombre"},
+                {"data": "apellido1"},
+                {"data": "apellido2"},
+                {"data": "cedula"},
+                {"data": "acciones"}
+            ],
+            "oLanguage": {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": 'Mostrar <select>' +
+                        '<option value="10">10</option>' +
+                        '<option value="20">20</option>' +
+                        '<option value="30">30</option>' +
+                        '<option value="40">40</option>' +
+                        '<option value="50">50</option>' +
+                        '<option value="60">60</option>' +
+                        '<option value="70">70</option>' +
+                        '<option value="80">80</option>' +
+                        '<option value="-1">All</option>' +
+                        '</select> registros',
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando del (_START_ al _END_) de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Filtrar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Por favor espere - cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            }
+        });
+
+        setInterval(function () {
+        table.ajax.reload(null, false);
+        }, 1000);
+    });
+   
+
+
 }
-/*modal tel invalida*/
-function mostrarModalinvalidotel() {
-    document.getElementById("modalinvalidotel").style.display = "block";
-}
-function cerrarModalinvalidotel() {
-    document.getElementById("modalinvalidotel").style.display = "none";
-}
+/*fin de la funcion de terminacion de la paginacion de data table*/

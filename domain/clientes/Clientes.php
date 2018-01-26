@@ -1,51 +1,38 @@
 <?php
 
-include '../../domain/personas/Personas.php';
+include_once '../../domain/personas/Personas.php';
 
 class Clientes extends Personas {
-    
-    private $clienteid;
-    private $clientedireccionexacta;
-    private $clienteclave;
-    private $clienteestado;
-    
-    public function Clientes($clienteid, $clientedireccionexacta, $clienteclave, $clienteestado) {
-        $this->clienteid = $clienteid;
-        $this->clientedireccionexacta = $clientedireccionexacta;
-        $this->clienteclave = $clienteclave;
-        $this->clienteestado = $clienteestado;
-    }
-    public function getClienteid() {
-        return $this->clienteid;
-    }
+    private $clienteId;
+    private $clientePersonaId;/*personaid*/
+    private $clienteEstado;
 
-    public function getClientedireccionexacta() {
-        return $this->clientedireccionexacta;
+    function Clientes($clienteid,$clientepersonaid,$clienteestado){
+        $this->clienteId=$clienteid;
+        $this->clientePersonaId=$clientepersonaid;
+        $this->clienteEstado=$clienteestado;
     }
-
-    public function getClienteclave() {
-        return $this->clienteclave;
+    /*Elaboracion de los set de las variables*/
+    public function setClienteId($clienteid){
+        $this->clienteId=$clienteid;
     }
-
-    public function getClienteestado() {
-        return $this->clienteestado;
+    public function setClientePersonaId($clientepersonaid){
+        $this->clientePersonaId=$clientepersonaid;
     }
-
-    public function setClienteid($clienteid) {
-        $this->clienteid = $clienteid;
+    public function setClienteEstado($clienteestado){
+        $this->clienteEstado=$clienteestado;
     }
-
-    public function setClientedireccionexacta($clientedireccionexacta) {
-        $this->clientedireccionexacta = $clientedireccionexacta;
+    /*elaboracion de los get de las variables*/
+    public function getClienteId(){
+        return $this->clienteId;
     }
-
-    public function setClienteclave($clienteclave) {
-        $this->clienteclave = $clienteclave;
+    public function getClientePersonaId(){
+        return $this->clientePersonaId;
     }
-
-    public function setClienteestado($clienteestado) {
-        $this->clienteestado = $clienteestado;
+    public function getClienteEstado(){
+        return $this->clienteEstado;
     }
 }
 
 ?>
+
