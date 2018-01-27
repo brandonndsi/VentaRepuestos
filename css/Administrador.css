@@ -28,6 +28,10 @@ header label{
 	margin: 6px 0px;
 	cursor: pointer;
 }
+header a{
+text-decoration: none;
+color:white;
+}
 #menu-bar:checked ~ #menu{
 transform: translateX(0%);
 }
@@ -44,12 +48,16 @@ padding:0px 20px 10px 20px;
 border-left: 2px solid #fff;
 }
 #navegador{
+/*opacity: 0.6;
+  filter: alpha(opacity=60);*/
+position: fixed; 
 z-index: 100;
 top: 0;
 left: 0;
 width: 100%;
 margin: auto;
-/*background-color: rgba(255, 255, 255, .1);*/
+
+/*background-color: rgba(41, 41, 41, 0.5);*/
 background:black; /*rgba(41,41,41,0.5);*/
 }
 /*Comenzando con lo que es el div de el nav de administrador.*/
@@ -84,7 +92,10 @@ border: 1px solid black;
 overflow: auto;
 /*terminacion del ocultar de los navegadores*/
 padding: 20px;
-background-color: rgba(0, 0, 0, .77);
+background-color: rgba(0,0,0,0.6);
+/*background-color: rgba(0, 0, 0, .77);
+background-color: rgba(0,0,255,0.5);*/
+
 }
 #menu h4{
 	text-align: center;
@@ -184,7 +195,7 @@ height: 100vh;
 }
 #datos p {
 padding:10px;
-padding-top: 1px; 
+padding-top: 4px; 
 text-align: justify;
 color: #000000;
 background: #fff;
@@ -199,12 +210,79 @@ background: #F9F6F6;
 	background: #F9F6F6;
 	border-radius:0px;
 
+
 }
+/*trabajando con el modal de help*/
+#help{
+width: 100%;
+height: 100%;
+top:0px;
+left: 0px;
+position: fixed;
+/*overflow: hidden;/**********************/
+background-color: #fff;
+/*display: none;*/
+/*background-color: rgba(0,0,0,0.6);*/
+background: rgba(41,41,41,0);
+transition-property: width;
+transition:1s;
+transform: translateY(-150%);/*-150**/
+overflow: auto;
+
+/*display: none;*/
+}
+#help #contenedor_help{
+border: 1px solid black;
+border-radius: 10px;
+width:80%;
+margin:auto;
+margin-top:80px;
+height:60%;
+background-color:#fff;
+text-align: center;
+align-content: center;
+font-family: Arial;
+padding:10px;
+display: flex;
+flex-wrap: wrap;
+
+}
+#help #titulo_help{
+width: 100%;
+padding:10px;
+
+}
+#help #body_help{
+width:100%;
+text-align: justify;
+padding: 10px;
+font-size: 10px;
+}
+#help #footer_help{
+width: 100%;
+align-content:center;	
+}
+#help #footer_help a{
+/*border:2px solid black;*/
+border-radius: 10px;
+font-size: 20px;
+padding: 5px 20px 5px 20px;
+color:#fff;
+background-color:#71EDB7;
+text-decoration: none;	
+}
+/*terminado con el modal de help*/
 /*trabajando las dimenciones de la tablet y la pc*/
 @media (min-width: 450px){
 #nombre_informacion{
 	font-size: 20px;
 }
+#help #contenedor_help{
+	font-size: 20px;
+	width:60%;
+}
+#help #contenedor_help #body_help{
+	font-size: 12px;
 }
 @media (min-width:900px){
 #datos{
@@ -217,6 +295,10 @@ transform: translateX(0%);
 }
 .icon-menu{
 	display: none;
+}
+#help #contenedor_help{
+	width: 50%;
+	height: 50%;
 }
 }
 /******************************/

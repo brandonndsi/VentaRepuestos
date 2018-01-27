@@ -100,7 +100,7 @@ position: fixed;
 /*background-color: rgba(0,0,0,0.6);*//*color de fondo de pantalla*/
 top:0px;/*es la parte de arriba que se pocicione al principio*/
 left:0px;/*izquierda en el borde se adacte a la pantalla*/
--webkit-transition: all 6s;
+-webkit-transition:0.5s;
 display: none;
 }
 #form{
