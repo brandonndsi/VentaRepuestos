@@ -12,7 +12,9 @@ mostrarAdministrador();
         success: function(data){
             var ruta=JSON.parse(data);
             rut=ruta[0];
+        var imagen="<img src='"+ruta[0]+"'>";
         document.getElementById("nuevo").src=ruta[0];
+        document.getElementById("imagenAdmin").innerHTML=imagen;
         }
     });
     	
