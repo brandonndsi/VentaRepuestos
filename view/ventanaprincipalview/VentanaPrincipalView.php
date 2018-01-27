@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <!-- CSS -->    
         <link rel="stylesheet" href="../../css/Administrador.css">
+        <link rel="stylesheet" type="text/css" href="../../css/catalogo/fonts/style.css">
         <!-- js -->
         <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="../../js/imagen.js"></script>
@@ -29,7 +30,16 @@
         }
         ?>
         <div id="contenedor">
+            <header>
             <div id="navegador">
+            <input type="checkbox" id="menu-bar">
+            <label class="icon-menu" for="menu-bar"></label>
+            <a><label class="icon-help-with-circle"></label></a>
+            <a><label class ="icon-search"></label></a>
+            <a><label class="icon-bell"></label></a>
+
+            <div id="menu">
+                <h4><?php echo " " .$persona[1]; ?></h4>
                 <ul>
                 <li>
                 <div id="imagenAdmin">
@@ -47,16 +57,18 @@
                 <a href="../proveedorview/ProveedorView.php">Proveedor</a>
                 <a href="../ventanaprincipalview/CatalogoAdmiView.php">Catalogo</a>
             </div>
+            </div>
+            </header>
             <div id="datos">
-                <h3>Bienvenido</h3>
-                <div id="imagen">
-                    <img src="../../images/administrador/administrador.png" id="nuevo">
-                <p id="nombre"><b><?php echo " " . $persona[1]; ?></b></p>
+                <div id="nombre_informacion">
+                <h1 class="text-titles"><i class="icon-user-tie"><?php echo " " . $persona[1]."  "; ?></i><small>Admin</small></h1>
+                    <!--<img src="../../images/administrador/administrador.png" id="nuevo">-->
+                <!--<p id="nombre"><b><?php //echo " " . $persona[1]; ?></b></p>-->
                 <p>La principal persona responsable que le da soporte a la paguina de repuestos de la virgen de sarapiqui,
                     ademas eres el encargado de crear los respuestos, editar los precios,agregar nuevas categorias que se
                     adacten al cliente, entre otras cosas, evitar que los hackers roben informacion de la misma base de datos
-                    de la aplicacion , el responsable de todo.</p>
-            </div>  
+                    de la aplicacion , el responsable de todo.</p> 
+            </div> 
         </div>
         <input type="hidden" id="personaid" value="<?php echo $id; ?>">
     </body>

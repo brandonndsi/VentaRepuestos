@@ -1,7 +1,7 @@
 
 <header>
         <div class="contenedor">
-            <h1><span class="icon-classic-computer"></span>DJB</h1>
+            <h1><span class="icon-truck"></span>DJB</h1>
             <input type="checkbox" id="menu-bar">
             <label class="icon-menu" for="menu-bar"></label>
             <nav class="menu">

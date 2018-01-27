@@ -4,20 +4,63 @@ padding: 0;
 }
 body{
 	font-family: sans-serif;
-	position: relative;
+	/*position: relative;*/
 }
 #contenedor{
 top:0;
 left: 0;
 display: flex;
 }
-/*Comenzando con lo que es el div de el nav de administrador.*/
+header {
+	width: 100%;
+	height: 50px;
+	background: #333;
+	color: #fff;
+
+	position: fixed;
+	top:0;
+	left:0;
+	/*z-index: 100;*/
+}
+header label{
+	float: left;/*para posicionar el label a de izquierda.*/
+	font-size: 28px;
+	margin: 6px 0px;
+	cursor: pointer;
+}
+#menu-bar:checked ~ #menu{
+transform: translateX(0%);
+}
+#menu-bar{
+	display: none;/*para ocultar el checbock*/
+}
+#navegador a{
+position: static;
+width: auto;
+height: auto;
+float: right;
+display: flex;
+padding:0px 20px 10px 20px;
+border-left: 2px solid #fff;
+}
 #navegador{
+z-index: 100;
+top: 0;
+left: 0;
+width: 100%;
+margin: auto;
+/*background-color: rgba(255, 255, 255, .1);*/
+background:black; /*rgba(41,41,41,0.5);*/
+}
+/*Comenzando con lo que es el div de el nav de administrador.*/
+#menu{
+transition: all 0.5s;/*para darle el efecto de regresar del menu*/
+transform: translateX(-100%);/*para ocultar el menu*/
 position: absolute;
-	top: 0;
-	height: 100%;
-	transition: all .3s ease-in-out;
-z-index: 2;
+top: 50px;
+height: 100vh;
+transition: all .3s ease-in-out;
+/*****/
 border-right: 1px solid rgba(255, 255, 255, .4);
 overflow: hidden;
 left: 0;
@@ -43,12 +86,15 @@ overflow: auto;
 padding: 20px;
 background-color: rgba(0, 0, 0, .77);
 }
-#navegador ul {
+#menu h4{
+	text-align: center;
+}
+#menu ul {
 	background-color: transparent;
 	display: block;
 	padding: 20px;
 }
-#navegador li{
+#menu li{
 	,margin:0;
 	width: 80%;
 	list-style: none;
@@ -59,19 +105,19 @@ background-color: rgba(0, 0, 0, .77);
 	font-size: 16px; 
 	height:100%;
 }
-#navegador li:hover{
+#menu li:hover{
 cursor: pointer;
 }
 /*esta es el div del navegador del administrador para lo que es la imagen*/
-#navegador ul li #imagenAdmin{
+#menu ul li #imagenAdmin{
 	width:100%;
 	background-color: transparent;
 	height:150px;
 	margin:0;
 }
-#navegador ul li #imagenAdmin img{
+#menu ul li #imagenAdmin img{
 	width:100%;/*para que agarre el 100 del div que lo contiene*/
-	height:150px;/*para que agarre el 90px del div que lo contiene*/
+	height:120px;/*para que agarre el 90px del div que lo contiene*/
 	display: block;/*para que pueda agarrar los parametros de el div*/
 	margin: auto;/*margin auto para que se ajuste a la pantalla*/
 	/*border:2px solid black;*/
@@ -80,7 +126,7 @@ cursor: pointer;
 /*finalizacion del ul y li del administrador*/
 
 /*comienzo del a de administrador el nav de redireccionamiento.*/
-#navegador  a{
+#menu  a{
 border-radius: 20px;
 display: block;
 width: 80%;
@@ -89,7 +135,7 @@ padding:20px;
 text-decoration: none;
 margin:10px;
 }
-#navegador a:hover{
+#menu a:hover{
 display: block;
 cursor: pointer;
 color: black;
@@ -102,44 +148,39 @@ box-shadow: 5px 5px 0px black;
 /*se finalizo lo que es le div del navegador el administrador*/
 
 /*comenzando con los datos que se mostraran dependiendo de la opcion del administrador*/
-#datos h3{
-	text-align: center;
-	padding: 10px;
-	padding-bottom: 10px;
-	background: #74F189;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;	
+#nombre_informacion{
+width: 100%;
+background-color: #fff;
+text-align: center;
+align-content: center;
 }
-#datos #imagen,h3,p{
-box-shadow: 5px 5px 0px black;	
+#nombre_informacion h1{
+padding-bottom: 30px;
+padding-top: 30px;
 }
-#datos #imagen{
-	background: #fff;
-	box-sizing: border-box;/*para ajustar la parte derecha del contenedor*/
-	padding:4px;
-	width: 100%;
-	height: 120px;
+/*este es el icono de el administrador admin en el principal*/
+.icon-user-tie{
+	color:#328AFF;
 }
-#datos img{
-	width: 100px;/*para que la imagen tome el 100 del div que la contiene*/
-	height: auto;/*para que la imagen tome el alto del div*/
-	display: block;/*para poder quitar el flex y tener la posivilida de centrar elementos*/
-	margin: auto;/*centra el elemento del div*/
-	border-radius: 50%;
-	border: 5px solid black;
+/*El tipo de letra que se le da al admin*/
+.text-titles{
+	font-family: 'RobotoCondensedLight'
 }
+
 #datos{
  -webkit-background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;
  background-size: cover; 
  background-image: url("../images/fondos/administrador.jpg");
-padding:20px;
+/*padding:10px;*/
 margin: auto;
-margin-left: 270px;
-width: 75%;
+/*margin-left: 270px;*/
+margin-top: 50px;
+width: 100%;
 height: 100vh;
-box-sizing: border-box;
+/*box-sizing: border-box;*/
+
 }
 #datos p {
 padding:10px;
@@ -159,7 +200,25 @@ background: #F9F6F6;
 	border-radius:0px;
 
 }
-
+/*trabajando las dimenciones de la tablet y la pc*/
+@media (min-width: 450px){
+#nombre_informacion{
+	font-size: 20px;
+}
+}
+@media (min-width:900px){
+#datos{
+	width:80%;
+	margin-left: 270px;
+}
+#menu{
+top:0;
+transform: translateX(0%);
+}
+.icon-menu{
+	display: none;
+}
+}
 /******************************/
 div#navegador::-webkit-scrollbar-track-piece
 {

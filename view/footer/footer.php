@@ -8,7 +8,7 @@
                     <a class="icon-facebook" href="https://www.facebook.com/"></a>
                     <a class="icon-twitter" href="https://twitter.com/"></a>
                     <a class="icon-instagram" href="https://www.instagram.com/?hl=es-la"></a>
-                    <a class="icon-google" href="https://www.google.com/intl/es/gmail/about/#"></a>
+                    <a class="icon-google-plus" href="https://www.google.com/intl/es/gmail/about/#"></a>
                 </div>
             </div>
 

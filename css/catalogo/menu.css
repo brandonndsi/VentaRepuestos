@@ -27,10 +27,10 @@ header {
 	.contenedor{
 		width: 900px;
 	}
-}
+/*****/
 header .contenedor{
 	display: table;
-}
+}}/******/
 h1{
 	float: left;
 }
