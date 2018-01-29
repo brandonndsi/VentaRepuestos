@@ -51,15 +51,24 @@
                 </div>
                 </li>
                 </ul>
-                <a href="../../business/sesionaccion/SesionDesconectarAccion.php">Cerrar</a>
-                <a href="../compraview/CompraView.php">Registrar Compra</a>
-                <a href="../ordencompraview/OrdenCompraView.php">orden de Compra</a>
-                <a href="../facturaview/FacturaView.php">Factura</a>
-                <a href="../empleadoview/EmpleadoView.php">Empleado</a>
-                <a href="../tipoempleadoview/TipoEmpleadoView.php">Tipo Empleado</a>
-                <a href="../clienteview/ClienteView.php">Cliente</a>
-                <a href="../proveedorview/ProveedorView.php">Proveedor</a>
-                <a href="../ventanaprincipalview/CatalogoAdmiView.php">Catalogo</a>
+                <a href="../../business/sesionaccion/SesionDesconectarAccion.php">
+                    <span class="icon-switch"></span>Cerrar</a>
+                <a href="../compraview/CompraView.php">
+                    <span class="icon-file-text2"></span>Registrar Compra</a>
+                <a href="../ordencompraview/OrdenCompraView.php">
+                    <span class="icon-cart"></span>orden de Compra</a>
+                <a href="../facturaview/FacturaView.php">
+                    <span class="icon-file-text"></span>Factura</a>
+                <a href="../empleadoview/EmpleadoView.php">
+                    <span class="icon-profile"></span>Empleado</a>
+                <a href="../tipoempleadoview/TipoEmpleadoView.php">
+                    <span class="icon-user-tie"></span>Tipo Empleado</a>
+                <a href="../clienteview/ClienteView.php">
+                    <span class="icon-user-plus"></span>Cliente</a>
+                <a href="../proveedorview/ProveedorView.php">
+                    <span class="icon-truck"></span>Proveedor</a>
+                <a href="../ventanaprincipalview/CatalogoAdmiView.php">
+                    <span class="icon-clipboard"></span>Catalogo</a>
             </div>
             </div>
             </header>
@@ -132,16 +141,5 @@
             </div>
         </div>
     </div>
-
-        <script>
-   /* (function($){
-        $(window).on("load",function(){
-            $("#menu").mCustomScrollbar({
-            theme: "dark-thin",
-            scrollButtons:{ enable: true}
-            });
-        });
-    })(jQuery);*/
-</script>
     </body>
 </html>
