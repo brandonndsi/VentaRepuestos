@@ -40,7 +40,7 @@
             <label class="icon-menu" for="menu-bar"></label>
             <a href="javascript:abrirModal();"><label class="icon-help-with-circle"></label></a>
             <a href="javascript:abrirBuscar();"><label class ="icon-search"></label></a>
-            <a href="#"><label class="icon-bell"></label></a>
+            <a href="javascript:abrirCampana();"><label class="icon-bell"></label></a>
 
             <div id="menu">
                 <h4><?php echo " " .$persona[1]; ?></h4>
@@ -115,16 +115,19 @@
         <div id="campana">
             <div id="contenedor_campana">
                 <div id="titulo_campana">
-                
-                </div>
-                <div id="titulo_campana">
-                    
+                <a href="javascript:cerrarCampana()"><span class="icon-cross"></span></a>
+                <label>Notificaciones.</label>
                 </div>
                 <div id="body_campana">
-                    
-                </div>
-                <div id="footer_campana">
-                
+                   <div id="conte">
+                      <a href="#"><span class="icon-envelop"></span>DATOS NUEVOS.</a> 
+                   </div> 
+                   <div id="conte">
+                      <a href="#"><span class="icon-envelop"></span>DATOS NUEVOS.</a> 
+                   </div> 
+                   <div id="conte">
+                     <a href="#"><span class="icon-envelop"></span>DATOS NUEVOS.</a> 
+                   </div> 
                 </div>
             </div>
         </div>

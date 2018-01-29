@@ -3,7 +3,7 @@ window.onload=function(){
             theme: "dark-thin"//,
             //scrollButtons:{ enable: true}
             });
-	$("#datos").mCustomScrollbar({
+	$("datos").mCustomScrollbar({
             theme: "dark-thin"//,
             //scrollButtons:{ enable: true}
             });
@@ -13,7 +13,6 @@ function cerrarHelp(){
 }
 function abrirModal(){
 	document.getElementById("help").style.transform="translateY(0%)";
-	//document.getElementById("contenedor_help").style.transform="translateY(0%)";
 }
 
 function cerrarBuscar(){
@@ -21,5 +20,11 @@ function cerrarBuscar(){
 }
 function abrirBuscar(){
 	document.getElementById("buscar").style.transform="translateY(0%)";
-	//document.getElementById("contenedor_help").style.transform="translateY(0%)";
+}
+function cerrarCampana(){
+	document.getElementById("campana").style.transform="translateX(+150%)";
+}
+function abrirCampana(){
+	document.getElementById("campana").style.transform="translateX(0%)";
+
 }
