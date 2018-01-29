@@ -6,13 +6,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Administrador</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <!-- CSS -->    
+        <!-- CSS -->
+        <!--http://manos.malihu.gr/jquery-custom-content-scroller/ -->   
         <link rel="stylesheet" href="../../css/Administrador.css">
         <link rel="stylesheet" type="text/css" href="../../css/catalogo/fonts/style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/scroll/jquery.mCustomScrollbar.css">
         <!-- js -->
         <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="../../js/imagen.js"></script>
         <script type="text/javascript" src="../../js/administrador.js"></script>
+        <script type="text/javascript" src="../../js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
 
     </head>
     <script>
@@ -106,5 +109,36 @@
                 </div>
             </div>
         </div>
+        <!--terminacion del modal de la busqueda de datos en el navegador de administrador -->
+
+        <!-- comienzo de los datos de las notificaciones del modal de administrador -->
+        <div id="campana">
+            <div id="contenedor_campana">
+                <div id="titulo_campana">
+                
+                </div>
+                <div id="titulo_campana">
+                    
+                </div>
+                <div id="body_campana">
+                    
+                </div>
+                <div id="footer_campana">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script>
+   /* (function($){
+        $(window).on("load",function(){
+            $("#menu").mCustomScrollbar({
+            theme: "dark-thin",
+            scrollButtons:{ enable: true}
+            });
+        });
+    })(jQuery);*/
+</script>
     </body>
 </html>

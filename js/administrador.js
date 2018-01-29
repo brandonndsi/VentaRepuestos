@@ -1,4 +1,13 @@
-
+window.onload=function(){
+	$("#menu").mCustomScrollbar({
+            theme: "dark-thin"//,
+            //scrollButtons:{ enable: true}
+            });
+	$("#datos").mCustomScrollbar({
+            theme: "dark-thin"//,
+            //scrollButtons:{ enable: true}
+            });
+}
 function cerrarHelp(){
 	document.getElementById("help").style.transform="translateY(-150%)";
 }
