@@ -6,14 +6,20 @@
         <meta charset="UTF-8" content="text/html; charset=ISO-8859-1">
         <title>Proveedor</title>
         <!-- CSS-->
-        <link rel="stylesheet" type="text/css" href="../../css/jquery.tabla.css">
+        <!--<link rel="stylesheet" type="text/css" href="../../css/jquery.tabla.css">-->
+        <link rel="stylesheet" type="text/css" href="../../css/proveedor.css">
+        <link rel="stylesheet" type="text/css" href="../../css/catalogo/fonts/style.css">
         <link rel="stylesheet" type="text/css" href="../../css/estilocrud.css">
         <link rel="stylesheet" type="text/css" href="../../css/notificaciones/todo.css">
+        <link rel="stylesheet" type="text/css" href="../../css/scroll/jquery.mCustomScrollbar.css">
+
         <!-- JS-->
         <script src="../../js/jquery-3.3.1.js"></script>
         <script src="../../js/jquery-ui.js"></script>
         <script src="../../js/jquery.dataTables.js"></script>
         <script type="text/javascript" src="../../js/Proveedor.js"></script>
+        <script type="text/javascript" src="../../js/administradormodal.js"></script>
+        <script type="text/javascript" src="../../js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
         
         
         <script>
@@ -28,21 +34,20 @@
       <?php 
         include_once '../menu/menuAdministrador.php';
         ?>
-        <center>
-        <h1>
-            Proveedor
-            <button class="btn btn-primary" onclick="nuevoMostrar()">Nuevo</button>
-        </h1> 
-    </center>
-    <div class="col-md-12 col-md-offset-2">
-        <table id="listaProveedor" class="table table-striped table-bordered" cellspacing="0" width="100%" >
+    <div id="contenedor">
+        <div id="content_proveedor_nuevo">
+            <label>Proveedor</label>
+            <input class="btn-nuevo" onclick="nuevoMostrar()" value="Nuevo">
+        </div>
+    <div class="col-md-12 col-md-offset-2" id="ta">
+        <table id="listaProveedor" class="table table-striped table-bordered" >
             <thead>
                 <tr>
                     <th>Nombre</th>
                     <th>Apellido 1</th>
                     <th>Apellido 2</th>
                     <th>Cedula</th>
-                    <th>Acciones</th>
+                    <th id="accion-btn">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -76,7 +81,7 @@
         </div>    
     </div>
     <!-- Modal de proveedor eliminar -->
-        <div id="modalEliminar">
+    <div id="modalEliminar">
         <div id="formEliminar">
             <h2 id="lblEliminar">Eliminar.</h2>
             <input type="hidden" name="proveedorid" id="proveedorid">
@@ -84,7 +89,7 @@
         <input type="submit"  value="Enviar" onclick="eliminarProveedor()" id="eliEm">
         <input type="submit" value="Cancelar" onclick="eliminarCerrar()" id="eliCe">
         </div>      
-        </div> 
+    </div> 
     <!--Modal ver proveedor -->
     <div id="verModal">
         <div id="formVer">
@@ -100,7 +105,7 @@
         <input type="submit"  value="Cerrar" onclick="cerrarVer()" id="cerrar"> 
         </div>
         </div>    
-        </div>
+    </div>
     <!-- modal de modificar proveedor -->
     <div id="modalModificar">
         <div id="form">
@@ -118,24 +123,25 @@
         <input type="submit" value="Cancelar" onclick="actualizarCerra()" id="cancelar" class="input-50"> 
         </div>  
         </div>
-        </div>    
+    </div>    
          <!-- notificacion de eliminar modal de confirmacion -->   
-    <div id="notificacionEliminar">
+        <div id="notificacionEliminar">
         <?php 
             include_once '../modalnotificaciones/eliminar.php';
          ?>
-    </div>
+        </div>
         <!--  notificacion de actualizar modal de confirmacion-->
-    <div id="notificacionActualizar">
+        <div id="notificacionActualizar">
         <?php
         include_once '../modalnotificaciones/actualizar.php';
         ?>
-    </div>
-    <!--  notificacion de nuevo modal de confirmacion-->
-    <div id="notificacionNuevo">
+        </div>
+        <!--  notificacion de nuevo modal de confirmacion-->
+        <div id="notificacionNuevo">
         <?php
         include_once '../modalnotificaciones/nuevo.php';
         ?>
+        </div>
     </div>
     </body>
 </html>

@@ -1,0 +1,156 @@
+@import url(menuAdministrador.css);
+*{
+margin:0;
+padding:0;
+}
+body{
+top:0;
+left: 0;
+display: flex;
+flex-wrap: wrap;
+-webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover; 
+background-image: url("../images/fondos/James-Bond-Die-Autos-der-James-Bond-Geg.jpg");
+}
+#contenedor{
+width: 100%;
+height: 100vh;
+top:0;
+left: 0;
+display: flex;
+flex-wrap: wrap;
+}
+#content_proveedor_nuevo{
+display: flex;
+flex-wrap: wrap;
+width: 90%;
+height: 60px;
+margin:auto;
+/*border: 1px solid black;*/
+margin-top: 60px;
+margin-bottom: 10px;
+border-bottom: 2px solid black;
+}
+#content_proveedor_nuevo label{
+width: 70%;
+margin:10px 0px 10px 0px;
+text-align: center;
+}
+#content_proveedor_nuevo .btn-nuevo{
+text-align: center;
+margin: 10px 0px 10px 0px;
+width:20%;
+color: white;
+background: #0BFA37;
+border:1px solid #08FF56;
+border-radius:10px;
+}
+#content_proveedor_nuevo .btn-nuevo:hover{
+cursor: pointer;
+}
+/*trabajando con el contenedor de la tabla proveedor*/
+#ta{
+/*margin: auto;*/
+box-sizing: border-box;
+top:0;
+left:0;
+/*border: 1px solid red;*/
+width:90%;
+height: 90%;
+margin: auto;
+margin-top: 0;
+overflow: auto;
+}
+/*terminando con el contenedor de proveedor*/
+
+/*comenzando con la tabla proveedor*/
+#listaProveedor{
+width: 100%;
+margin-top: 10px;
+margin-left: 10px;
+margin-right: 10px;
+/*border:2px solid black;*/
+border-collapse: collapse;
+text-align: center;
+}
+#listaProveedor tfoot th{
+	border-right: 1px solid black;
+	background-color:#05D6FC;
+	/*border: 2px solid black;*/
+}
+#listaProveedor thead{
+text-align: left;
+background-color:#05D6FC; /*#246355;*/
+border-bottom: 2px solid black;
+}
+#listaProveedor thead th{
+	text-align: center;
+	border-right: 1px solid black;
+}
+#listaProveedor td,th{
+	padding: 15px 0px 15px 0px;
+}
+#accion-btn{
+text-align: center;
+border-left: 1px solid black;
+}
+#listaProveedor_paginate{
+position: relative;
+border-top: 2px solid black;
+border-bottom: 2px solid black;
+margin-left:10px; 
+background: #fff;
+}
+#listaProveedor_paginate a{
+padding: 10px;
+margin: auto;
+align-content: right;
+float:right;
+border: 1px solid #05D6FC;
+margin-top: 10px;
+margin-right: 10px;
+font-size: 15px;
+border-radius: 10px;
+background-color:#05D6FC;
+color:#fff;
+}
+#listaProveedor_paginate a:hover{
+	cursor: pointer;
+	font-size: 12px;
+	/*transition-property: width;
+	transition: all .3s;
+	transition-delay: .3s;*/
+}
+/*terminando con la tabla*/
+@media (min-width: 450px){
+#content_proveedor_nuevo .btn-nuevo{
+	width: 10%;
+	padding: 10px;
+	font-size: 20px;
+}
+#content_proveedor_nuevo label{
+ width:80%;
+ font-size: 20px;
+}
+}
+
+@media (min-width:900px){
+#ta{
+	width:80%;
+	margin-left: 270px;
+}
+#content_proveedor_nuevo{
+	width:80%;
+	margin-left: 270px;	
+}
+#menu{
+top:0;
+transform: translateX(0%);
+}
+.icon-menu{
+	display: none;
+}
+}
+

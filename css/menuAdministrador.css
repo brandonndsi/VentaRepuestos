@@ -1,0 +1,365 @@
+header {
+	width: 100%;
+	height: 50px;
+	background: #333;
+	color: #fff;
+
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 100;
+}
+header label{
+	float: left;/*para posicionar el label a de izquierda.*/
+	font-size: 28px;
+	margin: 6px 0px;
+	cursor: pointer;
+}
+header a{
+text-decoration: none;
+color:white;
+}
+#menu-bar:checked ~ #menu{
+transform: translateX(0%);
+}
+#menu-bar{
+	display: none;/*para ocultar el checbock*/
+}
+#navegador a{
+position: static;
+width: auto;
+height: auto;
+float: right;
+display: flex;
+padding:0px 20px 10px 20px;
+border-left: 2px solid #fff;
+}
+#navegador{
+/*opacity: 0.6;
+  filter: alpha(opacity=60);*/
+position: fixed; 
+z-index: 100;
+top: 0;
+left: 0;
+width: 100%;
+margin: auto;
+
+/*background-color: rgba(41, 41, 41, 0.5);*/
+background:black; /*rgba(41,41,41,0.5);*/
+}
+/*Comenzando con lo que es el div de el nav de administrador.*/
+#menu{
+transition: all 0.5s;/*para darle el efecto de regresar del menu*/
+transform: translateX(-100%);/*para ocultar el menu*/
+position: absolute;
+top: 50px;
+height: 100vh;
+transition: all .3s ease-in-out;
+/*****/
+border-right: 1px solid rgba(255, 255, 255, .4);
+overflow: hidden;
+left: 0;
+/*margin: 0;
+padding: 0;
+bottom: 0;*/
+/*todo esto para ajustar la imagen al div*/
+-webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover; 
+background-image: url("../images/administrador/sideBar.jpg");
+margin:auto;
+/*fin de la ajustacion de la imagen  al div*/
+width: 270px;/******/
+/*height: 100vh;*//*******/
+box-sizing: border-box;
+border: 1px solid black;
+/*para lo de ocultar datos del contenido de mozilla y chrome*/
+/*overflow-y: auto;*/
+overflow: auto;
+/*terminacion del ocultar de los navegadores*/
+padding: 20px;
+background-color: rgba(0,0,0,0.6);
+/*background-color: rgba(0, 0, 0, .77);
+background-color: rgba(0,0,255,0.5);*/
+z-index: 100;
+
+}
+#menu h4{
+	text-align: center;
+}
+#menu ul {
+	background-color: transparent;
+	display: block;
+	padding: 20px;
+}
+#menu li{
+	,margin:0;
+	width: 80%;
+	list-style: none;
+  	overflow: hidden; /* Limpiamos errores de float */
+	padding: 15px;
+	color: #fff;
+	border-bottom: 4px solid #fff;
+	font-size: 16px; 
+	height:100%;
+}
+#menu li:hover{
+cursor: pointer;
+}
+/*esta es el div del navegador del administrador para lo que es la imagen*/
+#menu ul li #imagenAdmin{
+	width:100%;
+	background-color: transparent;
+	height:150px;
+	margin:0;
+}
+#menu ul li #imagenAdmin img{
+	width:100%;/*para que agarre el 100 del div que lo contiene*/
+	height:120px;/*para que agarre el 90px del div que lo contiene*/
+	display: block;/*para que pueda agarrar los parametros de el div*/
+	margin: auto;/*margin auto para que se ajuste a la pantalla*/
+	/*border:2px solid black;*/
+	border-radius: 50%;/*para uqe tome la forma redondiada del div*/
+}
+/*finalizacion del ul y li del administrador*/
+
+/*comienzo del a de administrador el nav de redireccionamiento.*/
+#menu  a{
+border-radius: 20px;
+display: block;
+width: 80%;
+color: #fff;
+padding:15px;
+text-decoration: none;
+margin:0px 0px 5px 2px;
+}
+#menu span{
+float: right;
+margin-right: 10px;
+font-size: 25px;
+}
+#menu span.icon-user-tie{
+color:white;
+}
+#menu a:hover{
+
+display: block;
+cursor: pointer;
+color: black;
+transition: 0.4s;/*esto es para la transicion de  el hover*/
+border-radius: 30px;
+background-color: rgba(255, 255, 255, .1);/*color de trasparencia del a */*/  /*#FF5722; #f0f0f0;*/
+box-shadow: 5px 5px 0px black;	
+}
+/*terminacion del css de a del nav de administrador efectos*/
+/*se finalizo lo que es le div del navegador el administrador*/
+
+/*trabajando con los css de los tres modales del menu del adminstrador para poder liberar memoria*/
+/*trabajando con el modal de help*/
+#help{
+width: 100%;
+height: 100%;
+top:0px;
+left: 0px;
+position: fixed;
+background-color: #fff;
+background: rgba(41,41,41,0);
+transition-property: width;
+transition:1s;
+transform: translateY(-150%);/*-150**/
+overflow: auto;
+z-index: 100;
+}
+#help #contenedor_help{
+border: 1px solid black;
+border-radius: 10px;
+width:80%;
+margin:auto;
+margin-top:80px;
+height:60%;
+background-color:#fff;
+text-align: center;
+align-content: center;
+font-family: Arial;
+padding:10px;
+display: flex;
+flex-wrap: wrap;
+
+}
+#help #titulo_help{
+width: 100%;
+margin: 0;
+border-bottom: 2px solid black;
+padding-bottom: 10px;
+
+}
+#help #body_help{
+width:100%;
+text-align: justify;
+padding: 10px;
+font-size: 10px;
+border-bottom: 2px solid black;
+}
+#help #footer_help{
+width: 100%;
+align-content:center;
+margin-top:15px;	
+}
+#help #footer_help a{
+/*border:2px solid black;*/
+border-radius: 10px;
+font-size: 20px;
+padding: 5px 30px 5px 30px;
+color:#fff;
+background-color:#71EDB7;
+text-decoration: none;	
+}
+/*terminado con el modal de help*/
+
+/*comensando con el modal de la busqueda de datos.*/
+#buscar{
+width: 100%;
+height: 100%;
+top:0px;
+left: 0px;
+position: fixed;
+background-color: #fff;
+background: rgba(41,41,41,0);
+transition-property: width;
+transition:1s;
+transform: translateY(-150%);/*-150**/
+overflow: auto;
+z-index: 100;
+}
+#buscar #contenedor_buscar{
+border: 1px solid black;
+border-radius: 10px;
+width:90%;
+margin:auto;
+margin-top:80px;
+height:50%;
+background-color:#fff;
+text-align: center;
+align-content: center;
+font-family: Arial;
+display: flex;
+flex-wrap: wrap;
+}
+#buscar #contenedor_buscar #titulo_buscar{
+width: 100%;
+margin:0px 0px 20px 0px;
+/*background-color: #B9E7F3;*/
+}
+#buscar #contenedor_buscar #body_buscar{
+width: 100%;
+margin: 0;
+}
+#buscar #contenedor_buscar #body_buscar input{
+font-size: 20px;
+}
+#buscar #contenedor_buscar #footer_buscar{
+width: 100%;
+margin: 20px 0px 0px 0px;
+}
+#buscar #contenedor_buscar #footer_buscar a{
+
+margin: 20px;
+padding: 10px 25px 10px 25px;
+width:40%;
+text-decoration: none;
+font-size: 12px;
+color:#fff;
+border-radius: 10px;
+}
+#buscar #contenedor_buscar #footer_buscar span{
+padding: 0;
+margin: 0;
+width: 100%;
+}
+#busP{
+background-color: #80EE98;	
+}
+#busE{
+	background-color: #F73239;
+}
+/*terminando con el modal de la busqueda de los datos a buscar*/
+
+/*comenzando con el modelo de campana de notificaciones para el adminsitrador*/
+#campana{
+width: 100%;
+height: 100%;
+top:0px;
+left: 0px;
+position: fixed;
+background-color: #fff;
+background: rgba(41,41,41,0);/*nivel de transparencia*/
+transition-property: width;
+transition:0.5s;
+transform: translateX(+150%);/*-150**/
+overflow: auto;	
+z-index: 100;
+}
+#contenedor_campana{
+	float:right;
+	display: block;
+	/*margin-top:50px;*/
+	width: 270px;
+	background-color:white;
+	height: 100vh;
+	position: absolute;
+	right: 0;
+	top:0;
+}
+#titulo_campana{
+display: flex;
+background-color:#FD6F31;
+width: 100%;
+height: 50px;	
+}
+#titulo_campana a{
+	/*border: 1px solid black;*/
+	width: 30%;
+	font-size: 25px;
+	text-decoration: none;
+	padding: 15px 0px 0px 10px;
+	color:white;
+}
+#titulo_campana a:hover{
+	cursor: pointer;
+	font-size: 23px;
+}
+#titulo_campana label{
+	padding: 15px 0px 0px 0px;
+	width: 40%;
+	font-size: 25px;
+	color:white;
+}
+#tilulo_campana span{
+	font-size: 100%;
+}
+#body_campana #conte{
+border-bottom: 2px solid #C4C3C3;
+margin:0;
+padding:20px;
+}
+#body_campana #conte a{
+color: black;
+text-decoration: none;
+}
+#body_campana #conte a:hover{
+cursor:pointer;
+}
+#body_campana #conte span{
+border-radius: 20px;
+padding:10px;
+font-size: 30px;
+margin-right: 10px;
+background-color: #9B9898;
+}
+#body_campana #conte span{
+cursor:wait;/*relog de arena*/
+}
+/*terminado con lo que es la mensajeria del administrador.*/
+
+/*terminando con el administrador los modales.*/

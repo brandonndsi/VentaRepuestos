@@ -15,6 +15,7 @@
         <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="../../js/imagen.js"></script>
         <script type="text/javascript" src="../../js/administrador.js"></script>
+        <script type="text/javascript" src="../../js/administradormodal.js"></script>
         <script type="text/javascript" src="../../js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
 
     </head>
@@ -24,59 +25,13 @@
         });
     </script>
     <body>
-        <?php
-        session_start();
-        if (!isset($_SESSION['usuario'])) {
-            header("location: ../loginview/LoginView.php");
-        } else {
-            $persona = $_SESSION['usuario'];
-            $id = $persona[0];
-        }
-        ?>
         <div id="contenedor">
-            <header>
-            <div id="navegador">
-            <input type="checkbox" id="menu-bar">
-            <label class="icon-menu" for="menu-bar"></label>
-            <a href="javascript:abrirModal();"><label class="icon-help-with-circle"></label></a>
-            <a href="javascript:abrirBuscar();"><label class ="icon-search"></label></a>
-            <a href="javascript:abrirCampana();"><label class="icon-bell"></label></a>
-
-            <div id="menu">
-                <h4><?php echo " " .$persona[1]; ?></h4>
-                <ul>
-                <li>
-                <div id="imagenAdmin">
-                       <img src="../../images/administrador/david.jpeg">
-                </div>
-                </li>
-                </ul>
-                <a href="../../business/sesionaccion/SesionDesconectarAccion.php">
-                    <span class="icon-switch"></span>Cerrar</a>
-                <a href="../compraview/CompraView.php">
-                    <span class="icon-file-text2"></span>Registrar Compra</a>
-                <a href="../ordencompraview/OrdenCompraView.php">
-                    <span class="icon-cart"></span>orden de Compra</a>
-                <a href="../facturaview/FacturaView.php">
-                    <span class="icon-file-text"></span>Factura</a>
-                <a href="../empleadoview/EmpleadoView.php">
-                    <span class="icon-profile"></span>Empleado</a>
-                <a href="../tipoempleadoview/TipoEmpleadoView.php">
-                    <span class="icon-user-tie"></span>Tipo Empleado</a>
-                <a href="../clienteview/ClienteView.php">
-                    <span class="icon-user-plus"></span>Cliente</a>
-                <a href="../proveedorview/ProveedorView.php">
-                    <span class="icon-truck"></span>Proveedor</a>
-                <a href="../ventanaprincipalview/CatalogoAdmiView.php">
-                    <span class="icon-clipboard"></span>Catalogo</a>
-            </div>
-            </div>
-            </header>
+            <?php 
+                include_once '../menu/menuAdministrador.php';
+             ?>
             <div id="datos">
                 <div id="nombre_informacion">
                 <h1 class="text-titles"><i class="icon-user-tie"><?php echo " " . $persona[1]."  "; ?></i><small>Admin</small></h1>
-                    <!--<img src="../../images/administrador/administrador.png" id="nuevo">-->
-                <!--<p id="nombre"><b><?php //echo " " . $persona[1]; ?></b></p>-->
                 <p>La principal persona responsable que le da soporte a la paguina de repuestos de la virgen de sarapiqui,
                     ademas eres el encargado de crear los respuestos, editar los precios,agregar nuevas categorias que se
                     adacten al cliente, entre otras cosas, evitar que los hackers roben informacion de la misma base de datos
@@ -84,62 +39,7 @@
             </div> 
         </div>
         <input type="hidden" id="personaid" value="<?php echo $id; ?>">
-        <!-- comensando con el modal de help -->
-        <div id="help">
-            <div id="contenedor_help">
-            <div id="titulo_help">
-               <h2>Ayuda</h2> 
-            </div>
-            <div id="body_help">
-               <p>El menu de apciones te proporciona varios modulos los caules puedes consultar y actualizar datos de los mismos en la base de datos,entre los modulos estan:<br>
-               <b>Registrar compra:</b> la cual consiste en poder generar la compra a un cliente en genera.<br>
-               <b>Orden de compra:</b> Consiste en poder ver los pedidos de los usuarios.<br>
-               <b>Empleado:</b> Presenta todos datos de editar,eliminar,actualizar y crear empleado, asi como la facturacion,tipo de empleado,cliente,proveedory el catalogo.
-                .</p> 
-            </div>
-            <div id="footer_help">
-                <a href=""><span class=" icon-checkmark"></span></a>
-            </div>
-        </div>
-        </div>
-        <!-- terminacion del modal de ayuda al administrador -->
-        <!-- comenzando con el modal de la busqueda de las funciones del administrador-->
-        <div id="buscar">
-            <div id="contenedor_buscar">
-                <div id="titulo_buscar">
-                <h2>¿Qué estas buscando?</h2>
-                </div>
-                <div id="body_buscar">
-                <input type="text" id="cont_buscar">
-                </div>
-                <div id="footer_buscar">
-                    <a href="" id="busP"><span class="icon-search"></span></a>
-                    <a href="javascript:cerrarBuscar();" id="busE"><span class="icon-cross"></span></a>
-                </div>
-            </div>
-        </div>
-        <!--terminacion del modal de la busqueda de datos en el navegador de administrador -->
-
-        <!-- comienzo de los datos de las notificaciones del modal de administrador -->
-        <div id="campana">
-            <div id="contenedor_campana">
-                <div id="titulo_campana">
-                <a href="javascript:cerrarCampana()"><span class="icon-cross"></span></a>
-                <label>Notificaciones.</label>
-                </div>
-                <div id="body_campana">
-                   <div id="conte">
-                      <a href="#"><span class="icon-envelop"></span>DATOS NUEVOS.</a> 
-                   </div> 
-                   <div id="conte">
-                      <a href="#"><span class="icon-envelop"></span>DATOS NUEVOS.</a> 
-                   </div> 
-                   <div id="conte">
-                     <a href="#"><span class="icon-envelop"></span>DATOS NUEVOS.</a> 
-                   </div> 
-                </div>
-            </div>
-        </div>
+               
     </div>
     </body>
 </html>

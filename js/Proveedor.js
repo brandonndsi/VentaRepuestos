@@ -1,6 +1,15 @@
  var table;
  var datoAuto;
-
+window.onload=function(){
+$("#menu").mCustomScrollbar({
+            theme: "dark-thin"//,
+            //scrollButtons:{ enable: true}
+            });
+$("#ta").mCustomScrollbar({
+            theme: "dark-thin"//,
+            //scrollButtons:{ enable: true}
+            });
+};
  function autoCompletado(input){
    // alert(input.value);
    var todo=input.value;

@@ -1,31 +1,181 @@
+@import url(menuAdministrador.css);
 *{
 	margin:0;
 	top:0;
-	let:0;
 }
 body{
-	width: 100%;
-	height: 100vh;
+width:100%;
+height:100vh;
+font-family: sans-serif;
+	/*width: 100%;
+	height: 100vh;*/
 }
-#principal{
-	width: 100%;
+#contenedor{
+	width:100%;
+	height:100%;
 	top:0;
 	left: 0;
 	display: flex;
 	flex-wrap: wrap;
-	margin: auto;
+	/*background: red;*/
+	
 }
 #menu{
-	width: 40%;
+	width: 275px;
 	border: 1px solid black;
 	padding: 10px;
-	height: 200px;
+	height: 100vh;
+}
+/*dando los parametros del div principal de factura*/
+#principal{
+top:0;
+left: 0;
+text-align:center;
+background-color: rgba(41,41,41,.5);
+margin: auto;
+margin-top: 50px;
+width: 90%;
+min-height: 100vh;
+background-color:white;
+border:2px solid black;
+padding: 0px 15px 0px 15px;
+}
+/*terminando cone l div de principal que contiene todos los datos del factura*/
 
+/*comensando con el div de la informacion de el div de factura*/
+#principal #titulo_principal{
+	margin:auto;
+	width: 100%;
+	background:#A8F1F9;
+	padding: 10px 0px 10px 0px;
+	margin-top: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
 }
-#contenido{
+/*Terminando el div de informacion de factura.*/
+
+/*comensando con el div de buscar la factura  en la base de datos*/
+#principal #body_principal{
+	width: 100%;
+	max-width: 100%;
+	margin: auto;
+	/*padding: 20px;*/
+	box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+	display: flex;
+	flex-wrap: wrap;
+	/*background: transparent;*/
+	padding: 10px 0px 10px 0px;/*para los lados de adentro del input buscar*/
+}
+
+#body_principal .input_principal{
+width: 100%;
+padding: 5px;
+background: rgba(0,0,0,.1);
+border: 1px solid rgba(0,0,0,0.3);
+margin:0px 10px 0px 10px;
+color:#888787;
+border-radius: 5px;
+}
+#body_principal .btn_principal{
+	margin: 5px 0px 0px 10px;
+	color: #fff;
+	border-radius:10px;
 	width: 40%;
-	border: 1px solid black;
+	box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+	font-size:18px;
+	padding:5px 0px 5px 0px;
+	background:#49EC98;
 }
-#contenido p{
-font-size: 10px;
+#body_principal .btn_principal span{
+	margin-right: 10px;
+}
+#body_principal .btn_principal:hover{
+	cursor:pointer;
+	font-size: 16px;
+	transition: all .3s;
+}
+/*terminacion del div de buscar facturas*/
+
+/*trabajano con el div de la tabla de mostrar los datos.*/
+#tabla_principal{
+width: 100%;
+	max-width: 100%;
+	margin: auto;
+	/*padding: 20px;*/
+	box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+	display: flex;
+	flex-wrap: wrap;
+	/*background: transparent;*/
+	padding: 10px 0px 10px 0px;/*para los lados de adentro del input buscar*/	
+}
+#tabla_principal #tabla{
+
+box-sizing:  border-box;
+border: 1px solid black;
+text-align:left;
+width:95%;
+background-color: #fff;
+border-collapse:collapse;
+margin: auto;
+margin:0px 10px 0px 10px;
+}
+#tabla_principal #tabla td,th{
+	padding: 15px 0px 15px 0px;
+}
+#tabla_principal #tabla thead{
+background-color:#05D6FC; /*#246355;*/
+border-bottom: 2px solid black;
+}
+#tabla_principal #tabla th{
+text-align: center;
+}
+#tabla_principal #tabla tr:nth-child(even){
+background-color: #ddd;
+}
+#tabla_principal #tabla tr:hover td{
+background-color:#369681;
+color:#fff;
+cursor:pointer; 
+}
+#btn-accion{
+	text-align: center;
+}
+#btn-accion a{
+color: black;
+text-decoration: none;
+/*border: 2px solid black;*/
+font-size: 25px;
+margin-right: 4px;
+}
+#btn-accion a:hover{
+cursor:pointer;
+}
+
+/*terminando con el div de buscar persona.*/
+@media (min-width:450px){
+#body_principal .input_principal{
+display: flex;
+width: 40%;
+}
+#body_principal .btn_principal{
+width: 20%;
+border: 1px solid black;
+}
+}
+@media (min-width:900px){
+#body_principal .btn_principal{
+width: 12%;
+font-size:14px;
+}
+#menu{
+top:0;
+transform: translateX(0%);
+}
+.icon-menu{
+	display: none;
+}
+#principal{
+	margin-left: 25%;
+}
 }
