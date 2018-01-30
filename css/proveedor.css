@@ -119,16 +119,13 @@ color:#fff;
 #listaProveedor_paginate a:hover{
 	cursor: pointer;
 	font-size: 12px;
-	/*transition-property: width;
-	transition: all .3s;
-	transition-delay: .3s;*/
 }
 /*terminando con la tabla*/
 @media (min-width: 450px){
 #content_proveedor_nuevo .btn-nuevo{
-	width: 10%;
+	width: 15%;
 	padding: 10px;
-	font-size: 20px;
+	font-size: 16px;
 }
 #content_proveedor_nuevo label{
  width:80%;

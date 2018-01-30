@@ -17,98 +17,144 @@ font-family: sans-serif;
 	left: 0;
 	display: flex;
 	flex-wrap: wrap;
+	margin:auto;
 	/*background: red;*/
 	
 }
-#menu{
-	width: 275px;
-	border: 1px solid black;
-	padding: 10px;
-	height: 100vh;
-}
+
 /*dando los parametros del div principal de factura*/
-#principal{
-top:0;
-left: 0;
-text-align:center;
-background-color: rgba(41,41,41,.5);
-margin: auto;
-margin-top: 50px;
-width: 90%;
-min-height: 100vh;
-background-color:white;
-border:2px solid black;
-padding: 0px 15px 0px 15px;
-}
+
 /*terminando cone l div de principal que contiene todos los datos del factura*/
 
 /*comensando con el div de la informacion de el div de factura*/
-#principal #titulo_principal{
-	margin:auto;
+#titulo_principal{
 	width: 100%;
+	margin:auto;
 	background:#A8F1F9;
-	padding: 10px 0px 10px 0px;
-	margin-top: 10px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	padding: 10px 0px 0px 0px;
+	margin-top: 50px;
+	margin-bottom: 0px;
+	text-align: center;
+	border-bottom: 2px solid black;
 	box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+	height: 60px;
 }
 /*Terminando el div de informacion de factura.*/
 
 /*comensando con el div de buscar la factura  en la base de datos*/
-#principal #body_principal{
+ #body_principal{
 	width: 100%;
-	max-width: 100%;
-	margin: auto;
-	/*padding: 20px;*/
-	box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
 	display: flex;
 	flex-wrap: wrap;
+	height:30px;
+	/*margin: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	/*padding: 20px;*/
+	/*box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+	
+	height: 60px;
+	top:0;
 	/*background: transparent;*/
 	padding: 10px 0px 10px 0px;/*para los lados de adentro del input buscar*/
 }
 
-#body_principal .input_principal{
-width: 100%;
-padding: 5px;
-background: rgba(0,0,0,.1);
-border: 1px solid rgba(0,0,0,0.3);
-margin:0px 10px 0px 10px;
-color:#888787;
-border-radius: 5px;
+#body_principal label{
+width: 70%;
+margin:0px 0px 0px 0px;
+text-align: center;
 }
-#body_principal .btn_principal{
-	margin: 5px 0px 0px 10px;
-	color: #fff;
-	border-radius:10px;
-	width: 40%;
-	box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
-	font-size:18px;
-	padding:5px 0px 5px 0px;
-	background:#49EC98;
+#body_principal .btn-nuevo{
+text-align: center;
+margin: 0px 0px 0px 0px;
+width:20%;
+color: white;
+background: #0BFA37;
+border:1px solid #08FF56;
+border-radius:10px;
 }
-#body_principal .btn_principal span{
-	margin-right: 10px;
-}
-#body_principal .btn_principal:hover{
-	cursor:pointer;
-	font-size: 16px;
-	transition: all .3s;
+#body_principal .btn-nuevo:hover{
+cursor: pointer;
 }
 /*terminacion del div de buscar facturas*/
 
 /*trabajano con el div de la tabla de mostrar los datos.*/
 #tabla_principal{
-width: 100%;
-	max-width: 100%;
+border-top: 2px solid black;
+box-sizing: border-box;
+top:0;
+left:0;
+/*border: 1px solid red;*/
+width:90%;
+height: 90%;
+margin: auto;
+margin-top: 0;
+overflow: auto;
+	/*width: 100%;
 	margin: auto;
 	/*padding: 20px;*/
-	box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+	/*box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
 	display: flex;
 	flex-wrap: wrap;
 	/*background: transparent;*/
+	/*margin-top: 0;
 	padding: 10px 0px 10px 0px;/*para los lados de adentro del input buscar*/	
 }
+/*comenzando la tabla*/
+#lista_factura{
+width: 100%;
+margin-top: 10px;
+margin-left: 10px;
+margin-right: 10px;
+border-collapse: collapse;
+text-align: center;	
+}
+#lista_factura tfoot th{
+	border-right: 1px solid black;
+	background-color:#05D6FC;
+	/*border: 2px solid black;*/
+}
+#lista_factura thead{
+text-align: left;
+background-color:#05D6FC; /*#246355;*/
+border-bottom: 2px solid black;
+}
+#lista_factura thead th{
+	text-align: center;
+	border-right: 1px solid black;
+}
+#lista_factura td,th{
+	padding: 15px 0px 15px 0px;
+}
+#accion-btn{
+text-align: center;
+border-left: 1px solid black;
+}
+#lista_factura_paginate{
+position: relative;
+border-top: 2px solid black;
+border-bottom: 2px solid black;
+margin-left:10px; 
+background: #fff;
+}
+#lista_factura_paginate a{
+padding: 10px;
+margin: auto;
+align-content: right;
+float:right;
+border: 1px solid #05D6FC;
+margin-top: 10px;
+margin-right: 10px;
+font-size: 15px;
+border-radius: 10px;
+background-color:#05D6FC;
+color:#fff;
+}
+#lista_factura_paginate a:hover{
+	cursor: pointer;
+	font-size: 12px;
+}
+/*terminando con la tabla*/
 #tabla_principal #tabla{
 
 box-sizing:  border-box;
@@ -154,23 +200,24 @@ cursor:pointer;
 
 /*terminando con el div de buscar persona.*/
 @media (min-width:450px){
-#body_principal .input_principal{
-display: flex;
-width: 40%;
-}
-#body_principal .btn_principal{
-width: 20%;
-border: 1px solid black;
-}
+
 }
 @media (min-width:900px){
-#body_principal .btn_principal{
-width: 12%;
-font-size:14px;
-}
 #menu{
 top:0;
 transform: translateX(0%);
+}
+#titulo_principal{
+width:80%;
+margin-left: 270px;
+}
+#body_principal{
+width:80%;
+margin-left: 270px;	
+}
+#tabla_principal{
+width:80%;
+margin-left: 270px;
 }
 .icon-menu{
 	display: none;

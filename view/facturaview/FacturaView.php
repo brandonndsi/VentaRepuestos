@@ -11,25 +11,36 @@
        
         <!-- JS -->
         <script type="text/javascript" src="../../js/administradormodal.js"></script>
-        <script type="text/javascript" src="../../js/facturacion.js"></script>
         <script type="text/javascript" src="../../js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+         <script type="text/javascript" src="../../js/facturacion.js"></script>
     </head>
     <body>
-	<div id="contenedor">
-		<?php 
+    	<?php 
 		include_once '../menu/menuAdministrador.php';
 		?>
-		<div id="principal">
+	<div id="contenedor">
 			<div id="titulo_principal">
 				<h3>facturaci&oacute;n.</h3>
 			</div>
 			<div id="body_principal">
-				<input type="text" class="input_principal" placeholder="#factura,nombre cliente">
-				<a class="btn_principal"><span class="icon-search"></span>Buscar</a>
+				<label>Factura</label>
+            <input type="submit" class="btn-nuevo" onclick="nuevoMostrar()" value="Nuevo">
 			</div>
-			<div id="tabla_principal">
-				<table id="tabla">
+			<div class="col-md-12 col-md-offset-2" id="tabla_principal">
+				<table id="lista_factura" class="table table-striped table-bordered" >
 					<thead>
+					<tr>
+						<th>Fecha</th>
+						<th>Cliente</th>
+						<th>Vendedor</th>
+						<th>Estado</th>
+						<th>Total</th>
+						<th id="accion-btn">Acci&oacute;n</th>
+					</tr>
+					</thead>
+					<tbody>
+            		</tbody>
+            		<tfoot>
 					<tr>
 						<th>Fecha</th>
 						<th>Cliente</th>
@@ -38,23 +49,15 @@
 						<th>Total</th>
 						<th>Acci&oacute;n</th>
 					</tr>
-					</thead>
-					<tr>
-					<td>22/10/2017</td>
-					<td>David</td>
-					<td>Juan</td>
-					<td>efectivo</td>
-					<td id="btn-cantidad">$12000</td>
-					<td id="btn-accion">
-					<a href="#"><span class="icon-clipboard"></span></a>	
-					<a href="#"><span class="icon-download2"></span></a>
-					<a href="#"><span class="icon-bin"></span></a>
-					</td>
-					</tr>
+					</tfoot>
 				</table>
 			</div>
-		</div>
 		
+<?php 
+	include_once '../modalnotificaciones/modalnotificacionadministrador/administradorayuda.php';
+    include_once '../modalnotificaciones/modalnotificacionadministrador/administradorbuscar.php';
+    include_once '../modalnotificaciones/modalnotificacionadministrador/administradornotificacion.php';
+?>
 	</div>
     </body>
 </html>

@@ -47,7 +47,7 @@
             </div>
             </header>
         <?php
-            include_once '../modalnotificaciones/modalnotificacionadministrador/administradorayuda.php';
+            /*include_once '../modalnotificaciones/modalnotificacionadministrador/administradorayuda.php';
             include_once '../modalnotificaciones/modalnotificacionadministrador/administradorbuscar.php';
-            include_once '../modalnotificaciones/modalnotificacionadministrador/administradornotificacion.php';
+            include_once '../modalnotificaciones/modalnotificacionadministrador/administradornotificacion.php';*/
         ?>

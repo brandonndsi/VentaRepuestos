@@ -6,8 +6,8 @@ $("#menu").mCustomScrollbar({
             //scrollButtons:{ enable: true}
             });
 $("#ta").mCustomScrollbar({
-            theme: "dark-thin"//,
-            //scrollButtons:{ enable: true}
+            theme: "dark-thin",
+            scrollButtons:{ enable: true}
             });
 };
  function autoCompletado(input){

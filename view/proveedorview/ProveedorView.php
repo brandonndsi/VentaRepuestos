@@ -37,7 +37,7 @@
     <div id="contenedor">
         <div id="content_proveedor_nuevo">
             <label>Proveedor</label>
-            <input class="btn-nuevo" onclick="nuevoMostrar()" value="Nuevo">
+            <input  type="submit" class="btn-nuevo" onclick="nuevoMostrar()" value="Nuevo">
         </div>
     <div class="col-md-12 col-md-offset-2" id="ta">
         <table id="listaProveedor" class="table table-striped table-bordered" >
@@ -142,6 +142,12 @@
         include_once '../modalnotificaciones/nuevo.php';
         ?>
         </div>
+
+        <?php 
+        include_once '../modalnotificaciones/modalnotificacionadministrador/administradorayuda.php';
+        include_once '../modalnotificaciones/modalnotificacionadministrador/administradorbuscar.php';
+        include_once '../modalnotificaciones/modalnotificacionadministrador/administradornotificacion.php';
+        ?>
     </div>
     </body>
 </html>
