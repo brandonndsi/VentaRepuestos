@@ -94,7 +94,7 @@ z-index: 100;
 	padding: 20px;
 }
 #menu li{
-	,margin:0;
+	margin:0;
 	width: 80%;
 	list-style: none;
   	overflow: hidden; /* Limpiamos errores de float */

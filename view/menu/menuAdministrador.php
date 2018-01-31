@@ -20,7 +20,7 @@
                 <ul>
                 <li>
                 <div id="imagenAdmin">
-                       <img src="../../images/administrador/david.jpeg">
+                    <img src="../../images/administrador/administrador.png">
                 </div>
                 </li>
                 </ul>

@@ -5,55 +5,44 @@ include '../../domain/personas/Personas.php';
 class Empleados extends Personas {
 
     private $empleadoid;
-    private $personaid;
-    private $tipoempleado;
     private $empleadocedula;
+    private $tipoempleado;
     private $empleadocontrasenia;
-    private $fechaingreso;
     private $empleadoedad;
     private $empleadosexo;
     private $empleadoestadocivil;
     private $empleadobanco;
     private $empleadocuentabancaria;
+    private $fechaingreso;
     private $empleadoestado;
-
-    public function Empleados($empleadoid, $personaid, $tipoempleado, $empleadocedula, $empleadocontrasenia, $fechaingreso, $empleadoedad, $empleadosexo, $empleadoestadocivil, $empleadobanco, $empleadocuentabancaria, $empleadoestado) {
+    
+    public function Empleados($empleadoid, $empleadocedula, $tipoempleado, $empleadocontrasenia, $empleadoedad, $empleadosexo, $empleadoestadocivil, $empleadobanco, $empleadocuentabancaria, $fechaingreso, $empleadoestado) {
         $this->empleadoid = $empleadoid;
-        $this->personaid = $personaid;
-        $this->tipoempleado = $tipoempleado;
         $this->empleadocedula = $empleadocedula;
+        $this->tipoempleado = $tipoempleado;
         $this->empleadocontrasenia = $empleadocontrasenia;
-        $this->fechaingreso = $fechaingreso;
         $this->empleadoedad = $empleadoedad;
         $this->empleadosexo = $empleadosexo;
         $this->empleadoestadocivil = $empleadoestadocivil;
         $this->empleadobanco = $empleadobanco;
         $this->empleadocuentabancaria = $empleadocuentabancaria;
+        $this->fechaingreso = $fechaingreso;
         $this->empleadoestado = $empleadoestado;
     }
-
     public function getEmpleadoid() {
         return $this->empleadoid;
-    }
-
-    public function getPersonaid() {
-        return $this->personaid;
-    }
-
-    public function getTipoempleado() {
-        return $this->tipoempleado;
     }
 
     public function getEmpleadocedula() {
         return $this->empleadocedula;
     }
 
-    public function getEmpleadocontrasenia() {
-        return $this->empleadocontrasenia;
+    public function getTipoempleado() {
+        return $this->tipoempleado;
     }
 
-    public function getFechaingreso() {
-        return $this->fechaingreso;
+    public function getEmpleadocontrasenia() {
+        return $this->empleadocontrasenia;
     }
 
     public function getEmpleadoedad() {
@@ -76,6 +65,10 @@ class Empleados extends Personas {
         return $this->empleadocuentabancaria;
     }
 
+    public function getFechaingreso() {
+        return $this->fechaingreso;
+    }
+
     public function getEmpleadoestado() {
         return $this->empleadoestado;
     }
@@ -84,24 +77,16 @@ class Empleados extends Personas {
         $this->empleadoid = $empleadoid;
     }
 
-    public function setPersonaid($personaid) {
-        $this->personaid = $personaid;
+    public function setEmpleadocedula($empleadocedula) {
+        $this->empleadocedula = $empleadocedula;
     }
 
     public function setTipoempleado($tipoempleado) {
         $this->tipoempleado = $tipoempleado;
     }
 
-    public function setEmpleadocedula($empleadocedula) {
-        $this->empleadocedula = $empleadocedula;
-    }
-
     public function setEmpleadocontrasenia($empleadocontrasenia) {
         $this->empleadocontrasenia = $empleadocontrasenia;
-    }
-
-    public function setFechaingreso($fechaingreso) {
-        $this->fechaingreso = $fechaingreso;
     }
 
     public function setEmpleadoedad($empleadoedad) {
@@ -122,6 +107,10 @@ class Empleados extends Personas {
 
     public function setEmpleadocuentabancaria($empleadocuentabancaria) {
         $this->empleadocuentabancaria = $empleadocuentabancaria;
+    }
+
+    public function setFechaingreso($fechaingreso) {
+        $this->fechaingreso = $fechaingreso;
     }
 
     public function setEmpleadoestado($empleadoestado) {

@@ -105,7 +105,7 @@
                             </select>
                         </div>
                         <div style="width:50%; float:left;">
-                            <p class="col-sm-8">Contraseña: <input type="password" name="empleadocontrasena" class="form-control" id="empleadocontrasena" required pattern="([a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{2,25})"/></p>
+                            <p class="col-sm-8">Contraseña: <input type="password" name="empleadocontrasena" class="form-control" id="empleadocontrasena" required /></p>
                             <p class="col-sm-8">Edad: <input type="number" name="empleadoage" class="form-control" id="empleadoage" min="18" max="80" pattern="[1-9]{2,3}" required/></p>
                             <p class="col-sm-8">Sexo: <select name = "combosexo" id="combosexo" class="form-control"> required</p>
                             <option value = "Masculino">M</option>

@@ -10,8 +10,59 @@ class DataEmpleado {
     }
 
     //insertar
-    public function insertarEmpleado() {
-        
+    public function insertarEmpleado($empleado) {
+        if ($this->conexion->crearConexion()->set_charset('utf8')) {
+
+            $con = $this->conexion->crearConexion();
+            $usuario = $con->query("CALL buscarPersonaCorreo('" . $empleado->getCorreo() . "');");
+
+            $númeroFilas = mysql_num_rows($usuario);
+
+            if ($númeroFilas > 0) {
+
+                echo '<script>alert("El correo de usuario ya existe. Por favor elije otro.");</script>';
+                echo '<script>history.back(1);</script>';
+            } else {
+                $nuevoPersona = $this->conexion->crearConexion()->query(
+                        "CALL nuevaPersona(
+                     '" . $empleado->getPersonaCedula() . "',
+                     '" . $empleado->getPersonaNombre() . "',
+                     '" . $empleado->getPersonaApellido1() . "',
+                     '" . $empleado->getPersonaApellido2() . "',
+                     '" . $empleado->getPersonaTelefono() . "',
+                     '" . $empleado->getCorreo() . "',
+                     '1');");
+                /* opteniendo el id de la persona */
+                $personaid = $this->conexion->crearConexion()->query(
+                        "CALL buscarPersonaCorreo('" . $empleado->getCorreo() . "');");
+
+                while ($resultado = $personaid->fetch_assoc()) {
+                    $con = $resultado['personaid'];
+                }
+                /* verificamos si es un string ya formulado */
+                if (is_string($con)) {
+                    $empleado->setPersonaId($con);
+                }
+
+                $this->conexion->cerrarConexion();
+                $nuevoEmpleado = $this->conexion->crearConexion()->query(
+                        "CALL nuevoEmpleado( 
+                    '" . $empleado->getPersonaId() . "',
+                    '" . $empleado->getEmpleadocedula() . "',     
+                    '" . $empleado->getTipoempleado() . "',
+                    '" . $empleado->getEmpleadocontrasenia() . "',     
+                    '" . $empleado->getEmpleadoedad() . "',
+                    '" . $empleado->getEmpleadosexo() . "',     
+                    '" . $empleado->getEmpleadoestadocivil() . "',
+                    '" . $empleado->getEmpleadobanco() . "',     
+                    '" . $empleado->getEmpleadocuentabancaria() . "',    
+                    '" . $empleado->getFechaingreso() . "',
+                    '1');");
+                $this->conexion->cerrarConexion();
+
+                return $nuevoEmpleado;
+            }
+        }
     }
 
     //modificar
@@ -38,13 +89,13 @@ class DataEmpleado {
             $tabla = "";
             while ($row = $mostrarempleados->fetch_assoc()) {
 
-                $editar = '<button onclick=\"verModalEditar('.$row['empleadoid'].','
-                        . '\''.$row['personanombre'].'\','. '\''.$row['personaapellido1'].'\','
-                        . '\''.$row['personaapellido2'].'\','.$row['empleadocedula'].','
-                        . $row['personatelefono'].','. '\''.$row['personacorreo'].'\','
-                        . '\''.$row['empleadocontrasenia'].'\','.$row['empleadoedad'].','
-                        . '\''.$row['empleadosexo'].'\','.'\''.$row['empleadoestadocivil'].'\','
-                        . '\''.$row['empleadobanco'].'\','.$row['empleadocuentabancaria'].');\"'
+                $editar = '<button onclick=\"verModalEditar(' . $row['empleadoid'] . ','
+                        . '\'' . $row['personanombre'] . '\',' . '\'' . $row['personaapellido1'] . '\','
+                        . '\'' . $row['personaapellido2'] . '\',' . $row['empleadocedula'] . ','
+                        . $row['personatelefono'] . ',' . '\'' . $row['personacorreo'] . '\','
+                        . '\'' . $row['empleadocontrasenia'] . '\',' . $row['empleadoedad'] . ','
+                        . '\'' . $row['empleadosexo'] . '\',' . '\'' . $row['empleadoestadocivil'] . '\','
+                        . '\'' . $row['empleadobanco'] . '\',' . $row['empleadocuentabancaria'] . ');\"'
                         . 'class=\"btn btn-primary\">Modificar</button>';
 
                 $ver = '<button onclick=\"verModalBuscar(' . $row['empleadoedad'] . ','
