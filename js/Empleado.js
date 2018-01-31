@@ -169,6 +169,41 @@ function modificarEmpleado() {
     cerrarModalModificar();
 }
 
+function modificarEmpleado() {
+    nombre = $("#personanombre3").val();
+    apellido1 = $("#personaape1").val();
+    apellido2 = $("#personaape2").val();
+    cedula = $("#empleadocedula3").val();
+    telefono = $("#personatelefono3").val();
+    correo = $("#personacorreo3").val();
+    clave = $("#empleadocontrasenia3").val();
+    edad = $("#empleadoedad3").val();
+    sexo = $("#empleadosexo3").val();
+    estadoCivil = $("#empleadoestadocivil3").val();
+    banco = $("#empleadobanco3").val();
+    cuenta = $("#empleadocuentabancaria3").val();
+
+    $(document).ready(function () {
+        $.post("../../business/empleadoaccion/empleadoAccion.php", {
+            nombre: nombre,
+            apellido1: apellido1,
+            apellido2: apellido2,
+            cedula: cedula,
+            telefono: telefono,
+            correo: correo,
+            clave: clave,
+            edad: edad,
+            sexo: sexo,
+            estadoCivil: estadoCivil,
+            banco: banco,
+            cuenta: cuenta,
+            accion: "modificar"
+        });
+    });
+
+    cerrarModalModificar();
+}
+
 function verModalEditar($id, $nombre, $apellido1, $apellido2, $cedula, $telefono, $correo, $contra, $age, $sex,
         $estcivil, $banck, $cuenta) {
 

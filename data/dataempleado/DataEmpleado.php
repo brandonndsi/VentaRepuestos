@@ -66,8 +66,53 @@ class DataEmpleado {
     }
 
     //modificar
-    public function modificarEmpleado() {
-        
+    public function modificarEmpleado($empleado) {
+
+        if ($this->conexion->crearConexion()->set_charset('utf8')) {
+            $actualizandoEmpleado = $this->conexion->crearConexion()->query(
+                    "CALL actualizarEmpleado(
+                    '" . $empleado->getEmpleadocedula() . "'
+                    '" . $empleado->getEmpleadocontrasenia() . "'
+                    '" . $empleado->getEmpleadoedad() . "'
+                    '" . $empleado->getEmpleadosexo() . "'
+                    '" . $empleado->getEmpleadoestadocivil() . "'
+                    '" . $empleado->getEmpleadobanco() . "'
+                    '" . $empleado->getEmpleadocuentabancaria() . "'    
+                    '" . $empleado->getEmpleadoId() . "');");
+
+            $this->conexion->cerrarConexion();
+
+            //recuperando lo que es el id de la persona en empleado.
+            $recuperandoIdPersona = $this->conexion->crearConexion()->query(
+                    "CALL buscarPersonaIDEmpleado(
+                        '" . $empleado->getEmpleadoId() . "');");
+            $this->conexion->cerrarConexion();
+
+            /* transformando los datos del id objeto a un string */
+            $conID = "";
+            while ($resultado = $recuperandoIdPersona->fetch_assoc()) {
+                $conID = $resultado['personaid'];
+                echo $conID;
+            }
+            /* verificamos si es un string ya formulado */
+            if (is_numeric($conID)) {
+                $empleado->setPersonaId($conID);
+            }
+
+            //modificando la tb persona
+            $personanuevo = $this->conexion->crearConexion()->query(
+                    "CALL actualizarPersona( 
+                    '" . $empleado->getPersonaCedula() . "',
+                    '" . $empleado->getPersonaNombre() . "',
+                    '" . $empleado->getPersonaApellido1() . "',
+                    '" . $empleado->getPersonaApellido2() . "',
+                    '" . $empleado->getPersonaTelefono() . "',
+                    '" . $empleado->getCorreo() . "',
+                    '" . $empleado->getPersonaId() . "');");
+
+            $this->conexion->cerrarConexion();
+        }
+        return $actualizandoEmpleado;
     }
 
     //eliminar

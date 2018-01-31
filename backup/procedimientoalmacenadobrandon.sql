@@ -46,7 +46,27 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `nuevoEmpleado`(IN `persona` VARCHAR
     NO SQL
 BEGIN
 INSERT INTO `tbempleados`(`personaid`, `empleadocedula`,  `tipoempleado`, `empleadocontrasenia`, `empleadoedad`, `empleadosexo`, `empleadoestadocivil`, `empleadobanco`, `empleadocuentabancaria`, `empleadofechaingreso`, `empleadoestado`)
-VALUES (persona, cedual, tipo, clave, edad, sexo, estadoCivil, banco, cuenta,fecha, estado);
+VALUES (persona, cedula, tipo, clave, edad, sexo, estadoCivil, banco, cuenta,fecha, estado);
 END$$
 DELIMITER ;
 
+/* buscar id persona de empleado*/
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `buscarPersonaIDEmpleado`(IN `empleid` VARCHAR(20))
+    NO SQL
+BEGIN
+SELECT `personaid`
+FROM `tbempleados` 
+WHERE empleadoid= empleid;
+END$$
+DELIMITER ;
+
+/* actualizar empleado*/
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `actualizarEmpleado`(IN `empleid` INT(20), IN `cedula` VARCHAR(20), IN `clave` VARCHAR(20), IN `edad` INT, IN `sexo` VARCHAR(20), IN `estadoCivil` VARCHAR(20), IN `banco` VARCHAR(20), IN `cuenta` INT)
+    NO SQL
+BEGIN
+UPDATE `tbempleados` SET `empleadocedula`= cedula,`empleadocontrasenia`= clave,`empleadoedad`= edad,`empleadosexo`= sexo,`empleadoestadocivil`= estadoCivil,`empleadobanco`= banco,`empleadocuentabancaria`= cuenta
+WHERE empleadoid=empleid;
+END$$
+DELIMITER ;
