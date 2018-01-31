@@ -80,6 +80,7 @@ cursor: pointer;
 
 /*trabajano con el div de la tabla de mostrar los datos.*/
 #tabla_principal{
+padding: 10px 0px 0px 10px;
 border-top: 2px solid black;
 box-sizing: border-box;
 top:0;
@@ -89,16 +90,7 @@ width:90%;
 height: 90%;
 margin: auto;
 margin-top: 0;
-overflow: auto;
-	/*width: 100%;
-	margin: auto;
-	/*padding: 20px;*/
-	/*box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
-	display: flex;
-	flex-wrap: wrap;
-	/*background: transparent;*/
-	/*margin-top: 0;
-	padding: 10px 0px 10px 0px;/*para los lados de adentro del input buscar*/	
+overflow: auto;	
 }
 /*comenzando la tabla*/
 #lista_factura{

@@ -10,9 +10,19 @@
         <link rel="stylesheet" type="text/css" href="../../css/scroll/jquery.mCustomScrollbar.css">
        
         <!-- JS -->
+        <script src="../../js/jquery-3.3.1.js"></script>
         <script type="text/javascript" src="../../js/administradormodal.js"></script>
+        <script src="../../js/jquery.dataTables.js"></script>
         <script type="text/javascript" src="../../js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
          <script type="text/javascript" src="../../js/facturacion.js"></script>
+			
+			<script>
+            $(document).ready(function () {
+                mostrarFactura();
+                
+            });
+        </script>
+
     </head>
     <body>
     	<?php 
