@@ -134,3 +134,15 @@ INSERT INTO `tbproveedores`
 END$$
 DELIMITER ;
 /*FIN DE NUEVO PROVEEDOR*/
+/*comenzando con la de mostrar factura*/
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `mostrarfactura`()
+    NO SQL
+BEGIN
+SELECT *
+FROM tbfacturas e
+INNER JOIN tbfacturasdetalles p ON e.numerofactura= p.numerofactura
+WHERE  e.estadofactura = 1;
+END$$
+DELIMITER ;
+/*finalizando factura mostrar todo*/
